@@ -6,6 +6,7 @@ using System.IO;
 using System.Diagnostics;
 using System.Reflection;
 using System.Reflection.Emit;
+using Utils;
 
 
 
@@ -290,7 +291,15 @@ namespace PluginWorkWithROMS
   {
     public string description;
     public ushort unkn2;
-
+    Func<uint, uint> sw = (num1) => (uint)(((((num1 & -16777216) >> 0x18) | ((num1 & 0xff0000) >> 8)) | ((num1 & 0xff00) << 8)) | ((num1 & 0xff) << 0x18));
+    Func<string, byte[]> stob = (st) =>
+      {
+        char[] ch = st.ToCharArray();
+        byte[] rt = new byte[ch.Length()];
+        for (int j = 0; j < ch.Length(); j++)
+          rt[j] = (byte)ch[j];
+        return rt;
+      };
     public TBlockType2E()
     {
     }
@@ -301,12 +310,24 @@ namespace PluginWorkWithROMS
       byte[] buffer;
       flashMemory = (EMemoryType)br.ReadByte();
       unkn2 = br.ReadUInt16();
-
+      contentChecksum16 = br.ReadUInt16();
+      buffer = br.ReadBytes(12);
+      description = buffer.ToString();
+      contentLength=sw(br.ReadUInt16));
+      location = sw(br.ReadUInt16());
     }
 
     public override void Write(BinaryWriter bw)
     {
-      throw new NotImplementedException();
+      //throw new NotImplementedException();
+      byte[] buffer;
+      bw.Write((byte)flashMemory);
+      bw.Write(unkn2);
+      bw.Write(contentChecksum16);
+      buffer = stob(description);
+      bw.Write(buffer);
+      bw.Write(contentLength);
+      bw.Write(location);
     }
   }
 
