@@ -1,0 +1,96 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlugInCore", "PlugInCore\PlugInCore.csproj", "{AD5B1C3D-0915-4FB6-B126-DC694B7701A7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PluginRemoveLanguages", "PluginRemoveLanguages\PluginRemoveLanguages.csproj", "{BBEA0D7D-17C7-48B3-87F9-7CD58D7DD4EF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PluginWorkWithROMS", "PluginWorkWithROMS\PluginWorkWithROMS.csproj", "{1692179B-65C5-4EB0-BA35-B8EEE2AD7FFD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PluginS60v5MenuEditor_for5800XM", "PluginS60v5MenuEditor\PluginS60v5MenuEditor_for5800XM.csproj", "{42171F41-9025-4257-9C89-04328A8948C9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MIFWriter", "MIFWriter\MIFWriter.csproj", "{A7755CE7-7628-4458-993B-ADC29DC03330}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestProject1", "TestProject1\TestProject1.csproj", "{5B08BD8D-EDA7-479F-98D2-26D3167B407F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MIFTEST", "MIFTEST\MIFTEST.csproj", "{3744DF8D-708F-4FB9-822F-030F3C33B63E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SvgNet", "..\SvgNet\SvgNet\SvgNet.csproj", "{BB4C8021-B5E1-4DE2-82CB-14BDFB9837E4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PicToMif", "PicToMif\PicToMif.csproj", "{66CD5FDF-29D9-401F-8DCD-07DDC16BBEF4}"
+	ProjectSection(ProjectDependencies) = postProject
+		{A7755CE7-7628-4458-993B-ADC29DC03330} = {A7755CE7-7628-4458-993B-ADC29DC03330}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NokiaS60CenrepEditor v101", "NokiaS60CenrepEditor v101.csproj", "{EE82F1EF-CCB0-4CA0-8CF0-0F8BEB635363}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AD5B1C3D-0915-4FB6-B126-DC694B7701A7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AD5B1C3D-0915-4FB6-B126-DC694B7701A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AD5B1C3D-0915-4FB6-B126-DC694B7701A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AD5B1C3D-0915-4FB6-B126-DC694B7701A7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BBEA0D7D-17C7-48B3-87F9-7CD58D7DD4EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BBEA0D7D-17C7-48B3-87F9-7CD58D7DD4EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BBEA0D7D-17C7-48B3-87F9-7CD58D7DD4EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BBEA0D7D-17C7-48B3-87F9-7CD58D7DD4EF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1692179B-65C5-4EB0-BA35-B8EEE2AD7FFD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1692179B-65C5-4EB0-BA35-B8EEE2AD7FFD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1692179B-65C5-4EB0-BA35-B8EEE2AD7FFD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1692179B-65C5-4EB0-BA35-B8EEE2AD7FFD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{42171F41-9025-4257-9C89-04328A8948C9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{42171F41-9025-4257-9C89-04328A8948C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{42171F41-9025-4257-9C89-04328A8948C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{42171F41-9025-4257-9C89-04328A8948C9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A7755CE7-7628-4458-993B-ADC29DC03330}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A7755CE7-7628-4458-993B-ADC29DC03330}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A7755CE7-7628-4458-993B-ADC29DC03330}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A7755CE7-7628-4458-993B-ADC29DC03330}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5B08BD8D-EDA7-479F-98D2-26D3167B407F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5B08BD8D-EDA7-479F-98D2-26D3167B407F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5B08BD8D-EDA7-479F-98D2-26D3167B407F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5B08BD8D-EDA7-479F-98D2-26D3167B407F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3744DF8D-708F-4FB9-822F-030F3C33B63E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3744DF8D-708F-4FB9-822F-030F3C33B63E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3744DF8D-708F-4FB9-822F-030F3C33B63E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3744DF8D-708F-4FB9-822F-030F3C33B63E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BB4C8021-B5E1-4DE2-82CB-14BDFB9837E4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BB4C8021-B5E1-4DE2-82CB-14BDFB9837E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BB4C8021-B5E1-4DE2-82CB-14BDFB9837E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BB4C8021-B5E1-4DE2-82CB-14BDFB9837E4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{66CD5FDF-29D9-401F-8DCD-07DDC16BBEF4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{66CD5FDF-29D9-401F-8DCD-07DDC16BBEF4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{66CD5FDF-29D9-401F-8DCD-07DDC16BBEF4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{66CD5FDF-29D9-401F-8DCD-07DDC16BBEF4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EE82F1EF-CCB0-4CA0-8CF0-0F8BEB635363}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EE82F1EF-CCB0-4CA0-8CF0-0F8BEB635363}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EE82F1EF-CCB0-4CA0-8CF0-0F8BEB635363}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EE82F1EF-CCB0-4CA0-8CF0-0F8BEB635363}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		Reflector1DestinationAssemblyName = 
+		Reflector1DestinationVersion = 1.0.0.0
+		Reflector1DestinationName = NokiaCooker BETA
+		Reflector1DestinationLocation = E:\NokiaCooker BETA.exe
+		Reflector1SourceAssemblyName = 
+		Reflector1SourceVersion = 1.0.0.0
+		Reflector1SourceName = NokiaCooker
+		Reflector1SourceLocation = E:\NC\NokiaCooker BETA.exe
+		Reflector0DestinationAssemblyName = 
+		Reflector0DestinationVersion = 1.0.0.0
+		Reflector0DestinationName = NokiaCooker BETA
+		Reflector0DestinationLocation = C:\Documents and Settings\JA\Dokumentumok\Visual Studio 2008\Projects\NokiaS60CenrepEditor v101\NokiaS60CenrepEditor v101\bin\Debug\Plugins\NokiaCooker BETA.exe
+		Reflector0SourceAssemblyName = 
+		Reflector0SourceVersion = 1.0.0.0
+		Reflector0SourceName = NokiaCooker
+		Reflector0SourceLocation = C:\NokiaCooker BETA.exe
+		VisualSVNWorkingCopyRoot = .
+	EndGlobalSection
+EndGlobal
