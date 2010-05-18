@@ -4,11 +4,14 @@ using System.Linq;
 using System.Text;
 using System.IO;
 using System.Diagnostics;
+using System.Reflection;
+using System.Reflection.Emit;
 
 
 
 namespace PluginWorkWithROMS
 {
+  internal delegate string tostr(int i);
 
   enum EBlockType
   {
@@ -30,9 +33,41 @@ namespace PluginWorkWithROMS
     APE
   }
 
+  static class Generator
+  {
+    public static void Generate()
+    {
+      /*
+      FieldInfo info;
+      StackFrame frame = new StackTrace().GetFrame(1);
+      Type declaringType = frame.GetMethod().DeclaringType;
+      FieldInfo[] fields = declaringType.GetFields(BindingFlags.GetField | BindingFlags.NonPublic | BindingFlags.Static);
+      int index = 0;
+    Label_002A:
+      info = fields[index];
+      try
+      {
+        if (info.FieldType != typeof(tostr))
+        {
+          goto Label_012C;
+        }
+        Type[] parameterType = new Type[] { typeof(int) };
+        DynamicMethod method = new DynamicMethod(string.Empty, typeof(string), parameterType, declaringType, true);
+        ILGenerator iLGenerator = method.GetILGenerator();
+        iLGenerator.Emit(OpCodes.Ldarg_0);
+
+      }
+      catch
+      {
+      }
+      return; */
+    }
+  }
+
   abstract class TBase
   {
     public abstract void Read(BinaryReader br);
+    public abstract void Write(BinaryWriter bw);
   }
 
 
@@ -103,6 +138,7 @@ namespace PluginWorkWithROMS
     public ushort contentChecksum16;
     public EMemoryType flashMemory;
     public uint location;
+    public uint contentLength;
 
     public static TBlockHeader Factory(BinaryReader br, EBlockType blockType, EContentType contentType)
     {
@@ -211,7 +247,67 @@ namespace PluginWorkWithROMS
 
   class TBlockType17 : TBlockHeader
   {
+    public byte const01;
+    public ushort unkn2;
+    Func<uint, uint> sw = (num1) => (uint)(((((num1 & -16777216) >> 0x18) | ((num1 & 0xff0000) >> 8)) | ((num1 & 0xff00) << 8)) | ((num1 & 0xff) << 0x18));
+    static TBlockType17()
+    {
+      Generator.Generate();
+    }
 
+    public TBlockType17()
+    {
+    }
+
+    public override void Read(BinaryReader br)
+    {
+      //throw new NotImplementedException();
+      flashMemory = (EMemoryType)br.ReadByte();
+      unkn2 = br.ReadUInt16();
+      contentChecksum16 = br.ReadUInt16();
+      const01 = br.ReadByte();
+      if (const01 != 1)
+      {
+        throw new NotImplementedException();
+      }
+      contentLength = sw(br.ReadUInt32());
+      location = sw(br.ReadUInt32());
+    }
+
+    public override void Write(BinaryWriter bw)
+    {
+      //throw new NotImplementedException();
+      bw.Write((byte)flashMemory);
+      bw.Write(unkn2);
+      bw.Write(contentChecksum16);
+      bw.Write(const01);
+      bw.Write(sw(contentLength));
+      bw.Write(sw(location));
+    }
+  }
+
+  class TBlockType2E : TBlockHeader
+  {
+    public string description;
+    public ushort unkn2;
+
+    public TBlockType2E()
+    {
+    }
+
+    public override void Read(BinaryReader br)
+    {
+      //throw new NotImplementedException();
+      byte[] buffer;
+      flashMemory = (EMemoryType)br.ReadByte();
+      unkn2 = br.ReadUInt16();
+
+    }
+
+    public override void Write(BinaryWriter bw)
+    {
+      throw new NotImplementedException();
+    }
   }
 
 
