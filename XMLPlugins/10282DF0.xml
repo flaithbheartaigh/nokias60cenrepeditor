@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+  <Plugin Author="Jakab András" version="1.0.0">
+    <Appendable>No</Appendable>
+    <Owner>Audió buffer beállítás</Owner>
+  </Plugin>
+  <AREA>
+    <key id="0x00000001" type="int" desc="Sensor beállítások" default="0" AlwaysPass="R" WriteDeviceData="W"/>
+    <key id="0x00000002" type="int" desc="Érintő beállításai" default="0" AlwaysPass="R" WriteDeviceData="W"/>
+    <key id="0x00000003" type="int" desc="Mozgásérzékelő beállításai" default="0" AlwaysPass="R" WriteDeviceData="W"/>
+    <key id="0x00000004" type="int" desc="Helyzetérzékelő beállításai" default="0" AlwaysPass="R" WriteDeviceData="W"/>
+    <key id="0x00100002" type="int" desc="Érintő vezérlés(bitmask! 0.bit->Hívásnémítás, 1.bit->Riasztás halasztása)" default="0" AlwaysPass="R" WriteDeviceData="W"/>
+    <key id="0x00100003" type="int" desc="Mozgatás vezérlés(bitmask! 0.bit->Hívásnémítás, 1.bit->Riasztás halasztása, 2.bit->orientáció)" default="0" AlwaysPass="R" WriteDeviceData="W"/>
+  </AREA>
+</root>

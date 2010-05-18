@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+  <Plugin Author="Jakab András" version="1.0.0">
+    <Appendable>No</Appendable>
+    <Owner>Audió buffer beállítás</Owner>
+  </Plugin>
+  <AREA>
+    <key id="0x00000001" type="int" desc="Elsődleges buffer típusa progresszív letöltésnél" default="2" AlwaysPass="R">
+      <option value="0" desc="Nincs buffer"/>
+      <option value="1" desc="Fix méret"/>
+      <option value="2" desc="Fixed duration"/>
+      <option value="3" desc="Dynamic duration"/>
+    </key>
+    <key id="0x00000002" type="int" desc="Az elsődleges buffer mérete/duration" default="20" AlwaysPass="R"/>
+    <key id="0x00000003" type="int" desc="Másodlagos buffer típusa progresszív letöltésnél" default="1" AlwaysPass="R">
+      <option value="0" desc="Nincs buffer"/>
+      <option value="1" desc="Fix méret"/>
+      <option value="2" desc="Fixed duration"/>
+      <option value="3" desc="Dynamic duration"/>
+    </key>
+    <key id="0x00000004" type="int" desc="A másodlagos buffer mérete/duration" default="163840" AlwaysPass="R"/>
+    <key id="0x00000005" type="int" desc="Buffer töltöttsége %-ban lejátszás előtt" default="35" AlwaysPass="R"/>
+  </AREA>
+</root> 
