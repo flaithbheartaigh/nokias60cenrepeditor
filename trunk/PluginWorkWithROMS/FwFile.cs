@@ -331,6 +331,49 @@ namespace PluginWorkWithROMS
     }
   }
 
+  public class TBlockType27_ROFS_Hash : TBlockHeader
+  {
+    public string description;
+    public byte[] maybe_hash16_md5;
+    public ushort unkn2;
+    public byte[] unkn4;
+    Func<uint, uint> sw = (num1) => (uint)(((((num1 & -16777216) >> 0x18) | ((num1 & 0xff0000) >> 8)) | ((num1 & 0xff00) << 8)) | ((num1 & 0xff) << 0x18));
+    Func<string, byte[]> stob = (st) =>
+    {
+      char[] ch = st.ToCharArray();
+      byte[] rt = new byte[ch.Length()];
+      for (int j = 0; j < ch.Length(); j++)
+        rt[j] = (byte)ch[j];
+      return rt;
+    };
+
+    public TBlockType27_ROFS_Hash()
+    {
+    }
+
+    public override void Read(BinaryReader br)
+    {
+      //throw new NotImplementedException();
+      byte[] buffer;
+      maybe_hash16_md5 = br.ReadBytes(0x10);
+      unkn4 = br.ReadBytes(4);
+      buffer = br.ReadBytes(12);
+      description = buffer.ToString();
+      flashMemory = (EMemoryType)br.ReadByte();
+      unkn2 = br.ReadUInt16();
+      contentChecksum16 = br.ReadUInt16();
+      contentLength = sw(br.ReadUInt16());
+      location = sw(br.ReadUInt16());
+    }
+
+    public override void Write(BinaryWriter bw)
+    {
+      // Folytatni!!!!!
+      throw new NotImplementedException();
+    }
+
+  }
+
 
   public class FwFile
   {
