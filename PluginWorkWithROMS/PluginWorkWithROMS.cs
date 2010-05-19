@@ -10,7 +10,7 @@ using System.Drawing;
 using System.Windows.Forms;
 using System.IO;
 
-namespace PluginWorkWithROMS
+namespace S60.Plugins.Firmware
 {
   [CenRepPluginAttributes("ROFS2/ROFS3 csomagolás")]
   public class PluginWorkWithROMS : ICenRepPlugins

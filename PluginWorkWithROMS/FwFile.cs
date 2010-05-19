@@ -6,11 +6,10 @@ using System.IO;
 using System.Diagnostics;
 using System.Reflection;
 using System.Reflection.Emit;
-using Utils;
 
 
 
-namespace PluginWorkWithROMS
+namespace S60.Plugins.Firmware
 {
   internal delegate string tostr(int i);
 
@@ -38,30 +37,6 @@ namespace PluginWorkWithROMS
   {
     public static void Generate()
     {
-      /*
-      FieldInfo info;
-      StackFrame frame = new StackTrace().GetFrame(1);
-      Type declaringType = frame.GetMethod().DeclaringType;
-      FieldInfo[] fields = declaringType.GetFields(BindingFlags.GetField | BindingFlags.NonPublic | BindingFlags.Static);
-      int index = 0;
-    Label_002A:
-      info = fields[index];
-      try
-      {
-        if (info.FieldType != typeof(tostr))
-        {
-          goto Label_012C;
-        }
-        Type[] parameterType = new Type[] { typeof(int) };
-        DynamicMethod method = new DynamicMethod(string.Empty, typeof(string), parameterType, declaringType, true);
-        ILGenerator iLGenerator = method.GetILGenerator();
-        iLGenerator.Emit(OpCodes.Ldarg_0);
-
-      }
-      catch
-      {
-      }
-      return; */
     }
   }
 
@@ -87,6 +62,10 @@ namespace PluginWorkWithROMS
 
       unkn = new byte[headerSize - 4];
       unkn = br.ReadBytes(unkn.Length);
+    }
+    public override void Write(BinaryWriter bw)
+    {
+      throw new NotImplementedException();
     }
   }
 
@@ -129,6 +108,10 @@ namespace PluginWorkWithROMS
 
       blockChecksum8 = br.ReadByte();
       content = br.ReadBytes((int)blockHeader.contentSize);
+    }
+    public override void Write(BinaryWriter bw)
+    {
+      throw new NotImplementedException();
     }
   }
 
@@ -180,7 +163,7 @@ namespace PluginWorkWithROMS
     public UInt16 maybe_crc;
     public byte const01;
     // size
-    public UInt32 location;
+    public new UInt32 location;
 
     public override void Read(BinaryReader br)
     {
@@ -194,6 +177,10 @@ namespace PluginWorkWithROMS
       contentSize = Utils.SwapBytes(br.ReadUInt32());
       location = Utils.SwapBytes(br.ReadUInt32());
     }
+    public override void Write(BinaryWriter bw)
+    {
+      throw new NotImplementedException();
+    }
   }
 
 
@@ -201,13 +188,17 @@ namespace PluginWorkWithROMS
   {
     public byte[] unknSigned;
     // size
-    public UInt32 location;
+    public new UInt32 location;
 
     public override void Read(BinaryReader br)
     {
       unknSigned = br.ReadBytes(17);
       contentSize = Utils.SwapBytes(br.ReadUInt32());
       location = Utils.SwapBytes(br.ReadUInt32());
+    }
+    public override void Write(BinaryWriter bw)
+    {
+      throw new NotImplementedException();
     }
   }
 
@@ -220,7 +211,7 @@ namespace PluginWorkWithROMS
     public byte processorType;
     public byte[] unkn;             // 4
     // size
-    public UInt32 location;
+    public new UInt32 location;
 
     public override void Read(BinaryReader br)
     {
@@ -232,6 +223,11 @@ namespace PluginWorkWithROMS
       unkn = br.ReadBytes(4);
       contentSize = Utils.SwapBytes(br.ReadUInt32());
       location = Utils.SwapBytes(br.ReadUInt32());
+    }
+
+    public override void Write(BinaryWriter bw)
+    {
+      throw new NotImplementedException();
     }
   }
 
@@ -295,8 +291,8 @@ namespace PluginWorkWithROMS
     Func<string, byte[]> stob = (st) =>
       {
         char[] ch = st.ToCharArray();
-        byte[] rt = new byte[ch.Length()];
-        for (int j = 0; j < ch.Length(); j++)
+        byte[] rt = new byte[ch.Length];
+        for (int j = 0; j < ch.Length; j++)
           rt[j] = (byte)ch[j];
         return rt;
       };
@@ -313,7 +309,7 @@ namespace PluginWorkWithROMS
       contentChecksum16 = br.ReadUInt16();
       buffer = br.ReadBytes(12);
       description = buffer.ToString();
-      contentLength=sw(br.ReadUInt16));
+      contentLength=sw(br.ReadUInt16());
       location = sw(br.ReadUInt16());
     }
 
@@ -331,7 +327,7 @@ namespace PluginWorkWithROMS
     }
   }
 
-  public class TBlockType27_ROFS_Hash : TBlockHeader
+  class TBlockType27_ROFS_Hash : TBlockHeader
   {
     public string description;
     public byte[] maybe_hash16_md5;
@@ -341,8 +337,8 @@ namespace PluginWorkWithROMS
     Func<string, byte[]> stob = (st) =>
     {
       char[] ch = st.ToCharArray();
-      byte[] rt = new byte[ch.Length()];
-      for (int j = 0; j < ch.Length(); j++)
+      byte[] rt = new byte[ch.Length];
+      for (int j = 0; j < ch.Length; j++)
         rt[j] = (byte)ch[j];
       return rt;
     };
@@ -369,7 +365,8 @@ namespace PluginWorkWithROMS
     public override void Write(BinaryWriter bw)
     {
       // Folytatni!!!!!
-      throw new NotImplementedException();
+      //throw new NotImplementedException();
+
     }
 
   }

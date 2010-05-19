@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Reflection;
-using MIFWriter;
+using S60.Tools.MIF;
 using System.IO;
 
-namespace PicToMif
+namespace S60.Tools.Programs
 { 
   class pictomif
   {
