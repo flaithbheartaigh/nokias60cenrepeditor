@@ -6,7 +6,7 @@ using System.Text;
 using System.IO;
 using System.Drawing;
 
-namespace MIFWriter
+namespace S60.Tools.MIF
 {
   public static class MyConverter
   {

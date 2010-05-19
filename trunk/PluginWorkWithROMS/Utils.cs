@@ -5,7 +5,7 @@ using System.Text;
 using System.IO;
 
 
-namespace PluginWorkWithROMS
+namespace S60.Plugins.Firmware
 {
     class Utils
     {
