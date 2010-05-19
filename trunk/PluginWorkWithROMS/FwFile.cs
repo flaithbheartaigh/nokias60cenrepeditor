@@ -322,8 +322,8 @@ namespace S60.Plugins.Firmware
       bw.Write(contentChecksum16);
       buffer = stob(description);
       bw.Write(buffer);
-      bw.Write(contentLength);
-      bw.Write(location);
+      bw.Write(sw(contentLength));
+      bw.Write(sw(location));
     }
   }
 
@@ -364,13 +364,75 @@ namespace S60.Plugins.Firmware
 
     public override void Write(BinaryWriter bw)
     {
+      byte[] buffer;
       // Folytatni!!!!!
       //throw new NotImplementedException();
-
+      bw.Write(maybe_hash16_md5, 0, 0x10);
+      bw.Write(unkn4, 0, 4);
+      bw.Write(description);
+      bw.Write(buffer);
+      bw.Write((byte)flashMemory);
+      bw.Write(unkn2);
+      bw.Write(contentChecksum16);
+      bw.Write(Utils.SwapBytes(contentLength));
+      bw.Write(Utils.SwapBytes(location));
     }
 
   }
 
+  class TBlockType28_CORE_Cert : TBlockType27_ROFS_Hash
+  {
+    public byte[] maybe_hash20_sha1;
+    public byte[] unkn2b;
+
+    public TBlockType28_CORE_Cert()
+    {
+    }
+
+    public override void Read(BinaryReader br)
+    {
+      base.Read(br);
+      maybe_hash20_sha1 = br.ReadBytes(20);
+      unkn2b = br.ReadBytes(2);
+    }
+    public override void Write(BinaryWriter bw)
+    {
+      base.Write(bw);
+      bw.Write(maybe_hash20_sha1);
+      bw.Write(unkn2b);
+    }
+  }
+
+  class TBlockType30 : TBlockHeader
+  {
+    public ushort unkn2;
+    public byte[] unkn8;
+
+    public TBlockType30()
+    {
+    }
+
+    public override void Read(BinaryReader br)
+    {
+      //throw new NotImplementedException();
+      flashMemory = (EMemoryType)br.ReadByte();
+      unkn2 = br.ReadUInt16();
+      contentChecksum16 = br.ReadUInt16();
+      contentLength = Utils.SwapBytes(br.ReadUInt16());
+      location = Utils.SwapBytes(br.ReadUInt16());
+    }
+
+    public override void Write(BinaryWriter bw)
+    {
+      //throw new NotImplementedException();
+      bw.Write((byte)flashMemory);
+      bw.Write(unkn2);
+      bw.Write(contentChecksum16);
+      bw.Write(unkn8);
+      bw.Write(Utils.SwapBytes(contentLength));
+      bw.Write(Utils.SwapBytes(location));
+    }
+  }
 
   public class FwFile
   {
