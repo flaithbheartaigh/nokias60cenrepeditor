@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace PlugInCore.Attributes
+namespace S60.Plugins.Attributes
 {
   [AttributeUsage(AttributeTargets.Class)]
   public class CenRepPluginAttributes : Attribute

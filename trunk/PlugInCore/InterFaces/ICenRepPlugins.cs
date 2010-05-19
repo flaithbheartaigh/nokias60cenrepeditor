@@ -5,7 +5,7 @@ using System.Text;
 using System.Xml;
 using System.Windows.Forms;
 
-namespace PlugInCore.InterFaces
+namespace S60.Plugins.Interfaces
 {
   public interface ICenRepPlugins
   {

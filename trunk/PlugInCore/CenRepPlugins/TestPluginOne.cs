@@ -5,7 +5,7 @@ using System.Text;
 using System.Xml;
 using PlugInCore.InterFaces;
 
-namespace PlugInCore.CenRepPlugins
+namespace S60.Plugins.TestPlugin
 {
   class TestPluginOne:ICenRepPlugins
   {

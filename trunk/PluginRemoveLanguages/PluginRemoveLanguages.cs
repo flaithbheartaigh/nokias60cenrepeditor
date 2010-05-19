@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using PlugInCore.InterFaces;
-using PlugInCore.Attributes;
+using S60.Plugins.InterFaces;
+using S60.Plugins.Attributes;
 using System.Xml;
 using System.Windows.Forms;
 
-namespace PluginRemoveLanguages
+namespace S60.Plugins.RemoveLanguages
 {
   [CenRepPluginAttributes("Felesleges nyelvek eltávolítása")]
   public class PluginRemoveLanguages : ICenRepPlugins

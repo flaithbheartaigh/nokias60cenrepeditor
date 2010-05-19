@@ -1,4 +1,4 @@
-﻿namespace PluginS60v5MenuEditor
+﻿namespace S60.Plugins.MenuEditor
 {
   partial class frmMenuEditor
   {
