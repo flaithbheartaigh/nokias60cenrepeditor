@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using System.Xml;
 using System.IO;
 
-namespace PluginS60v5MenuEditor
+namespace S60.Plugins.MenuEditor
 {
   public partial class frmMenuEditor : Form
   {
@@ -36,6 +36,12 @@ namespace PluginS60v5MenuEditor
     private void ParseFile()
     {
 
+    }
+
+    public void AddMenuFolder(TreeNode xNode)
+    {
+      treMenu.Nodes.Add(xNode);
+      // Itt folytatom
     }
   }
 }

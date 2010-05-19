@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Xml;
-using PlugInCore.InterFaces;
-using PlugInCore.CenRepPlugins;
+using S60.Plugins.InterFaces;
+using S60.Plugins.TestPlugin;
 
 
-namespace PlugInCore
+namespace S60.Plugins
 {
   public class PluginHost
   {

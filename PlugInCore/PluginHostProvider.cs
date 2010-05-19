@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.IO;
-using PlugInCore;
+using S60.Plugins;
 using System.Reflection;
-using PlugInCore.InterFaces;
-using PlugInCore.Attributes;
+using S60.Plugins.InterFaces;
+using S60.Plugins.Attributes;
 
 namespace PlugInCore
 {
