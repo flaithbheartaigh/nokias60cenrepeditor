@@ -8,7 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using System.IO;
 
-namespace NokiaS60CenrepEditor
+namespace S60
 {
   public partial class StandardEditor : Form
   {

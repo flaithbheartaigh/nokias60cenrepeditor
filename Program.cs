@@ -4,7 +4,7 @@ using System.Linq;
 using System.Windows.Forms;
 using PlugInCore.CenRepPlugins;
 
-namespace NokiaS60CenrepEditor
+namespace S60
 {
     static class Program
     {

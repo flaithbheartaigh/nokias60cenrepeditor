@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-namespace NokiaS60CenrepEditor
+namespace S60
 {
   public partial class dlgFindUID : Form
   {

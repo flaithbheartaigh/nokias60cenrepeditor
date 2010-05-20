@@ -9,7 +9,7 @@ using System.Windows.Forms;
 using System.IO;
 using MIFWriter;
 
-namespace NokiaS60CenrepEditor
+namespace S60
 {
   public partial class frmMIFMaker : Form
   {

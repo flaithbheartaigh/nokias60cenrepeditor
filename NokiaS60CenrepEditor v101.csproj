@@ -8,7 +8,7 @@
     <ProjectGuid>{EE82F1EF-CCB0-4CA0-8CF0-0F8BEB635363}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>NokiaS60CenrepEditor</RootNamespace>
+    <RootNamespace>S60</RootNamespace>
     <AssemblyName>NokiaS60CenrepEditor v101</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -90,7 +90,6 @@
     <Compile Include="frmMIFMaker.Designer.cs">
       <DependentUpon>frmMIFMaker.cs</DependentUpon>
     </Compile>
-    <Compile Include="XMLPlugin.cs" />
     <Compile Include="dlgFindUID.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -133,6 +132,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="App.config" />
     <None Include="Properties\app.manifest" />
@@ -151,6 +151,7 @@
     <Compile Include="StandardEditor.Designer.cs">
       <DependentUpon>StandardEditor.cs</DependentUpon>
     </Compile>
+    <Compile Include="XMLPlugin.cs" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />

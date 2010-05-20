@@ -5,7 +5,7 @@ using System.Text;
 using System.IO;
 using S60.Plugins;
 using System.Reflection;
-using S60.Plugins.InterFaces;
+using S60.Plugins.Interfaces;
 using S60.Plugins.Attributes;
 
 namespace PlugInCore

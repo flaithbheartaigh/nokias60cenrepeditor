@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Xml;
-using PlugInCore.InterFaces;
+using S60.Plugins.Interfaces;
 
 namespace S60.Plugins.TestPlugin
 {
