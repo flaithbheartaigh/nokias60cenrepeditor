@@ -7,7 +7,7 @@ using S60.Plugins.Attributes;
 using System.Xml;
 using System.Windows.Forms;
 
-namespace S60.Plugins.RemoveLanguages
+namespace S60.Plugins
 {
   [CenRepPluginAttributes("Felesleges nyelvek eltávolítása")]
   public class PluginRemoveLanguages : ICenRepPlugins

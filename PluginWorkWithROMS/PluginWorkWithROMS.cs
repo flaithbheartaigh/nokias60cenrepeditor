@@ -2,15 +2,15 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using PlugInCore;
 using S60.Plugins.Interfaces;
 using S60.Plugins.Attributes;
+using S60.Plugins;
 using System.Xml;
 using System.Drawing;
 using System.Windows.Forms;
 using System.IO;
 
-namespace S60.Plugins.Firmware
+namespace S60.Plugins
 {
   [CenRepPluginAttributes("ROFS2/ROFS3 csomagolás")]
   public class PluginWorkWithROMS : ICenRepPlugins

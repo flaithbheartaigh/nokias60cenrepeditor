@@ -5,7 +5,7 @@ using System.Text;
 using System.IO;
 
 
-namespace S60.Plugins.Firmware
+namespace S60.Plugins
 {
     class Utils
     {
