@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.IO;
-using MIFWriter;
+using S60.Tools.MIF;
 
 namespace S60
 {
@@ -71,14 +71,14 @@ namespace S60
       {
         if (!Directory.Exists(Application.StartupPath + @"\MIF"))
           Directory.CreateDirectory(Application.StartupPath + @"\MIF");
-        dlgSaveFolder.RootFolder = Application.StartupPath + @"\MIF";
+        //dlgSaveFolder.RootFolder = Application.StartupPath + @"\MIF";
         string mifname;
         int i =0;
         foreach (string fn in lstPicFiles.Items)
         {
           mifname =  Path.GetFileNameWithoutExtension(fn)+".mif";
           myMif = new MIFWriterClass();
-          myMif.AddFile(SvgDict[lstPicFiles.Items[i++]);
+          myMif.AddFile(SvgDict[lstPicFiles.Items.IndexOf(fn)]);
         };
       }
       lblCsomag.Visible = false;

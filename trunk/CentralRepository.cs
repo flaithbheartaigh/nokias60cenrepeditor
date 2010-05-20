@@ -7,7 +7,7 @@ using System.IO;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
-namespace S60
+namespace S60.Cenrep
 {
   public delegate CRItem GenCrItem(string line);
   public delegate bool CHK(string x);
@@ -42,7 +42,7 @@ namespace S60
         {
           Regex r = new Regex(@"^(?<opti>o[r]?::)?(?<other>.+)$");
           Match m = r.Match(s);
-          ExprItem eItem;
+          ExprItem eItem = new ExprItem();
           eItem.expr = m.Groups["other"].Value;
           eItem.optional = m.Groups["opti"].Value.ToString() == "o::";
           regulars.Add(eItem);
@@ -51,10 +51,16 @@ namespace S60
 
       private List<bool> ValidateRules()
       {
+        List<bool> bKifs = new List<bool>();
+
+        return bKifs;
       }
 
       public bool Validate()
       {
+        bool bValid = true;
+
+        return bValid;
       }
     }
     /* ************************************************************** */

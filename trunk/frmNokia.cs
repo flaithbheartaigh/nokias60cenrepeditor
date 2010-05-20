@@ -8,8 +8,8 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.Xml;
-using PlugInCore;
-using MIFWriter;
+using S60.Plugins;
+using S60.Tools.MIF;
 
 namespace S60
 {
@@ -220,7 +220,7 @@ namespace S60
       if (System.IO.File.Exists(fn))
       {
         /* parseXMLPlugin(fn); */
-        CXMLPlugin xP = new CXMLPlugin(fn);
+        //CXMLPlugin xP = new CXMLPlugin(fn);
       }
       else
       {

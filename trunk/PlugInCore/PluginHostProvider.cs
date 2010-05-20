@@ -8,7 +8,7 @@ using System.Reflection;
 using S60.Plugins.Interfaces;
 using S60.Plugins.Attributes;
 
-namespace PlugInCore
+namespace S60.Plugins
 {
   public class PluginHostProvider
   {
@@ -63,6 +63,7 @@ namespace PlugInCore
       List<Type> availType = new List<Type> ();
       foreach (Assembly currAssembly in assemblies)
       {
+        
         availType.AddRange(currAssembly.GetTypes());
       }
       List<Type> pluginList = availType.FindAll(delegate(Type t)

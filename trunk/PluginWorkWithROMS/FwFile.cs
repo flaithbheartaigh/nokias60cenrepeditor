@@ -9,7 +9,7 @@ using System.Reflection.Emit;
 
 
 
-namespace S60.Plugins.Firmware
+namespace S60.Plugins
 {
   internal delegate string tostr(int i);
 
