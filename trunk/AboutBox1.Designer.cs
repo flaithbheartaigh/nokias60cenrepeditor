@@ -1,4 +1,4 @@
-﻿namespace NokiaS60CenrepEditor
+﻿namespace S60
 {
     partial class AboutBox1
     {

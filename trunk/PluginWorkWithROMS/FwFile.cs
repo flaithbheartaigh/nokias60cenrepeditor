@@ -370,7 +370,7 @@ namespace S60.Plugins.Firmware
       bw.Write(maybe_hash16_md5, 0, 0x10);
       bw.Write(unkn4, 0, 4);
       bw.Write(description);
-      bw.Write(buffer);
+      //bw.Write(buffer);
       bw.Write((byte)flashMemory);
       bw.Write(unkn2);
       bw.Write(contentChecksum16);

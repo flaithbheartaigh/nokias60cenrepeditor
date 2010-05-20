@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using S60.Plugins.InterFaces;
+using S60.Plugins.Interfaces;
 using S60.Plugins.Attributes;
 using System.Xml;
 using System.Windows.Forms;

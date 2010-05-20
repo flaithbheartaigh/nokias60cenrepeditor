@@ -7,7 +7,7 @@ using System.IO;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
-namespace NokiaS60CenrepEditor
+namespace S60
 {
   public delegate CRItem GenCrItem(string line);
   public delegate bool CHK(string x);

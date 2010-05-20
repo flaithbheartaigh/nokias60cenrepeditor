@@ -11,7 +11,7 @@ using System.Xml;
 using PlugInCore;
 using MIFWriter;
 
-namespace NokiaS60CenrepEditor
+namespace S60
 {
   public partial class frmNokia : Form
   {

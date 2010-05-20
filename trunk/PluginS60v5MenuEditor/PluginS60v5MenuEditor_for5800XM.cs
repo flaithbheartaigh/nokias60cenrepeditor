@@ -5,7 +5,7 @@ using System.Text;
 using System.Xml;
 using System.Windows.Forms;
 using S60.Plugins;
-using S60.Plugins.InterFaces;
+using S60.Plugins.Interfaces;
 using S60.Plugins.Attributes;
 using System.IO;
 using System.Xml.Linq;
@@ -34,7 +34,7 @@ namespace S60.Plugins.MenuEditor
         return;
       }
       xmlmenu = nodes[0].Value+@"\101f4cd2\content\appshelldata.xml";
-      xMenu = new XmlDocument();
+      //xMenu = new XElement();
       StreamReader rXml = new StreamReader(xmlmenu);
       string xmlcontent = rXml.ReadToEnd();
       Regex reRemoveDTD = new Regex(@"<!DOC[^>]+>");

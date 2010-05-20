@@ -6,7 +6,7 @@ using System.Linq;
 using System.Reflection;
 using System.Windows.Forms;
 
-namespace NokiaS60CenrepEditor
+namespace S60
 {
     partial class AboutBox1 : Form
     {
