@@ -68,7 +68,7 @@ The body part contains the real modification stuff. It is based on hex coordinat
 0x1004 string "0x00000002" 0 cap_rd=alwayspass cap_wr=alwaysfail
 0x1005 string "localapp:0x100058c5" 0 cap_rd=alwayspass cap_wr=alwaysfail
 
-}}
+}}}
 
 As you can see, the body part begins with the [Main] tag, so it is extremely easy to divide them into two.
 
