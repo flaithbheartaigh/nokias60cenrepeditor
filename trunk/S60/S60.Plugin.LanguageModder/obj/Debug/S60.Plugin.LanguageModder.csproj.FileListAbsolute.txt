@@ -1,0 +1,5 @@
+D:\Projects\C#\S60\S60.Plugin.LanguageModder\bin\Debug\S60.Plugin.LanguageModder.dll
+D:\Projects\C#\S60\S60.Plugin.LanguageModder\bin\Debug\S60.Plugin.LanguageModder.pdb
+D:\Projects\C#\S60\S60.Plugin.LanguageModder\obj\Debug\ResolveAssemblyReference.cache
+D:\Projects\C#\S60\S60.Plugin.LanguageModder\obj\Debug\S60.Plugin.LanguageModder.dll
+D:\Projects\C#\S60\S60.Plugin.LanguageModder\obj\Debug\S60.Plugin.LanguageModder.pdb

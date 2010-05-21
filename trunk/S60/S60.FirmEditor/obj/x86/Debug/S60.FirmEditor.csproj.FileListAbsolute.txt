@@ -1,0 +1,10 @@
+D:\Projects\C#\S60\S60.FirmEditor\obj\x86\Debug\ResolveAssemblyReference.cache
+D:\Projects\C#\S60\S60.FirmEditor\obj\x86\Debug\S60.FirmEditor.frmMain.resources
+D:\Projects\C#\S60\S60.FirmEditor\obj\x86\Debug\S60.FirmEditor.Properties.Resources.resources
+D:\Projects\C#\S60\S60.FirmEditor\obj\x86\Debug\GenerateResource-ResGen.read.1.tlog
+D:\Projects\C#\S60\S60.FirmEditor\obj\x86\Debug\GenerateResource-ResGen.write.1.tlog
+D:\Projects\C#\S60\S60.FirmEditor\bin\Debug\S60.FirmEditor.exe
+D:\Projects\C#\S60\S60.FirmEditor\bin\Debug\S60.FirmEditor.pdb
+D:\Projects\C#\S60\S60.FirmEditor\obj\x86\Debug\S60.FirmEditor.exe
+D:\Projects\C#\S60\S60.FirmEditor\obj\x86\Debug\S60.FirmEditor.pdb
+D:\Projects\C#\S60\S60.FirmEditor\obj\x86\Debug\S60.FirmEditor.frmPluginManager.resources

@@ -1,0 +1,5 @@
+D:\Projects\C#\S60\S60.Plugin.CenRepEditor\bin\Debug\S60.Plugin.CenRepEditor.dll
+D:\Projects\C#\S60\S60.Plugin.CenRepEditor\bin\Debug\S60.Plugin.CenRepEditor.pdb
+D:\Projects\C#\S60\S60.Plugin.CenRepEditor\obj\Debug\ResolveAssemblyReference.cache
+D:\Projects\C#\S60\S60.Plugin.CenRepEditor\obj\Debug\S60.Plugin.CenRepEditor.dll
+D:\Projects\C#\S60\S60.Plugin.CenRepEditor\obj\Debug\S60.Plugin.CenRepEditor.pdb
