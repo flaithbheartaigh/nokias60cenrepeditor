@@ -10,12 +10,12 @@ Also, from other modders, our database will contain a lot of useful information 
 
 Currently we are working on the mainframe of Project S60. This will contain the editor (FEd), the Plugin interface for developing plugins, and a few Libraries for modders (SIS, Firmware, Imaging (SVG, MIF, MBM and bitmap management), and also a few example plugins.
 
-Our biggest plugin currently is the Central Repository Editor (or CenRepEdit for short) what is a separate Library, with a plugin for FEd, and a standalone user interface too.
+Our biggest plugin currently is the Central Repository Editor (or CenRepEdit for short) what is a separate Library, with a plugin for [https://code.google.com/p/nokias60cenrepeditor/wiki/FEd FEd], and a standalone user interface too.
 
 
 = Progress =
 
-|| FEd || 5.00%|| Owner: fonix232||
+|| [https://code.google.com/p/nokias60cenrepeditor/wiki/FEd FEd] || 5.00%|| Owner: fonix232||
 || Firmware Library || 12.00% || Owner: jandras ||
 || Plugin Interface || 00.00% || Owner: jandras ||
 || User Interface   || 50.00% || Owner: fonix232||
