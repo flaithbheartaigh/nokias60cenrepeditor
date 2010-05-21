@@ -74,7 +74,7 @@ namespace S60
         if (mPlugins.ElementAt(i).GetMenuName() == ts.Text)
         {
           XmlDocument xml = new XmlDocument();
-          xml.LoadXml("<root><CENREPDIR>" + strCenRepDir + "</CENREPDIR><PROGDIR>" + Application.StartupPath + "</PROGDIR></root>");
+          xml.LoadXml("<root><ROFSDIR>" + strROFSDir + "</ROFSDIR><PROGDIR>" + Application.StartupPath + "</PROGDIR></root>");
           mPlugins.ElementAt(i).RunPlugin(xml);
         }
       }
