@@ -1,0 +1,5 @@
+D:\Projects\C#\S60\S60.PluginInterface\bin\Debug\S60.PluginInterface.dll
+D:\Projects\C#\S60\S60.PluginInterface\bin\Debug\S60.PluginInterface.pdb
+D:\Projects\C#\S60\S60.PluginInterface\obj\Debug\ResolveAssemblyReference.cache
+D:\Projects\C#\S60\S60.PluginInterface\obj\Debug\S60.PluginInterface.dll
+D:\Projects\C#\S60\S60.PluginInterface\obj\Debug\S60.PluginInterface.pdb

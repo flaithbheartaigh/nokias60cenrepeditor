@@ -1,0 +1,5 @@
+D:\Projects\C#\S60\S60.Plugin.SisInstaller\bin\Debug\S60.Plugin.SisInstaller.dll
+D:\Projects\C#\S60\S60.Plugin.SisInstaller\bin\Debug\S60.Plugin.SisInstaller.pdb
+D:\Projects\C#\S60\S60.Plugin.SisInstaller\obj\Debug\ResolveAssemblyReference.cache
+D:\Projects\C#\S60\S60.Plugin.SisInstaller\obj\Debug\S60.Plugin.SisInstaller.dll
+D:\Projects\C#\S60\S60.Plugin.SisInstaller\obj\Debug\S60.Plugin.SisInstaller.pdb
