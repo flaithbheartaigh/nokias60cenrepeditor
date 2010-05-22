@@ -1,0 +1,11 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace S60.Lib.Firmware
+{
+    public class Class1
+    {
+    }
+}

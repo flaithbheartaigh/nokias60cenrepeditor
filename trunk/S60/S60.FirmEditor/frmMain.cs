@@ -7,6 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.IO;
+using S60.FirmEditor;
+using System.Diagnostics;
+
 
 namespace S60.FirmEditor
 {
@@ -15,32 +18,34 @@ namespace S60.FirmEditor
         public frmMain()
         {
             InitializeComponent();
+            Utils.Check();
         }
 
         private void searchBox_TextChanged(object sender, EventArgs e)
         {
-            TreeNode node;
-            if(folderView.Nodes.Count == 0)
+            listView.Items.Clear();
+            DirectoryInfo dir = new DirectoryInfo(Application.StartupPath + "\\");
+
+            foreach (DirectoryInfo subDir in dir.GetDirectories("*",SearchOption.AllDirectories))
             {
-                node = new TreeNode("");
-                node.Tag = Application.StartupPath;
+                if (subDir.Name.Contains(searchBox.Text))
+                {
+                    ListViewItem item = new ListViewItem(new string[] { subDir.FullName.Substring(Application.StartupPath.Length + 1), "", dir.CreationTime.ToString(), "Folder", "0x0" });
+                    listView.Items.Add(item);
+                }
             }
-            else
+            foreach (FileInfo file in dir.GetFiles("*", SearchOption.AllDirectories))
             {
-                node = folderView.SelectedNode;
+                if (file.Name.Contains(searchBox.Text))
+                {
+                    ListViewItem item = new ListViewItem(new string[] { file.Name, file.Length / 1024 + " kB", file.CreationTime.ToString(), file.GetType().ToString(), "0x0" });
+                    listView.Items.Add(item);
+                }
             }
 
-            DirectoryInfo dir = new DirectoryInfo(node.Tag.ToString());
-
-            foreach (DirectoryInfo subDir in dir.GetDirectories(searchBox.Text, SearchOption.AllDirectories))
+            if (searchBox.Text == String.Empty)
             {
-                ListViewItem item = new ListViewItem(new string[] { dir.Name, "", dir.CreationTime.ToString(), "Folder", "0x0" });
-                listView.Items.Add(item);
-            }
-            foreach (FileInfo file in dir.GetFiles(searchBox.Text, SearchOption.AllDirectories))
-            {
-                ListViewItem item = new ListViewItem(new string[] {file.Name, file.Length/1024 + " kB", file.CreationTime.ToString(), file.GetType().ToString(), "0x0"});
-                listView.Items.Add(item);
+                listView.Items.Clear();
             }
         }
 
@@ -65,6 +70,13 @@ namespace S60.FirmEditor
                 }
             }
         }
+
+        private void exitFEdToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            Application.Exit();
+        }
+
     }
 
 }

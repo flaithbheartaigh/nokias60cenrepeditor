@@ -8,3 +8,15 @@ D:\Projects\C#\S60\S60.FirmEditor\bin\Debug\S60.FirmEditor.pdb
 D:\Projects\C#\S60\S60.FirmEditor\obj\x86\Debug\S60.FirmEditor.exe
 D:\Projects\C#\S60\S60.FirmEditor\obj\x86\Debug\S60.FirmEditor.pdb
 D:\Projects\C#\S60\S60.FirmEditor\obj\x86\Debug\S60.FirmEditor.frmPluginManager.resources
+D:\Project S60\Source\S60\S60.FirmEditor\obj\x86\Debug\S60.FirmEditor.exe
+D:\Project S60\Source\S60\S60.FirmEditor\obj\x86\Debug\S60.FirmEditor.pdb
+D:\Project S60\Source\S60\S60.FirmEditor\bin\Debug\S60.FirmEditor.exe
+D:\Project S60\Source\S60\S60.FirmEditor\bin\Debug\S60.FirmEditor.pdb
+D:\Project S60\Source\S60\S60.FirmEditor\obj\x86\Debug\ResolveAssemblyReference.cache
+D:\Project S60\Source\S60\S60.FirmEditor\obj\x86\Debug\S60.FirmEditor.frmMain.resources
+D:\Project S60\Source\S60\S60.FirmEditor\obj\x86\Debug\S60.FirmEditor.frmPluginManager.resources
+D:\Project S60\Source\S60\S60.FirmEditor\obj\x86\Debug\S60.FirmEditor.Properties.Resources.resources
+D:\Project S60\Source\S60\S60.FirmEditor\obj\x86\Debug\GenerateResource-ResGen.read.1.tlog
+D:\Project S60\Source\S60\S60.FirmEditor\obj\x86\Debug\GenerateResource-ResGen.write.1.tlog
+D:\Project S60\Source\S60\out\S60.FirmEditor.exe
+D:\Project S60\Source\S60\out\S60.FirmEditor.pdb

@@ -3,3 +3,10 @@ D:\Projects\C#\S60\S60.Plugin.CenRepEditor\bin\Debug\S60.Plugin.CenRepEditor.pdb
 D:\Projects\C#\S60\S60.Plugin.CenRepEditor\obj\Debug\ResolveAssemblyReference.cache
 D:\Projects\C#\S60\S60.Plugin.CenRepEditor\obj\Debug\S60.Plugin.CenRepEditor.dll
 D:\Projects\C#\S60\S60.Plugin.CenRepEditor\obj\Debug\S60.Plugin.CenRepEditor.pdb
+D:\Project S60\Source\S60\S60.Plugin.CenRepEditor\bin\Debug\S60.Plugin.CenRepEditor.dll
+D:\Project S60\Source\S60\S60.Plugin.CenRepEditor\bin\Debug\S60.Plugin.CenRepEditor.pdb
+D:\Project S60\Source\S60\S60.Plugin.CenRepEditor\obj\Debug\ResolveAssemblyReference.cache
+D:\Project S60\Source\S60\S60.Plugin.CenRepEditor\obj\Debug\S60.Plugin.CenRepEditor.dll
+D:\Project S60\Source\S60\S60.Plugin.CenRepEditor\obj\Debug\S60.Plugin.CenRepEditor.pdb
+D:\Project S60\Source\S60\out\plugins\S60.Plugin.CenRepEditor.dll
+D:\Project S60\Source\S60\out\plugins\S60.Plugin.CenRepEditor.pdb
