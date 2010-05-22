@@ -33,35 +33,6 @@ namespace S60.FirmEditor
         else
           UpdateMenu(strNames[0], strNames[1], loadedPlugins.myHandler);
       }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-      InitializeComponent();
-      mPlugins = PluginHostProvider.Plugins;
-      foreach (PluginHost loadedPlugin in mPlugins)
-      {
-        string strMenuName = loadedPlugin.GetMenuName();
-        string[] strNames = Regex.Split(strMenuName,"/");
-        if (strNames.Length < 2)
-          UpdateMenu("Plugins",strNames[0],loadedPlugin.myHandler);
-        else
-          UpdateMenu(strNames[0],strNames[1],loadedPlugin.myHandler);
-      }
-
     }
 
     private void UpdateMenu(string strParent, string txt, EventHandler cmdHandler)
@@ -83,35 +54,6 @@ namespace S60.FirmEditor
       ToolStripMenuItem newDropDown = new ToolStripMenuItem(strParent);
       newDropDown.DropDownItems.Add(dynamicMenu);
       mnuMain.Items.Add(newDropDown);
-   }
-    }
-
-    private void UpdateMenu(string parent, string txt, EventHandler myHandler)
-    {
-      ToolStripMenuItem mnuDynamicMenu = new ToolStripMenuItem(txt);
-      mnuDynamicMenu.Click += myHandler;
-      foreach (ToolStripMenuItem mnuTmp in mnuMain.Items)
-            if (searchBox.Text == String.Empty)
-      {
-        if (mnuTmp.Text == parent)
-        {
-          mnuTmp.DropDownItems.Add(mnuDynamicMenu);
-          return;
-        }
-            {
-                listView.Items.Clear();
-            }
-        }
-
-    private void pluginManagerToolStripMenuItem_Click(object sender, EventArgs e)
-    {
-      frmPluginManager pluginMan = new frmPluginManager();
-      pluginMan.Show();
-    }
-      }
-      ToolStripMenuItem mnuDropDown = new ToolStripMenuItem(parent);
-      mnuDropDown.DropDownItems.Add(mnuDynamicMenu);
-      mnuMain.Items.Add(mnuDropDown);
     }
 
     private void searchBox_TextChanged(object sender, EventArgs e)
@@ -138,15 +80,9 @@ namespace S60.FirmEditor
         }
       }
 
-      if (searchBox.Text == String.Empty)
-   private void exitFEdToolStripMenuItem_Click(object sender, EventArgs e)
-      {
-   {
-        listView.Items.Clear();
-      }
-    }
+      }}
 
-    private void pluginManagerToolStripMenuItem_Click(object sender, EventArgs e)
+     private void pluginManagerToolStripMenuItem_Click(object sender, EventArgs e)
     {
       frmPluginManager pluginMan = new frmPluginManager();
       pluginMan.Show();
@@ -177,5 +113,5 @@ namespace S60.FirmEditor
   }
 
    }
-}
+
 
