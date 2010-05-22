@@ -3,3 +3,10 @@ D:\Projects\C#\S60\S60.Plugin.LanguageModder\bin\Debug\S60.Plugin.LanguageModder
 D:\Projects\C#\S60\S60.Plugin.LanguageModder\obj\Debug\ResolveAssemblyReference.cache
 D:\Projects\C#\S60\S60.Plugin.LanguageModder\obj\Debug\S60.Plugin.LanguageModder.dll
 D:\Projects\C#\S60\S60.Plugin.LanguageModder\obj\Debug\S60.Plugin.LanguageModder.pdb
+D:\Project S60\Source\S60\S60.Plugin.LanguageModder\bin\Debug\S60.Plugin.LanguageModder.dll
+D:\Project S60\Source\S60\S60.Plugin.LanguageModder\bin\Debug\S60.Plugin.LanguageModder.pdb
+D:\Project S60\Source\S60\S60.Plugin.LanguageModder\obj\Debug\ResolveAssemblyReference.cache
+D:\Project S60\Source\S60\S60.Plugin.LanguageModder\obj\Debug\S60.Plugin.LanguageModder.dll
+D:\Project S60\Source\S60\S60.Plugin.LanguageModder\obj\Debug\S60.Plugin.LanguageModder.pdb
+D:\Project S60\Source\S60\out\plugins\S60.Plugin.LanguageModder.dll
+D:\Project S60\Source\S60\out\plugins\S60.Plugin.LanguageModder.pdb

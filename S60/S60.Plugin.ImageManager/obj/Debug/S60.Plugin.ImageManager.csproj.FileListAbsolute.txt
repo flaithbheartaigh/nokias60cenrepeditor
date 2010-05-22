@@ -3,3 +3,10 @@ D:\Projects\C#\S60\S60.Plugin.ImageManager\bin\Debug\S60.Plugin.ImageManager.pdb
 D:\Projects\C#\S60\S60.Plugin.ImageManager\obj\Debug\ResolveAssemblyReference.cache
 D:\Projects\C#\S60\S60.Plugin.ImageManager\obj\Debug\S60.Plugin.ImageManager.dll
 D:\Projects\C#\S60\S60.Plugin.ImageManager\obj\Debug\S60.Plugin.ImageManager.pdb
+D:\Project S60\Source\S60\S60.Plugin.ImageManager\bin\Debug\S60.Plugin.ImageManager.dll
+D:\Project S60\Source\S60\S60.Plugin.ImageManager\bin\Debug\S60.Plugin.ImageManager.pdb
+D:\Project S60\Source\S60\S60.Plugin.ImageManager\obj\Debug\ResolveAssemblyReference.cache
+D:\Project S60\Source\S60\S60.Plugin.ImageManager\obj\Debug\S60.Plugin.ImageManager.dll
+D:\Project S60\Source\S60\S60.Plugin.ImageManager\obj\Debug\S60.Plugin.ImageManager.pdb
+D:\Project S60\Source\S60\out\plugins\S60.Plugin.ImageManager.dll
+D:\Project S60\Source\S60\out\plugins\S60.Plugin.ImageManager.pdb
