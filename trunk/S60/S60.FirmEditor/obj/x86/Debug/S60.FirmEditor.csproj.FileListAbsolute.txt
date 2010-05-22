@@ -33,3 +33,5 @@ E:\Projects\S60\S60\S60.FirmEditor\obj\x86\Debug\S60.FirmEditor.pdb
 E:\Projects\S60\S60\out\S60.FirmEditor.exe.config
 E:\Projects\S60\S60\out\S60.FirmEditor.exe
 E:\Projects\S60\S60\out\S60.FirmEditor.pdb
+D:\Project S60\Source\S60\S60.FirmEditor\obj\x86\Debug\GenerateResource.read.1.tlog
+D:\Project S60\Source\S60\S60.FirmEditor\obj\x86\Debug\GenerateResource.write.1.tlog
