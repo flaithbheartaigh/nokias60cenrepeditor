@@ -11,6 +11,8 @@ using S60.PluginInterface;
 using System.Text.RegularExpressions;
 using S60.FirmEditor;
 using System.Diagnostics;
+using S60.PluginInterface;
+using System.Text.RegularExpressions;
 
 namespace S60.FirmEditor
 {
@@ -19,6 +21,35 @@ namespace S60.FirmEditor
     private List<PluginHost> mPlugins;
     public frmMain()
     {
+      InitializeComponent();
+      Utils.Check();
+      mPlugins = PluginHostProvider.Plugins;
+      foreach (PluginHost loadedPlugins in mPlugins)
+      {
+        string strMenuName = loadedPlugins.GetMenuName();
+        string[] strNames = Regex.Split(strMenuName, "/");
+        if (strNames.Length < 2)
+          UpdateMenu("Plugins", strNames[0], loadedPlugins.myHandler);
+        else
+          UpdateMenu(strNames[0], strNames[1], loadedPlugins.myHandler);
+      }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
       InitializeComponent();
       mPlugins = PluginHostProvider.Plugins;
       foreach (PluginHost loadedPlugin in mPlugins)
@@ -53,32 +84,67 @@ namespace S60.FirmEditor
       newDropDown.DropDownItems.Add(dynamicMenu);
       mnuMain.Items.Add(newDropDown);
    }
-        private void searchBox_TextChanged(object sender, EventArgs e)
-        {
-            listView.Items.Clear();
-            DirectoryInfo dir = new DirectoryInfo(Application.StartupPath + "\\");
+    }
 
-            foreach (DirectoryInfo subDir in dir.GetDirectories("*",SearchOption.AllDirectories))
-            {
-                if (subDir.Name.Contains(searchBox.Text))
-                {
-                    ListViewItem item = new ListViewItem(new string[] { subDir.FullName.Substring(Application.StartupPath.Length + 1), "", dir.CreationTime.ToString(), "Folder", "0x0" });
-                    listView.Items.Add(item);
-                }
-            }
-            foreach (FileInfo file in dir.GetFiles("*", SearchOption.AllDirectories))
-            {
-                if (file.Name.Contains(searchBox.Text))
-                {
-                    ListViewItem item = new ListViewItem(new string[] { file.Name, file.Length / 1024 + " kB", file.CreationTime.ToString(), file.GetType().ToString(), "0x0" });
-                    listView.Items.Add(item);
-                }
-            }
+    private void UpdateMenu(string parent, string txt, EventHandler myHandler)
+    {
+      ToolStripMenuItem mnuDynamicMenu = new ToolStripMenuItem(txt);
+      mnuDynamicMenu.Click += myHandler;
+      foreach (ToolStripMenuItem mnuTmp in mnuMain.Items)
             if (searchBox.Text == String.Empty)
+      {
+        if (mnuTmp.Text == parent)
+        {
+          mnuTmp.DropDownItems.Add(mnuDynamicMenu);
+          return;
+        }
             {
                 listView.Items.Clear();
             }
         }
+
+    private void pluginManagerToolStripMenuItem_Click(object sender, EventArgs e)
+    {
+      frmPluginManager pluginMan = new frmPluginManager();
+      pluginMan.Show();
+    }
+      }
+      ToolStripMenuItem mnuDropDown = new ToolStripMenuItem(parent);
+      mnuDropDown.DropDownItems.Add(mnuDynamicMenu);
+      mnuMain.Items.Add(mnuDropDown);
+    }
+
+    private void searchBox_TextChanged(object sender, EventArgs e)
+    {
+      listView.Items.Clear();
+      DirectoryInfo dir = new DirectoryInfo(Application.StartupPath + "\\");
+
+      foreach (DirectoryInfo subDir in dir.GetDirectories("*", SearchOption.AllDirectories))
+      {
+        if (subDir.Name.Contains(searchBox.Text))
+        {
+          ListViewItem item = new ListViewItem(new string[] { subDir.FullName.Substring(Application.StartupPath.Length + 1), "", dir.CreationTime.ToString(), "Folder", "0x0" });
+          listView.Items.Add(item);
+        }
+      }
+      foreach (FileInfo file in dir.GetFiles("*", SearchOption.AllDirectories))
+      {
+        if (file.Name.Contains(searchBox.Text))
+      {
+        if (!searchBox.Items.Contains(searchBox.Text))
+        {
+          ListViewItem item = new ListViewItem(new string[] { file.Name, file.Length / 1024 + " kB", file.CreationTime.ToString(), file.GetType().ToString(), "0x0" });
+          listView.Items.Add(item);
+        }
+      }
+
+      if (searchBox.Text == String.Empty)
+   private void exitFEdToolStripMenuItem_Click(object sender, EventArgs e)
+      {
+   {
+        listView.Items.Clear();
+      }
+    }
 
     private void pluginManagerToolStripMenuItem_Click(object sender, EventArgs e)
     {
@@ -102,11 +168,13 @@ namespace S60.FirmEditor
       }
     }
 
-   private void exitFEdToolStripMenuItem_Click(object sender, EventArgs e)
-   {
-            this.Close();
-            Application.Exit();
+    private void exitFEdToolStripMenuItem_Click(object sender, EventArgs e)
+    {
+      this.Close();
+      Application.Exit();
     }
+
+  }
 
    }
 }

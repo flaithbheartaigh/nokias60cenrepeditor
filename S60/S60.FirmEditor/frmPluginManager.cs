@@ -6,19 +6,28 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using S60.PluginInterface;
 
 namespace S60.FirmEditor
 {
     public partial class frmPluginManager : Form
     {
-        public frmPluginManager()
-        {
-            InitializeComponent();
-        }
+      private List<PluginHost> m_plugins;
 
-        private void button1_Click(object sender, EventArgs e)
+      public frmPluginManager()
+      {
+        InitializeComponent();
+        m_plugins = PluginHostProvider.Plugins;
+        foreach (PluginHost loadedPlugins in m_plugins)
         {
-            this.Close();
+          TreeNode tmpNode = new TreeNode(loadedPlugins.GetPluginName());
+          treeView1.Nodes.Add(tmpNode);
         }
+      }
+
+      private void button1_Click(object sender, EventArgs e)
+      {
+        this.Close();
+      }
     }
 }
