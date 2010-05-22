@@ -28,51 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-<<<<<<< .mine
-          this.mnuMain = new System.Windows.Forms.MenuStrip();
-          this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-          this.firmwareToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-          this.mnuPlugins = new System.Windows.Forms.ToolStripMenuItem();
-          this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-          this.pluginManagerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-          this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-          this.settingsToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-          this.librariesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-          this.pluginSettingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-          this.fileSettingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-          this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-          this.contentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-          this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-          this.aboutUsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-          this.aboutS60ProjectToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-          this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
-          this.updateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-          this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
-          this.aboutFEdToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-          this.statusStrip = new System.Windows.Forms.StatusStrip();
-          this.toolStripProgressBar1 = new System.Windows.Forms.ToolStripProgressBar();
-          this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
-          this.toolStripStatusLabel3 = new System.Windows.Forms.ToolStripStatusLabel();
-          this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
-          this.folderView = new System.Windows.Forms.TreeView();
-          this.listView = new System.Windows.Forms.ListView();
-          this.fileName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-          this.fileSize = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-          this.Date = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-          this.Type = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-          this.Flag = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-          this.searchBox = new System.Windows.Forms.ComboBox();
-          this.searchButton = new System.Windows.Forms.Button();
-          this.mnuMain.SuspendLayout();
-          this.statusStrip.SuspendLayout();
-          this.SuspendLayout();
-          // 
-          // mnuMain
-          // 
-          this.mnuMain.BackColor = System.Drawing.Color.CornflowerBlue;
-          this.mnuMain.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-          this.mnuMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-=======
             this.components = new System.ComponentModel.Container();
             this.menuStrip = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -135,35 +90,11 @@
             this.menuStrip.BackColor = System.Drawing.Color.LightSteelBlue;
             this.menuStrip.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
->>>>>>> .r26
             this.fileToolStripMenuItem,
             this.firmwareToolStripMenuItem,
             this.mnuPlugins,
             this.settingsToolStripMenuItem,
             this.helpToolStripMenuItem});
-<<<<<<< .mine
-          this.mnuMain.Location = new System.Drawing.Point(0, 0);
-          this.mnuMain.Name = "mnuMain";
-          this.mnuMain.Size = new System.Drawing.Size(792, 24);
-          this.mnuMain.TabIndex = 0;
-          this.mnuMain.Text = "menuStrip";
-          // 
-          // fileToolStripMenuItem
-          // 
-          this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-          this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
-          this.fileToolStripMenuItem.Text = "File";
-          // 
-          // firmwareToolStripMenuItem
-          // 
-          this.firmwareToolStripMenuItem.Name = "firmwareToolStripMenuItem";
-          this.firmwareToolStripMenuItem.Size = new System.Drawing.Size(68, 20);
-          this.firmwareToolStripMenuItem.Text = "Firmware";
-          // 
-          // mnuPlugins
-          // 
-          this.mnuPlugins.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-=======
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
             this.menuStrip.Size = new System.Drawing.Size(834, 24);
@@ -235,7 +166,6 @@
             // pluginsToolStripMenuItem
             // 
             this.pluginsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
->>>>>>> .r26
             this.toolStripSeparator1,
             this.pluginManagerToolStripMenuItem});
 <<<<<<< .mine
