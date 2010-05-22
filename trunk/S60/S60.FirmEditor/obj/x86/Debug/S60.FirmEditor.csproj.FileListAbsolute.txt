@@ -20,3 +20,16 @@ D:\Project S60\Source\S60\S60.FirmEditor\obj\x86\Debug\GenerateResource-ResGen.r
 D:\Project S60\Source\S60\S60.FirmEditor\obj\x86\Debug\GenerateResource-ResGen.write.1.tlog
 D:\Project S60\Source\S60\out\S60.FirmEditor.exe
 D:\Project S60\Source\S60\out\S60.FirmEditor.pdb
+E:\Projects\S60\S60\S60.FirmEditor\obj\x86\Debug\ResolveAssemblyReference.cache
+E:\Projects\S60\S60\S60.FirmEditor\obj\x86\Debug\S60.FirmEditor.frmMain.resources
+E:\Projects\S60\S60\S60.FirmEditor\obj\x86\Debug\S60.FirmEditor.frmPluginManager.resources
+E:\Projects\S60\S60\S60.FirmEditor\obj\x86\Debug\S60.FirmEditor.Properties.Resources.resources
+E:\Projects\S60\S60\S60.FirmEditor\obj\x86\Debug\GenerateResource.read.1.tlog
+E:\Projects\S60\S60\S60.FirmEditor\obj\x86\Debug\GenerateResource-ResGen.read.1.tlog
+E:\Projects\S60\S60\S60.FirmEditor\obj\x86\Debug\GenerateResource.write.1.tlog
+E:\Projects\S60\S60\S60.FirmEditor\obj\x86\Debug\GenerateResource-ResGen.write.1.tlog
+E:\Projects\S60\S60\S60.FirmEditor\obj\x86\Debug\S60.FirmEditor.exe
+E:\Projects\S60\S60\S60.FirmEditor\obj\x86\Debug\S60.FirmEditor.pdb
+E:\Projects\S60\S60\out\S60.FirmEditor.exe.config
+E:\Projects\S60\S60\out\S60.FirmEditor.exe
+E:\Projects\S60\S60\out\S60.FirmEditor.pdb
