@@ -11,7 +11,7 @@ The current list of the libraries:
 
 || Library name || Status || Developer ||
 || Firmware Library || 12% || jandras ||
-|| Imaging Library || Unknown || jandras||
+|| Imaging Library || 25% || jandras||
 || SIS Library || Unknown || jandras ||
 || Central Repository Library || Unknown || jandras ||
 
