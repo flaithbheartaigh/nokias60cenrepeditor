@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.IO;
+using System.Security.Cryptography;
 
 
 namespace S60.Lib.Firmware
 {
-    class Utils
+    public class Utils
     {
 
         public static string CleanFileName(string fname)
