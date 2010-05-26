@@ -18,7 +18,7 @@ namespace S60.Lib.Imaging
     {
       public enum MIFHeaderType
       {
-        none  = 0,
+        none = 0,
         FileHeader = 1,
         ItemHeader = 2
       }
@@ -75,7 +75,7 @@ namespace S60.Lib.Imaging
       filedata.Add(contents);
       fileinfo.Add((byte)(Animated ? 1 : 0));
     }
-    public void AddFile(string filename,bool deleteconverted)
+    public void AddFile(string filename, bool deleteconverted)
     {
       if (!File.Exists(filename))
       {
@@ -105,7 +105,7 @@ namespace S60.Lib.Imaging
     }
     public byte[] GenMifContents()
     {
-      byte[] tmpbytes= {};
+      byte[] tmpbytes = { };
       Int32 clen = 0;
       Int32 xc;
       tmpbytes = tmpbytes.Append("B##4".ToByte());
@@ -118,7 +118,7 @@ namespace S60.Lib.Imaging
       Int32 offset = (16 + (16 * filedata.Count));
       foreach (string s in filedata)
       {
-        clen = s.Length+32;
+        clen = s.Length + 32;
         tmpbytes = tmpbytes.Append(offset.ToByte());
         tmpbytes = tmpbytes.Append(clen.ToByte());
         tmpbytes = tmpbytes.Append(offset.ToByte());
@@ -142,7 +142,7 @@ namespace S60.Lib.Imaging
     public void WriteMIFtoFile(string fn)
     {
       byte[] contents = GenMifContents();
-      BinaryWriter wr = new BinaryWriter(File.Open(fn,FileMode.Create));
+      BinaryWriter wr = new BinaryWriter(File.Open(fn, FileMode.Create));
       wr.Write(contents);
       wr.Flush();
       wr.Close();
@@ -165,11 +165,11 @@ namespace S60.Lib.Imaging
       do
       {
         buffer = xReader.ReadBytes(CHUNK_SIZE);
-        if ( buffer.Length > 0 )
+        if (buffer.Length > 0)
         {
           filestream = filestream.Append(buffer);
         }
-      } while ( buffer.Length > 0 );
+      } while (buffer.Length > 0);
       xReader.Close();
       tmp = Convert.ToBase64String(filestream);
       return tmp;
@@ -196,7 +196,7 @@ namespace S60.Lib.Imaging
           break;
       }
     }
-    public string Jpeg2SVG(string filename,int width, int height)
+    public string Jpeg2SVG(string filename, int width, int height)
     {
       string tmpfn = "";
       string[] footer = {
@@ -219,5 +219,5 @@ namespace S60.Lib.Imaging
     }
   }
 
-  }
 }
+
