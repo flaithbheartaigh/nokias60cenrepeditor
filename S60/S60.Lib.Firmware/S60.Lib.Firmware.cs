@@ -9,13 +9,13 @@ namespace S60.Lib.Firmware
 {
   internal delegate string tostr(int i);
 
-  enum EBlockType
+  public enum EBlockType
   {
     Code = 0x54,
     Data = 0x5D
   }
 
-  enum EContentType
+  public enum EContentType
   {
     PlainCode = 0x17,
     SignedCode = 0x2E,
@@ -36,14 +36,14 @@ namespace S60.Lib.Firmware
     }
   }
 
-  abstract class TBase
+  public abstract class TBase
   {
     public abstract void Read(BinaryReader br);
     public abstract void Write(BinaryWriter bw);
   }
 
 
-  class THeader : TBase
+  public class THeader : TBase
   {
     public byte signature;
     public UInt32 headerSize;
@@ -61,12 +61,16 @@ namespace S60.Lib.Firmware
     }
     public override void Write(BinaryWriter bw)
     {
-      throw new NotImplementedException();
+      //throw new NotImplementedException();
+      bw.Write(signature);
+      bw.Write(Utils.SwapBytes(headerSize));
+      bw.Write(Utils.SwapBytes(totBlocks));
+      bw.Write(unkn, 0, unkn.Length);
     }
   }
 
 
-  class TBlock : TBase
+  public class TBlock : TBase
   {
     public EBlockType blockType;
     public byte const01;
@@ -112,7 +116,7 @@ namespace S60.Lib.Firmware
   }
 
 
-  abstract class TBlockHeader : TBase
+  public abstract class TBlockHeader : TBase
   {
     public UInt32 contentSize = 0;
     public ushort contentChecksum16;
@@ -152,7 +156,7 @@ namespace S60.Lib.Firmware
   }
 
 
-  class TCodeBlock : TBlockHeader
+  public class TCodeBlock : TBlockHeader
   {
     public byte processorType;
     public UInt16 unkn;         // N95 = 0x0001   5800 = 0x0003
@@ -175,12 +179,18 @@ namespace S60.Lib.Firmware
     }
     public override void Write(BinaryWriter bw)
     {
-      throw new NotImplementedException();
+      //throw new NotImplementedException();
+      bw.Write(processorType);
+      bw.Write(unkn);
+      bw.Write(Utils.SwapBytes(maybe_crc));
+      bw.Write(const01);
+      bw.Write(Utils.SwapBytes(contentSize));
+      bw.Write(Utils.SwapBytes(location));
     }
   }
 
 
-  class TSignedCodeBlock : TBlockHeader
+  public class TSignedCodeBlock : TBlockHeader
   {
     public byte[] unknSigned;
     // size
@@ -199,7 +209,7 @@ namespace S60.Lib.Firmware
   }
 
 
-  class TDataBlock : TBlockHeader
+  public class TDataBlock : TBlockHeader
   {
     public byte[] hash;             // 16
     public byte[] hashCRC;          // 4 
@@ -223,11 +233,18 @@ namespace S60.Lib.Firmware
 
     public override void Write(BinaryWriter bw)
     {
-      throw new NotImplementedException();
+      //throw new NotImplementedException();
+      bw.Write(hash, 0, hash.Length);
+      bw.Write(hashCRC, 0, hashCRC.Length);
+      bw.Write(description);
+      bw.Write(processorType);
+      bw.Write(unkn, 0, 4);
+      bw.Write(Utils.SwapBytes(contentSize));
+      bw.Write(Utils.SwapBytes(location));
     }
   }
 
-  class TSignedDataBlock : TDataBlock
+  public class TSignedDataBlock : TDataBlock
   {
     public byte[] unknSigned;
 
@@ -238,7 +255,7 @@ namespace S60.Lib.Firmware
     }
   }
 
-  class TBlockType17 : TBlockHeader
+  public class TBlockType17 : TBlockHeader
   {
     public byte const01;
     public ushort unkn2;
@@ -279,7 +296,7 @@ namespace S60.Lib.Firmware
     }
   }
 
-  class TBlockType2E : TBlockHeader
+  public class TBlockType2E : TBlockHeader
   {
     public string description;
     public ushort unkn2;
@@ -323,7 +340,7 @@ namespace S60.Lib.Firmware
     }
   }
 
-  class TBlockType27_ROFS_Hash : TBlockHeader
+  public class TBlockType27_ROFS_Hash : TBlockHeader
   {
     public string description;
     public byte[] maybe_hash16_md5;
@@ -376,7 +393,7 @@ namespace S60.Lib.Firmware
 
   }
 
-  class TBlockType28_CORE_Cert : TBlockType27_ROFS_Hash
+  public class TBlockType28_CORE_Cert : TBlockType27_ROFS_Hash
   {
     public byte[] maybe_hash20_sha1;
     public byte[] unkn2b;
@@ -399,7 +416,7 @@ namespace S60.Lib.Firmware
     }
   }
 
-  class TBlockType30 : TBlockHeader
+  public class TBlockType30 : TBlockHeader
   {
     public ushort unkn2;
     public byte[] unkn8;
