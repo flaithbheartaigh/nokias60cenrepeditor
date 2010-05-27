@@ -111,7 +111,13 @@ namespace S60.Lib.Firmware
     }
     public override void Write(BinaryWriter bw)
     {
-      throw new NotImplementedException();
+      //throw new NotImplementedException();
+      bw.Write( ( byte ) blockType );
+      bw.Write( const01 );
+      bw.Write( (byte)contentType );
+      blockHeader.Write( bw );
+      bw.Write( blockChecksum8 );
+      bw.Write( content, 0, content.Length );
     }
   }
 
