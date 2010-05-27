@@ -9,6 +9,38 @@ namespace S60.Lib.Firmware
 {
   internal delegate string tostr(int i);
 
+  static public class UseExternalTools
+  {
+    static public void ExtractImage(string toolsPath, string image,string outpath)
+    {
+      Process p = Process.Start(toolsPath + @"\readimage.exe", "-z " + outpath + " " + image);
+      p.WaitForExit();
+    }
+  }
+
+  static public class ConstructBlocks
+  {
+    static List<TBlock> generatedBlock = new List<TBlock>();
+    private static int CurrPos = 0;
+    static TDataBlock ConstructDataBlock(BinaryReader br)
+    {
+      TDataBlock TD = new TDataBlock();
+
+      return TD;
+    }
+    static TCodeBlock ConstructCodeBlock(BinaryReader br)
+    {
+      TCodeBlock CB = new TCodeBlock();
+
+      return CB;
+    }
+
+    public static void GenerateOBYFile(string sourcePath, string destFileName)
+    {
+    }
+
+  }
+
   public enum EBlockType
   {
     Code = 0x54,
@@ -516,6 +548,7 @@ namespace S60.Lib.Firmware
       FileStream fs = null;
       BufferedStream bs = null;
       i = 0;
+      bool firstCode = false;
       foreach (TBlock block in blocks)
       {
         if (block.blockType == EBlockType.Code)
@@ -524,6 +557,7 @@ namespace S60.Lib.Firmware
           {
             fs = new FileStream(outputDir + "\\" + i + "_code.bin", FileMode.Create, FileAccess.Write);
             bs = new BufferedStream(fs);
+            firstCode = true;
             // File.WriteAllBytes(outputDir + i + "_InitBytes.bin", block.content);
           }
           else
@@ -531,7 +565,9 @@ namespace S60.Lib.Firmware
             fs = new FileStream(outputDir + "\\" + i + "_code.bin", FileMode.Append, FileAccess.Write);
             bs = new BufferedStream(fs);
           }
-          bs.Write(block.content, 0, block.content.Length);
+          //bs.Write(block.content, 0, block.content.Length);
+          bs.Write(block.content, firstCode ? 0xc00 : 0, firstCode ? block.content.Length - 0xc00 : block.content.Length);
+          firstCode = false;
           bs.Close();
           fs.Close();
         }
