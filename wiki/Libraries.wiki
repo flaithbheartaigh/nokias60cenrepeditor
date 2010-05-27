@@ -10,7 +10,7 @@ Here you will find all libraries made specially for Project S60
 The current list of the libraries:
 
 || Library name || Status || Developer ||
-|| Firmware Library || 12% || jandras ||
+|| Firmware Library || 20% || jandras ||
 || Imaging Library || 25% || jandras||
 || SIS Library || Unknown || jandras ||
 || Central Repository Library || Unknown || jandras ||
