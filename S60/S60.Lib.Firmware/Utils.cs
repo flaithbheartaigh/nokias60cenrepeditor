@@ -8,7 +8,7 @@ using System.Security.Cryptography;
 
 namespace S60.Lib.Firmware
 {
-  public class Utils
+  public static class Utils
   {
 
     public static string CleanFileName(string fname)
