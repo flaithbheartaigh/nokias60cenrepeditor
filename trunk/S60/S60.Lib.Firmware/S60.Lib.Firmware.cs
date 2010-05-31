@@ -9,12 +9,16 @@ namespace S60.Lib.Firmware
 {
   internal delegate string tostr(int i);
 
+
   static public class UseExternalTools
   {
     static public void ExtractImage(string toolsPath, string image,string outpath)
     {
       Process p = Process.Start(toolsPath + @"\readimage.exe", "-z " + outpath + " " + image);
       p.WaitForExit();
+    }
+    static public void BuildRofsImage(string toolsPath, string obeyfile, string outpath)
+    {
     }
   }
 
@@ -140,7 +144,9 @@ namespace S60.Lib.Firmware
 
       blockChecksum8 = br.ReadByte();
       content = br.ReadBytes((int)blockHeader.contentSize);
+      ROFSTracer.WriteTextBlock( this );
     }
+
     public override void Write(BinaryWriter bw)
     {
       //throw new NotImplementedException();
@@ -494,6 +500,7 @@ namespace S60.Lib.Firmware
     public FwFile()
     {
       outputDir = Environment.CurrentDirectory + "\\ROFS2";
+      ROFSTracer.InitDebug( Directory.GetCurrentDirectory() + @"\ReadTrace.log" );
     }
 
     public void Test(string fname)
