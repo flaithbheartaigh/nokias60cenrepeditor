@@ -30,23 +30,37 @@ namespace S60.Lib.Firmware
       return myMD5.ComputeHash(buffer);
     }
 
-    public static string ToHex(byte b)
+    public static byte CRC_byte(byte[] buffer)
+    {
+      byte bSum = 0;
+      int iCounter = 0;
+      int tmp1, tmp2;
+      do
+      {
+        tmp1 = (bSum & 1) << 7;
+        tmp2 = (bSum & 0xfe) >> 1;
+        bSum = (byte)((tmp1 | tmp2) + buffer[iCounter]);
+      } while (iCounter < buffer.Length);
+      return bSum;
+    }
+
+    public static string ToHex(this byte b)
     {
       return String.Format("{0:X2}", b);
     }
 
 
-    public static string ToHex(UInt16 b)
+    public static string ToHex(this UInt16 b)
     {
       return String.Format("{0:X4}", b);
     }
 
-    public static string ToHex(UInt32 b)
+    public static string ToHex(this UInt32 b)
     {
       return String.Format("{0:X8}", b);
     }
 
-    public static string ToHex(byte[] bytes)
+    public static string ToHex(this byte[] bytes)
     {
       string s = "";
       for (int i = 0; i < bytes.Length; i++)
