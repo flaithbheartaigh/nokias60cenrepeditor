@@ -5,7 +5,8 @@ using System.Text;
 
 namespace S60.Lib.Sis
 {
-    public class Class1
-    {
-    }
+  interface Class1
+  {
+
+  }
 }
