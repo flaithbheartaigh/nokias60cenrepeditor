@@ -40,6 +40,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ObeyManager.cs" />
+    <Compile Include="ROFSBuild.cs" />
     <Compile Include="ROFSTracer.cs" />
     <Compile Include="S60.Lib.Firmware.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
