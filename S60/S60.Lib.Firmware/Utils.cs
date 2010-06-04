@@ -23,11 +23,50 @@ namespace S60.Lib.Firmware
           res += "_";
       return res;
     }
+    public static ushort CRC16( byte[] buffer )
+    {
+      ushort crc1 = 0;
+      ushort crc2 =0;
+      int iModulo =0;
+      ushort usActByte = 0;
+      byte [] tmpBuffer = buffer;
+      int iCounter = 0;
+      do
+      {
+        usActByte = tmpBuffer[iCounter];
+        iModulo++;
+        if ( ( iModulo % 2 ) == 0 )
+          crc1 = ( ushort ) ( crc1 ^ usActByte );
+        crc2 = ( ushort ) ( crc2 ^ usActByte );
+        iCounter++;
+      } while ( iCounter < tmpBuffer.Length );
+      crc1 = ( ushort ) ( crc1 << 8 );
+      return (ushort)(crc1|crc2);
+    }
+    public static byte ComputeCRC8( TBase block )
+    {
+      byte iCRC8 = 0;
+      byte[] buffer;
+
+      return iCRC8;
+    }
 
     public static byte[] ComputeMD5Hash(this byte[] buffer)
     {
       MD5 myMD5 = new MD5CryptoServiceProvider();
       return myMD5.ComputeHash(buffer);
+    }
+
+    public static byte ComputeBlockChecksum( byte iConst, EBlockType BlkType, byte hdrSize, byte[] buffer )
+    {
+      byte crc = (byte)((iConst+((byte)BlkType)+hdrSize));
+      byte[] bfMyBuff = buffer;
+      int iCounter = 0;
+      do
+      {
+        crc = (byte)(crc + bfMyBuff[iCounter++]);
+      } while ( iCounter < bfMyBuff.Length );
+      return ( byte ) ( 0xff - crc );
     }
 
     public static byte CRC_byte(byte[] buffer)
@@ -40,6 +79,7 @@ namespace S60.Lib.Firmware
         tmp1 = (bSum & 1) << 7;
         tmp2 = (bSum & 0xfe) >> 1;
         bSum = (byte)((tmp1 | tmp2) + buffer[iCounter]);
+        iCounter++;
       } while (iCounter < buffer.Length);
       return bSum;
     }
