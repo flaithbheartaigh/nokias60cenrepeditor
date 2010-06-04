@@ -17,8 +17,10 @@ namespace S60.Lib.Firmware
       Process p = Process.Start(toolsPath + @"\readimage.exe", "-z " + outpath + " " + image);
       p.WaitForExit();
     }
-    static public void BuildRofsImage(string toolsPath, string obeyfile, string outpath)
+    static public void BuildRofsImage(string toolsPath, string obeyfile)
     {
+      Process p = Process.Start( toolsPath + @"\rofsbuild.exe", "-compress " + Directory.GetCurrentDirectory()+@"\"+obeyfile );
+      p.WaitForExit();
     }
   }
 
@@ -143,7 +145,7 @@ namespace S60.Lib.Firmware
 
       // Useful to check for errors
       long currPos = br.BaseStream.Position;
-      blockHeader = TBlockHeader.Factory(br, blockType, contentType);
+      blockHeader = TBlockHeader.GenBlkHeader(br,contentType,blockType);
       blockHeader.Read(br);
       if (br.BaseStream.Position != currPos + blockSize)
       {
@@ -535,6 +537,7 @@ namespace S60.Lib.Firmware
       ROFSTracer.InitDebug( Directory.GetCurrentDirectory() + @"\ReadTrace.log" );
     }
 
+    /*
     public void Test(string fname)
     {
       if (Directory.Exists(outputDir))
@@ -622,5 +625,6 @@ namespace S60.Lib.Firmware
       bs.Close();
       fs.Close();
     }
+     */
   }
 }
