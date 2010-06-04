@@ -62,6 +62,15 @@ namespace S60.Lib.Firmware
     BlockType30 = 0x30
   }
 
+  public enum Valami
+  {
+    ertek0,
+    ertek1,
+    ertek2,
+    ertek3,
+    ertek4
+  }
+
   public enum EMemoryType
   {
     CMT,
@@ -537,6 +546,56 @@ namespace S60.Lib.Firmware
       ROFSTracer.InitDebug( Directory.GetCurrentDirectory() + @"\ReadTrace.log" );
     }
 
+    public Valami MegNemTudomMitCsinal()
+    {
+      TBlock block;
+      List<byte> list;
+      int num;
+      List<TBlock>.Enumerator enumerator;
+      enumerator = blocks.GetEnumerator();
+      Begin:
+      block = enumerator.Current;
+      if (block.blockType == EBlockType.BlockType28_CORE_Cert)
+      {
+        return Valami.ertek3;
+      }
+      if (enumerator.MoveNext())
+        goto Begin;
+      enumerator.Dispose();
+      list = new List<byte>();
+      num = 0;
+      do
+      {
+        if (blocks[num].contentType == EContentType.Code)
+        {
+          list.AddRange(blocks[num].content);
+        }
+        num++;
+      } while ((num < blocks.Count) && (list.Count < 0x1000));
+      num = 0;
+      do
+      {
+        num++;
+      } while ((num < list.Count) && (list[num] == 0));
+      if ((list.Count - num) >= 30)
+      {
+        if (((list[num] == 0x52) && (list[num + 1] == 0x4f)) && (list[num + 2] == 70))
+        {
+          if (list[num + 3] == 0x53)
+          {
+            //return class98.Field_01;
+            return Valami.ertek1;
+          }
+        }
+        if (((list.Count-num) >=500) && ((((list[num+11]==0) && (list[num+12]==2)) && ((list[num+10]<=2) && (list[num+11]==0))) && list[num+12]<=2)))
+        {
+          //return class98.Field_00;
+          return Valami.ertek0;
+        }
+      }
+      //return class98.Field_04;
+      return Valami.ertek4;
+    }
     
     public void Test(string fname)
     {
