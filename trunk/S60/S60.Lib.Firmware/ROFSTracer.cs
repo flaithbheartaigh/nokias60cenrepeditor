@@ -22,26 +22,26 @@ namespace S60.Lib.Firmware
 
     [Conditional( "DEBUG" )]
     static public void WriteTextBlock( TBlock myBlock )
-    { /*
+    { 
       StreamWriter logger = new StreamWriter( fileName, true );
       logger.AutoFlush = true;
       logger.WriteLine( "<<==== NEW BLOCK =====>>" );
-      switch ( myBlock.blockType )
+      switch ( myBlock.contentType )
       {
-        case EBlockType.Data:
+        case EContentType.Data:
           logger.WriteLine( "Block type: (0x5D) DATA" );
           break;
-        case EBlockType.Code:
+        case EContentType.Code:
           logger.WriteLine( "Block type: (0x54) CODE" );
           break;
       }
       logger.WriteLine( "const01: {0:X2}", myBlock.const01 );
-      logger.WriteLine( "Content type : {0:X2}", ( byte ) myBlock.contentType );
+      logger.WriteLine( "Content type : {0:X2}", ( byte ) myBlock.blockType );
       logger.WriteLine( "Block size : {0} ({0:x2})", myBlock.blockSize );
       logger.WriteLine( "\t===>BlockHeader =====>" );
-      switch( myBlock.blockType)
+      switch( myBlock.contentType)
       {
-        case EBlockType.Data:
+        case EContentType.Data:
           TDataBlock myData = myBlock.blockHeader as TDataBlock;
           logger.WriteLine( "\t===>DataBlock ====>" );
           logger.WriteLine( "\tHash : " + myData.hash.ToHex()  );
@@ -53,7 +53,7 @@ namespace S60.Lib.Firmware
           logger.WriteLine( "\tLocation : {0} ({0:X8})", myData.location );
           logger.WriteLine( "\t<===DataBlock <====" );
           break;
-        case EBlockType.Code:
+        case EContentType.Code:
           TCodeBlock myCode = myBlock.blockHeader as TCodeBlock;
           logger.WriteLine( "\t===>CodeBlock ====>" );
           logger.WriteLine( "\tProcessor type {0:X2}", myCode.processorType );
@@ -67,7 +67,7 @@ namespace S60.Lib.Firmware
       }
       logger.WriteLine( "Block checksum : {0:X2}", myBlock.blockChecksum8 );
       logger.WriteLine( "Computed checksum : {0:X2}", Utils.ComputeBlockChecksum(myBlock.const01,myBlock.blockType,myBlock.blockHeaderSize,myBlock.content ));
-      if ( myBlock.blockType == EBlockType.Data )
+      if ( myBlock.contentType == EContentType.Data )
       {
         logger.WriteLine( "========= CONTENT ==========" );
         logger.WriteLine( myBlock.content.ToHex() );
@@ -75,7 +75,6 @@ namespace S60.Lib.Firmware
       }
 
       logger.Close();
-       * */
     }
   }
 }

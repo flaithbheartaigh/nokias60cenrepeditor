@@ -40,9 +40,9 @@ namespace S60.FirmHeaderUnpackTool
         block.Read(br);
         blocks.Add(block);
         Console.Write(" " + block.contentType + " At:" + Utils.ToHex(blockOffset) + " size:" + Utils.ToHex((UInt32)block.content.Length) + " " + Utils.ToHex(block.blockChecksum8));
-        switch (block.blockType)
+        switch (block.contentType)
         {
-          case EBlockType.Code:
+          case EContentType.Code:
             {
               BinaryWriter bwHeader = new BinaryWriter(new FileStream(outputDir + @"\" + cnt.ToString()+ ".header.bin",FileMode.Create));
               block.blockHeader.Write(bwHeader);
@@ -53,7 +53,7 @@ namespace S60.FirmHeaderUnpackTool
                 Console.Write(" " + Utils.ToHex(codeBlock.maybe_crc) + " " + Utils.ToHex(codeBlock.location));
               break;
             }
-          case EBlockType.Data:
+          case EContentType.Data:
             {
               i++;
               BinaryWriter bwHeader = new BinaryWriter(new FileStream(outputDir + @"\" + cnt.ToString() + ".header.bin", FileMode.Create));
@@ -77,15 +77,15 @@ namespace S60.FirmHeaderUnpackTool
 
       // Merge the Code Blocks
       // Dump Data and Code to file...
-      EBlockType oldType = blocks[0].blockType;
+      EContentType oldType = blocks[0].contentType;
       FileStream fs = null;
       BufferedStream bs = null;
       i = 0;
       foreach (TBlock block in blocks)
       {
-        if (block.blockType == EBlockType.Code)
+        if (block.contentType == EContentType.Data)
         {
-          if (oldType == EBlockType.Data)
+          if (oldType == EContentType.Data)
           {
             fs = new FileStream(outputDir + "\\" + i + "_code.bin", FileMode.Create, FileAccess.Write);
             bs = new BufferedStream(fs);
@@ -100,14 +100,14 @@ namespace S60.FirmHeaderUnpackTool
           bs.Close();
           fs.Close();
         }
-        if (block.blockType == EBlockType.Data)
+        if (block.contentType == EContentType.Data)
         {
           i++;
           //TDataBlock dataBlock = block.blockHeader as TDataBlock;
           //string outfile = outputDir + i + "_" + Utils.CleanFileName(dataBlock.description) + ".bin";
           //File.WriteAllBytes(outfile, block.content);
         }
-        oldType = block.blockType;
+        oldType = block.contentType;
       }
       bs.Close();
       fs.Close();

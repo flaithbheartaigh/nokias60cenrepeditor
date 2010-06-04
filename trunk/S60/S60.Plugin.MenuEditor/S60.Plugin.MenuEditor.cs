@@ -10,6 +10,10 @@ using System.Xml.Linq;
 using System.Text.RegularExpressions;
 using System.Resources;
 using S60.Lib.Extenders;
+using S60.Lib.Imaging;
+using System.Xml;
+using System.Xml.Serialization;
+using System.Xml.Schema;
 
 namespace S60.Plugins.MenuEditor
 {
@@ -92,6 +96,56 @@ namespace S60.Plugins.MenuEditor
 
     }
     // ******************DTDParser******************
+    
+    
+    public sealed class MenuEditorSettings: IXmlSerializable
+    {
+      public string modder_name { get; set; }
+      public string modder_email { get; set; }
+      public string modder_blog { get; set; }
+      public string modder_web { get; set; }
+      public string default_lang { get; set; }
+
+      public bool set_copyright { get; set; }
+
+      public MenuEditorSettings()
+      {
+        Default();
+      }
+
+      private void Default()
+      {
+        modder_name = "JAndras";
+        modder_email = "jakabandras210@gmail.com";
+        modder_blog = "";
+        modder_web = "";
+        default_lang = "17";
+        set_copyright = true;
+      }
+
+
+      #region IXmlSerializable Members
+
+      public System.Xml.Schema.XmlSchema GetSchema()
+      {
+        XmlSchema mySchema = new XmlSchema();
+        XmlSchemaObject schItem;
+        
+        return mySchema;
+      }
+
+      public void ReadXml(XmlReader reader)
+      {
+        throw new NotImplementedException();
+      }
+
+      public void WriteXml(XmlWriter writer)
+      {
+        throw new NotImplementedException();
+      }
+
+      #endregion
+    }
     private enum ItemType
     {
       ITM_Unknown = 0,
@@ -112,6 +166,30 @@ namespace S60.Plugins.MenuEditor
     private string strDTDString = "<!DOCTYPE xcfwml SYSTEM \"appshelldata.dtd\">";
     private Dictionary<string,string> dctApplications = new Dictionary<string, string>();
     private Dictionary<TreeNode,ItemStruct> menuItemAttrs = new Dictionary<TreeNode, ItemStruct>();
+    private Dictionary<string, string> knownApps = new Dictionary<string, string>();
+    private string dirPluginOwn = "";
+    private MenuEditorSettings mySettings;
+
+    public MenuEditor()
+    {
+      CheckMyDirs();
+      LoadAppUids();
+    }
+
+    private void LoadAppUids()
+    {
+      if (File.Exists(dirPluginOwn + @"\AppUids.xml"))
+      {
+        // Ismert alkalmazások beolvasása
+      }
+      else
+      {
+        if (File.Exists(dirPluginOwn+@"\applications.txt"))
+        {
+          // AppUid Viewer listájának importálása
+        }
+      }
+    }
 
     public string PluginMenuName()
     {
@@ -122,8 +200,22 @@ namespace S60.Plugins.MenuEditor
       return "Nokia 5800XM Menu Editor";
     }
 
+    private void CheckMyDirs()
+    {
+      if (dirPluginOwn == "")
+      {
+        dirPluginOwn = Directory.GetCurrentDirectory() + @"\plugins\MenuEditor";
+        if (!Directory.Exists(dirPluginOwn))
+        {
+          Directory.CreateDirectory(dirPluginOwn);
+          Directory.CreateDirectory(dirPluginOwn + @"\Temp");
+          Directory.CreateDirectory(dirPluginOwn + @"\Modding");
+        }
+      }
+    }
     public void RunPlugin()
     {
+      CheckMyDirs();
       FolderBrowserDialog fbdOpenROFSDir = new FolderBrowserDialog();
       fbdOpenROFSDir.SelectedPath = @"C:\";
       fbdOpenROFSDir.Description = "ROFS könyvtár megnyitása";
@@ -142,6 +234,7 @@ namespace S60.Plugins.MenuEditor
 
     public void RunPlugin(XmlDocument xmlParameters)
     {
+      CheckMyDirs();
       //MessageBox.Show("Menü szerkesztő elindult.");
       XmlNodeList nodes = xmlParameters.DocumentElement.GetElementsByTagName("ROFSDIR");
       string xmlmenu;
@@ -167,6 +260,7 @@ namespace S60.Plugins.MenuEditor
       xMenu = XElement.Parse(xmlcontent);
       TreeNode trn = GenerateNodes( xMenu, null );
       frmEditor.AddMenuFolder( trn );
+      frmEditor.MainMenuStrip.Items["mnuSave"].Click += SaveMenu;
       frmEditor.Show();
     }
     public void myHandler(object sender, System.EventArgs e)
@@ -186,6 +280,7 @@ namespace S60.Plugins.MenuEditor
         {
           case "folder":
             tmpItem.itmType = ItemType.ITM_Folder;
+            tmpItem.menuAttr = new Dictionary<string, string>();
             foreach ( var xAttr in xItem.Attributes() )
             {
               tmpItem.menuAttr.Add( xAttr.Name.ToString(), xAttr.Value.ToString() );
@@ -199,7 +294,13 @@ namespace S60.Plugins.MenuEditor
             break;
           case "application":
             menuNodes = mnu.Nodes.Add( xItem.Attribute( "uid" ).Value );
-
+            tmpItem.itmType = ItemType.ITM_Folder;
+            tmpItem.menuAttr = new Dictionary<string, string>();
+            foreach ( var xAttr in xItem.Attributes() )
+            {
+              tmpItem.menuAttr.Add( xAttr.Name.ToString(), xAttr.Value.ToString() );
+            }
+            menuItemAttrs.Add(menuNodes, tmpItem);
             break;
           case "mmc":
             continue;
@@ -209,9 +310,24 @@ namespace S60.Plugins.MenuEditor
     }
 
     /************************************************ MENTÉS **********************************************/
-    private void SaveMenu()
+    private void SaveMenu(object sender,EventArgs e)
     {
     }
     /************************************************ MENTÉS **********************************************/
+    /******************************************BEÁLLÍTÁSOK BETÖLTÉSE***************************************/
+    private void LoadSettings()
+    {
+      if ( null == mySettings )
+        mySettings = new MenuEditorSettings();
+      if ( File.Exists( dirPluginOwn + @"\Settings.xml" ) )
+      {
+      }
+      else
+        DefaultSettings();
+    }
+    private void DefaultSettings()
+    {
+    }
+    /******************************************BEÁLLÍTÁSOK BETÖLTÉSE***************************************/
   }
 }

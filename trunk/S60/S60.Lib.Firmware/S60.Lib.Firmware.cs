@@ -537,7 +537,7 @@ namespace S60.Lib.Firmware
       ROFSTracer.InitDebug( Directory.GetCurrentDirectory() + @"\ReadTrace.log" );
     }
 
-    /*
+    
     public void Test(string fname)
     {
       if (Directory.Exists(outputDir))
@@ -586,25 +586,25 @@ namespace S60.Lib.Firmware
 
       // Merge the Code Blocks
       // Dump Data and Code to file...
-      EBlockType oldType = blocks[0].blockType;
+      EContentType oldType = blocks[0].contentType;
       FileStream fs = null;
       BufferedStream bs = null;
       i = 0;
       bool firstCode = false;
       foreach (TBlock block in blocks)
       {
-        if (block.blockType == EBlockType.Code)
+        if (block.contentType == EContentType.Data)
         {
-          if (oldType == EBlockType.Data)
+          if (oldType == EContentType.Data)
           {
-            fs = new FileStream(outputDir + "\\" + i + "_code.bin", FileMode.Create, FileAccess.Write);
+            fs = new FileStream(outputDir + "\\" + "rofsImage.img", FileMode.Create, FileAccess.Write);
             bs = new BufferedStream(fs);
             firstCode = true;
             // File.WriteAllBytes(outputDir + i + "_InitBytes.bin", block.content);
           }
           else
           {
-            fs = new FileStream(outputDir + "\\" + i + "_code.bin", FileMode.Append, FileAccess.Write);
+            fs = new FileStream(outputDir + "\\" + "rofsImage.img", FileMode.Append, FileAccess.Write);
             bs = new BufferedStream(fs);
           }
           //bs.Write(block.content, 0, block.content.Length);
@@ -613,18 +613,17 @@ namespace S60.Lib.Firmware
           bs.Close();
           fs.Close();
         }
-        if (block.blockType == EBlockType.Data)
+        if (block.contentType == EContentType.Data)
         {
           i++;
           //TDataBlock dataBlock = block.blockHeader as TDataBlock;
           //string outfile = outputDir + i + "_" + Utils.CleanFileName(dataBlock.description) + ".bin";
           //File.WriteAllBytes(outfile, block.content);
         }
-        oldType = block.blockType;
+        oldType = block.contentType;
       }
       bs.Close();
       fs.Close();
     }
-     */
   }
 }
