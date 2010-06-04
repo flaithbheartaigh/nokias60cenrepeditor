@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Xml;
 using System.IO;
 
+
 namespace S60.Plugins.MenuEditor
 {
   public partial class frmMenuEditor : Form
@@ -28,6 +29,7 @@ namespace S60.Plugins.MenuEditor
     ImageList tr_il = new ImageList();
     ImageList tb_il = new ImageList();
 
+
     public frmMenuEditor()
     {
       InitializeComponent();
@@ -42,6 +44,11 @@ namespace S60.Plugins.MenuEditor
     private void procItemSelected( object sender, EventArgs e )
     {
 
+    }
+
+    private void ExitClicked(object sender, EventArgs e)
+    {
+      this.Hide();
     }
   }
 }

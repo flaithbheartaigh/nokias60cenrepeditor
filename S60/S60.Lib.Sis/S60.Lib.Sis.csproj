@@ -47,6 +47,12 @@
     <Compile Include="Version.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\S60.Lib.Extenders\S60.Lib.Extenders.csproj">
+      <Project>{D3E91A41-9A52-4A89-9F0C-48B6EEDE0B10}</Project>
+      <Name>S60.Lib.Extenders</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

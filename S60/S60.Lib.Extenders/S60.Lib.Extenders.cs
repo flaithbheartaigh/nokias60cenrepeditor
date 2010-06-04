@@ -45,6 +45,14 @@ namespace S60.Lib.Extenders
       }
       return tmp;
     }
+
+    public static byte[] ToByte(this Int16 szam)
+    {
+      byte[] tmp = { 0, 0 };
+      tmp[0] = (byte)(szam & 0xff);
+      tmp[1] = (byte)(szam >> 8);
+      return tmp;
+    }
     public static byte[] ToByte(this Int32 szam)
     {
       byte[] tmp = { 0, 0, 0, 0 };

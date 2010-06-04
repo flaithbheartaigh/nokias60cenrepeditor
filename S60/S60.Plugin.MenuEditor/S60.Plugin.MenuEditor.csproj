@@ -48,6 +48,12 @@
     <Compile Include="frmMenuEditor.designer.cs">
       <DependentUpon>frmMenuEditor.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmSetup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSetup.Designer.cs">
+      <DependentUpon>frmSetup.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -61,6 +67,10 @@
       <Project>{D3E91A41-9A52-4A89-9F0C-48B6EEDE0B10}</Project>
       <Name>S60.Lib.Extenders</Name>
     </ProjectReference>
+    <ProjectReference Include="..\S60.Lib.Imaging\S60.Lib.Imaging.csproj">
+      <Project>{7A40E92C-7531-4225-B98C-A08EA3324AD8}</Project>
+      <Name>S60.Lib.Imaging</Name>
+    </ProjectReference>
     <ProjectReference Include="..\S60.PluginInterface\S60.PluginInterface.csproj">
       <Project>{94E6D0B8-3372-42AF-BAE6-7B5F86995E06}</Project>
       <Name>S60.PluginInterface</Name>
@@ -69,6 +79,9 @@
   <ItemGroup>
     <EmbeddedResource Include="frmMenuEditor.resx">
       <DependentUpon>frmMenuEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSetup.resx">
+      <DependentUpon>frmSetup.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
