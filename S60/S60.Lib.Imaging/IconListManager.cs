@@ -39,7 +39,10 @@ namespace S60.Lib.Imaging
 			//add both our image lists
 			_imageLists.Add( smallImageList );
 			_imageLists.Add( largeImageList );
-
+      ((ImageList) _imageLists[0]).Images.Add(IconReader.GetFolderIcon(IconReader.IconSize.Small,IconReader.FolderType.Closed));
+      ((ImageList) _imageLists[1]).Images.Add(IconReader.GetFolderIcon(IconReader.IconSize.Small, IconReader.FolderType.Closed));
+      int pos = ((ImageList)_imageLists[0]).Images.Count;
+      AddExtension("", pos);
 			//set flag
 			ManageBothSizes = true;
 		}
