@@ -79,6 +79,7 @@
           this.propertiesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
           this.searchBox = new System.Windows.Forms.ComboBox();
           this.searchButton = new System.Windows.Forms.Button();
+          this.FirmOpenDialog = new System.Windows.Forms.OpenFileDialog();
           this.mnuMain.SuspendLayout();
           this.statusStrip.SuspendLayout();
           this.contextMenuStripTreeView.SuspendLayout();
@@ -125,13 +126,14 @@
           // fromFileToolStripMenuItem
           // 
           this.fromFileToolStripMenuItem.Name = "fromFileToolStripMenuItem";
-          this.fromFileToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
+          this.fromFileToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
           this.fromFileToolStripMenuItem.Text = "From file";
+          this.fromFileToolStripMenuItem.Click += new System.EventHandler(this.OpenFirmWare);
           // 
           // fromFolderToolStripMenuItem
           // 
           this.fromFolderToolStripMenuItem.Name = "fromFolderToolStripMenuItem";
-          this.fromFolderToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
+          this.fromFolderToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
           this.fromFolderToolStripMenuItem.Text = "From folder";
           this.fromFolderToolStripMenuItem.Click += new System.EventHandler(this.OpenROFSFolder);
           // 
@@ -349,23 +351,23 @@
             this.toolStripSeparator7,
             this.folderInfoToolStripMenuItem});
           this.contextMenuStripTreeView.Name = "contextMenuStripTreeView";
-          this.contextMenuStripTreeView.Size = new System.Drawing.Size(142, 54);
+          this.contextMenuStripTreeView.Size = new System.Drawing.Size(148, 54);
           // 
           // deleteFolderToolStripMenuItem
           // 
           this.deleteFolderToolStripMenuItem.Name = "deleteFolderToolStripMenuItem";
-          this.deleteFolderToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
+          this.deleteFolderToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
           this.deleteFolderToolStripMenuItem.Text = "Delete folder";
           // 
           // toolStripSeparator7
           // 
           this.toolStripSeparator7.Name = "toolStripSeparator7";
-          this.toolStripSeparator7.Size = new System.Drawing.Size(138, 6);
+          this.toolStripSeparator7.Size = new System.Drawing.Size(144, 6);
           // 
           // folderInfoToolStripMenuItem
           // 
           this.folderInfoToolStripMenuItem.Name = "folderInfoToolStripMenuItem";
-          this.folderInfoToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
+          this.folderInfoToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
           this.folderInfoToolStripMenuItem.Text = "Folder info";
           // 
           // listviewFileList
@@ -424,35 +426,35 @@
             this.infoToolStripMenuItem,
             this.propertiesToolStripMenuItem});
           this.contextMenuStripListView.Name = "contextMenuStripListView";
-          this.contextMenuStripListView.Size = new System.Drawing.Size(132, 98);
+          this.contextMenuStripListView.Size = new System.Drawing.Size(141, 98);
           // 
           // openFileToolStripMenuItem
           // 
           this.openFileToolStripMenuItem.Name = "openFileToolStripMenuItem";
-          this.openFileToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
+          this.openFileToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
           this.openFileToolStripMenuItem.Text = "Open file...";
           // 
           // toolStripSeparator6
           // 
           this.toolStripSeparator6.Name = "toolStripSeparator6";
-          this.toolStripSeparator6.Size = new System.Drawing.Size(128, 6);
+          this.toolStripSeparator6.Size = new System.Drawing.Size(137, 6);
           // 
           // deleteFileToolStripMenuItem
           // 
           this.deleteFileToolStripMenuItem.Name = "deleteFileToolStripMenuItem";
-          this.deleteFileToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
+          this.deleteFileToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
           this.deleteFileToolStripMenuItem.Text = "Delete";
           // 
           // infoToolStripMenuItem
           // 
           this.infoToolStripMenuItem.Name = "infoToolStripMenuItem";
-          this.infoToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
+          this.infoToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
           this.infoToolStripMenuItem.Text = "Info";
           // 
           // propertiesToolStripMenuItem
           // 
           this.propertiesToolStripMenuItem.Name = "propertiesToolStripMenuItem";
-          this.propertiesToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
+          this.propertiesToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
           this.propertiesToolStripMenuItem.Text = "Properties";
           // 
           // searchBox
@@ -555,6 +557,7 @@
         private System.Windows.Forms.ToolStripMenuItem deleteFolderToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator7;
         private System.Windows.Forms.ToolStripMenuItem folderInfoToolStripMenuItem;
+        private System.Windows.Forms.OpenFileDialog FirmOpenDialog;
 
     }
 }

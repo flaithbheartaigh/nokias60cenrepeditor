@@ -87,6 +87,10 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\S60.Lib.Firmware\S60.Lib.Firmware.csproj">
+      <Project>{FF87F8F4-2CC1-4319-9775-B18AB2F355FF}</Project>
+      <Name>S60.Lib.Firmware</Name>
+    </ProjectReference>
     <ProjectReference Include="..\S60.Lib.Imaging\S60.Lib.Imaging.csproj">
       <Project>{7A40E92C-7531-4225-B98C-A08EA3324AD8}</Project>
       <Name>S60.Lib.Imaging</Name>
@@ -98,6 +102,11 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Tools\readimage.exe">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

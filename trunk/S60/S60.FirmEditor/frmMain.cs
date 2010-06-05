@@ -12,6 +12,7 @@ using System.Text.RegularExpressions;
 using S60.FirmEditor;
 using System.Diagnostics;
 using S60.Lib.Imaging;
+using S60.Lib.Firmware;
 
 namespace S60.FirmEditor
 {
@@ -211,6 +212,30 @@ namespace S60.FirmEditor
         item.Tag = file.FullName;
         listviewFileList.Items.Add(item);
       }
+
+    }
+
+    private void OpenFirmWare(object sender, EventArgs e)
+    {
+      FwFile myFirm = new FwFile();
+      myFirm.outputDir = Application.StartupPath + @"\ROFSIMAGE";
+      if (FirmOpenDialog.ShowDialog() == DialogResult.Cancel)
+        return;
+      string firmFile = FirmOpenDialog.FileName;
+      myFirm.Test(firmFile);
+      UseExternalTools.ExtractImage(Application.StartupPath + @"\Tools", Application.StartupPath + @"\ROFSIMAGE\rofsImage.bin", Application.StartupPath + @"\ROFSROOT");
+      TreeNode rootNode = new TreeNode(Path.GetFileName(firmFile));
+      strROFSDir = Application.StartupPath + @"\ROFSROOT";
+      rootNode.Tag = strROFSDir;
+      populateDirView(strROFSDir, rootNode);
+      folderView.Nodes.Add(rootNode);
+      folderView.SelectedNode = folderView.TopNode;
+      DirectorySelect(null, null);
+
+    }
+
+    private void pluginsToolStripMenuItem_Click(object sender, EventArgs e)
+    {
 
     }
 
