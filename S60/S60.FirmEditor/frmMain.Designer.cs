@@ -341,7 +341,6 @@
           this.folderView.Size = new System.Drawing.Size(243, 478);
           this.folderView.TabIndex = 3;
           this.folderView.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.DirectorySelect);
- 
           // 
           // contextMenuStripTreeView
           // 
@@ -399,6 +398,7 @@
           // fileSize
           // 
           this.fileSize.Text = "Size";
+          this.fileSize.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
           this.fileSize.Width = 100;
           // 
           // Date

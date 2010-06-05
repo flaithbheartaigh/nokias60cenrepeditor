@@ -181,7 +181,10 @@ namespace S60.FirmEditor
         return;
       }
       folderView.Nodes.Clear();
-      populateDirView(strKonyvtar,null);
+      TreeNode rootNode = new TreeNode("ROOT");
+      rootNode.Tag = strKonyvtar;
+      populateDirView(strKonyvtar,rootNode);
+      folderView.Nodes.Add(rootNode);
       strROFSDir = strKonyvtar;
       folderView.SelectedNode = folderView.TopNode;
       DirectorySelect(null, null);
@@ -191,7 +194,7 @@ namespace S60.FirmEditor
   
     private void DirectorySelect(object sender, TreeViewEventArgs e)
     {
-      string strFullPath = strROFSDir + @"\" + folderView.SelectedNode.FullPath;
+      string strFullPath = folderView.SelectedNode.Tag.ToString();
       DirectoryInfo dirInfo = new DirectoryInfo(strFullPath);
       listviewFileList.Items.Clear();
       foreach (DirectoryInfo dir in dirInfo.GetDirectories())
@@ -203,7 +206,7 @@ namespace S60.FirmEditor
       }
       foreach (FileInfo file in dirInfo.GetFiles())
       {
-        ListViewItem item = new ListViewItem(new string[] { file.Name, (file.Length / 1024).ToString(), file.CreationTime.ToString(),file.GetType().ToString(), "0x00" });
+        ListViewItem item = new ListViewItem(new string[] { file.Name, (file.Length>2048)?(file.Length / 1024).ToString()+" Kb":file.Length.ToString()+" b", file.CreationTime.ToString(),"under develop.", "0x00" });
         item.ImageIndex = _iconListManager.AddFileIcon(file.FullName);
         item.Tag = file.FullName;
         listviewFileList.Items.Add(item);
