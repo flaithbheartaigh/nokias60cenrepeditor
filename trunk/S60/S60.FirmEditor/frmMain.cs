@@ -23,10 +23,15 @@ namespace S60.FirmEditor
     private ImageList _smallImageList = new ImageList();
     private ImageList _largeImageList = new ImageList();
     private IconListManager _iconListManager;
+    private ImageList _foldericon = new ImageList();
 
     public frmMain()
     {
       InitializeComponent();
+
+      _foldericon.Images.Add(IconReader.GetFolderIcon(IconReader.IconSize.Small,IconReader.FolderType.Closed));
+      _foldericon.Images.Add(IconReader.GetFolderIcon(IconReader.IconSize.Small, IconReader.FolderType.Open));
+
       _smallImageList.ColorDepth = ColorDepth.Depth32Bit;
       _largeImageList.ColorDepth = ColorDepth.Depth32Bit;
 
@@ -37,8 +42,12 @@ namespace S60.FirmEditor
 
       listviewFileList.SmallImageList = _smallImageList;
       listviewFileList.LargeImageList = _largeImageList;
+
       Utils.Check();
+      
       folderView.PathSeparator = @"\";
+      folderView.ImageList = _foldericon;
+
       mPlugins = PluginHostProvider.Plugins;
       foreach (PluginHost loadedPlugins in mPlugins)
       {
@@ -132,38 +141,26 @@ namespace S60.FirmEditor
       throw new NotImplementedException();
     }
 
-    private void FillDirTree(string strDir,TreeNode parent)
+    private void populateDirView(string folder, TreeNode rootNode)
     {
-      string[] dirArray = Directory.GetDirectories(strDir);
-      try
+      DirectoryInfo dir = new DirectoryInfo(folder);
+      foreach (DirectoryInfo d in dir.GetDirectories())
       {
-        if (dirArray.Length != 0)
-        {
-          Regex reSubDir = new Regex(@".+\\(?<sbdir>.+)$",RegexOptions.Compiled);
-          foreach (string directory in dirArray)
-          {
-            Match maSubDir = reSubDir.Match(directory);
-            TreeNode myNode;
-            if (null == parent)
-            {
-              myNode = folderView.Nodes.Add(maSubDir.Groups["sbdir"].Value);
-            }
-            else
-            {
-              myNode = parent.Nodes.Add(maSubDir.Groups["sbdir"].Value);
-            }
-            FillDirTree(directory, myNode);
-          }
-        }
-      }
-      catch
-      {
-        if (null == parent)
-          folderView.Nodes.Add("Access denied");
+        TreeNode subnode = new TreeNode(d.Name);
+        subnode.Tag = d.FullName;
+        subnode.ImageIndex = 0;
+        subnode.SelectedImageIndex = 1;
+       
+        if (null == rootNode)
+          folderView.Nodes.Add(subnode);
         else
-          parent.Nodes.Add("Access denied");
+          rootNode.Nodes.Add(subnode);
+
+        populateDirView(d.FullName, subnode);
       }
     }
+
+
 
     private void OpenROFSFolder(object sender, EventArgs e)
     {
@@ -184,23 +181,34 @@ namespace S60.FirmEditor
         return;
       }
       folderView.Nodes.Clear();
-      FillDirTree(strKonyvtar, null);
+      populateDirView(strKonyvtar,null);
       strROFSDir = strKonyvtar;
       folderView.SelectedNode = folderView.TopNode;
-      ClickDirectory(null, null);
+      DirectorySelect(null, null);
       //File ablak feltöltés...
     }
 
-    private void ClickDirectory(object sender, EventArgs e)
+  
+    private void DirectorySelect(object sender, TreeViewEventArgs e)
     {
       string strFullPath = strROFSDir + @"\" + folderView.SelectedNode.FullPath;
       DirectoryInfo dirInfo = new DirectoryInfo(strFullPath);
-      listviewFileList.Clear();
-      foreach (FileInfo file in dirInfo.GetFiles())
+      listviewFileList.Items.Clear();
+      foreach (DirectoryInfo dir in dirInfo.GetDirectories())
       {
-        ListViewItem item = new ListViewItem(new string[] { file.Name, (file.Length / 1024).ToString(), file.GetType().ToString(), "0x00" },_iconListManager.AddFileIcon(file.FullName));
+        ListViewItem item = new ListViewItem(new string[] { dir.Name,"",dir.CreationTime.ToString() });
+        item.ImageIndex = 0;
+        item.Tag = dir.FullName;
         listviewFileList.Items.Add(item);
       }
+      foreach (FileInfo file in dirInfo.GetFiles())
+      {
+        ListViewItem item = new ListViewItem(new string[] { file.Name, (file.Length / 1024).ToString(), file.CreationTime.ToString(),file.GetType().ToString(), "0x00" });
+        item.ImageIndex = _iconListManager.AddFileIcon(file.FullName);
+        item.Tag = file.FullName;
+        listviewFileList.Items.Add(item);
+      }
+
     }
 
   }

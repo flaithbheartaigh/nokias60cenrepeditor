@@ -125,13 +125,13 @@
           // fromFileToolStripMenuItem
           // 
           this.fromFileToolStripMenuItem.Name = "fromFileToolStripMenuItem";
-          this.fromFileToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+          this.fromFileToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
           this.fromFileToolStripMenuItem.Text = "From file";
           // 
           // fromFolderToolStripMenuItem
           // 
           this.fromFolderToolStripMenuItem.Name = "fromFolderToolStripMenuItem";
-          this.fromFolderToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+          this.fromFolderToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
           this.fromFolderToolStripMenuItem.Text = "From folder";
           this.fromFolderToolStripMenuItem.Click += new System.EventHandler(this.OpenROFSFolder);
           // 
@@ -340,7 +340,8 @@
           this.folderView.Name = "folderView";
           this.folderView.Size = new System.Drawing.Size(243, 478);
           this.folderView.TabIndex = 3;
-          this.folderView.Click += new System.EventHandler(this.ClickDirectory);
+          this.folderView.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.DirectorySelect);
+ 
           // 
           // contextMenuStripTreeView
           // 
