@@ -65,7 +65,7 @@
           this.deleteFolderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
           this.toolStripSeparator7 = new System.Windows.Forms.ToolStripSeparator();
           this.folderInfoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-          this.listView = new System.Windows.Forms.ListView();
+          this.listviewFileList = new System.Windows.Forms.ListView();
           this.fileName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
           this.fileSize = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
           this.Date = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -125,14 +125,15 @@
           // fromFileToolStripMenuItem
           // 
           this.fromFileToolStripMenuItem.Name = "fromFileToolStripMenuItem";
-          this.fromFileToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
+          this.fromFileToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
           this.fromFileToolStripMenuItem.Text = "From file";
           // 
           // fromFolderToolStripMenuItem
           // 
           this.fromFolderToolStripMenuItem.Name = "fromFolderToolStripMenuItem";
-          this.fromFolderToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
+          this.fromFolderToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
           this.fromFolderToolStripMenuItem.Text = "From folder";
+          this.fromFolderToolStripMenuItem.Click += new System.EventHandler(this.OpenROFSFolder);
           // 
           // toolStripSeparator4
           // 
@@ -339,6 +340,7 @@
           this.folderView.Name = "folderView";
           this.folderView.Size = new System.Drawing.Size(243, 478);
           this.folderView.TabIndex = 3;
+          this.folderView.Click += new System.EventHandler(this.ClickDirectory);
           // 
           // contextMenuStripTreeView
           // 
@@ -366,27 +368,27 @@
           this.folderInfoToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
           this.folderInfoToolStripMenuItem.Text = "Folder info";
           // 
-          // listView
+          // listviewFileList
           // 
-          this.listView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+          this.listviewFileList.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.fileName,
             this.fileSize,
             this.Date,
             this.Type,
             this.Flag});
-          this.listView.ContextMenuStrip = this.contextMenuStripListView;
-          this.listView.FullRowSelect = true;
-          this.listView.GridLines = true;
-          this.listView.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
-          this.listView.LabelEdit = true;
-          this.listView.LabelWrap = false;
-          this.listView.Location = new System.Drawing.Point(261, 27);
-          this.listView.Name = "listView";
-          this.listView.ShowItemToolTips = true;
-          this.listView.Size = new System.Drawing.Size(572, 508);
-          this.listView.TabIndex = 4;
-          this.listView.UseCompatibleStateImageBehavior = false;
-          this.listView.View = System.Windows.Forms.View.Details;
+          this.listviewFileList.ContextMenuStrip = this.contextMenuStripListView;
+          this.listviewFileList.FullRowSelect = true;
+          this.listviewFileList.GridLines = true;
+          this.listviewFileList.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
+          this.listviewFileList.LabelEdit = true;
+          this.listviewFileList.LabelWrap = false;
+          this.listviewFileList.Location = new System.Drawing.Point(261, 27);
+          this.listviewFileList.Name = "listviewFileList";
+          this.listviewFileList.ShowItemToolTips = true;
+          this.listviewFileList.Size = new System.Drawing.Size(572, 508);
+          this.listviewFileList.TabIndex = 4;
+          this.listviewFileList.UseCompatibleStateImageBehavior = false;
+          this.listviewFileList.View = System.Windows.Forms.View.Details;
           // 
           // fileName
           // 
@@ -480,7 +482,7 @@
           this.Controls.Add(this.searchButton);
           this.Controls.Add(this.searchBox);
           this.Controls.Add(this.folderView);
-          this.Controls.Add(this.listView);
+          this.Controls.Add(this.listviewFileList);
           this.Controls.Add(this.statusStrip);
           this.Controls.Add(this.mnuMain);
           this.MainMenuStrip = this.mnuMain;
@@ -512,7 +514,7 @@
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel3;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
         private System.Windows.Forms.TreeView folderView;
-        private System.Windows.Forms.ListView listView;
+        private System.Windows.Forms.ListView listviewFileList;
         private System.Windows.Forms.ColumnHeader fileName;
         private System.Windows.Forms.ColumnHeader fileSize;
         private System.Windows.Forms.ColumnHeader Date;

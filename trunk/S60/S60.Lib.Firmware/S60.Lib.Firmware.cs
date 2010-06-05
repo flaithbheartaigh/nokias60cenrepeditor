@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.IO;
 using System.Diagnostics;
+using System.Runtime.Serialization.Formatters.Binary;
 
 namespace S60.Lib.Firmware
 {
@@ -120,7 +121,22 @@ namespace S60.Lib.Firmware
 
     public object Clone()
     {
-      throw new NotImplementedException();
+      //throw new NotImplementedException();
+      MemoryStream ms;
+      BinaryFormatter bf;
+      object myClone;
+      try
+      {
+        ms = new MemoryStream();
+        bf = new BinaryFormatter();
+        bf.Serialize(ms, this);
+        myClone = bf.Deserialize(ms);
+        return myClone;
+      }
+      catch
+      {
+        throw new Exception("Hiba a klónozás során!");
+      }
     }
 
     #endregion
@@ -320,8 +336,7 @@ namespace S60.Lib.Firmware
 
     public override void Write(BinaryWriter bw)
     {
-      //throw new NotImplementedException();
-      bw.Write(hash, 0, hash.Length);
+       bw.Write(hash, 0, hash.Length);
       bw.Write(hashCRC, 0, hashCRC.Length);
       bw.Write(description);
       bw.Write(processorType);
@@ -358,7 +373,6 @@ namespace S60.Lib.Firmware
 
     public override void Read(BinaryReader br)
     {
-      //throw new NotImplementedException();
       flashMemory = (EMemoryType)br.ReadByte();
       unkn2 = br.ReadUInt16();
       contentChecksum16 = br.ReadUInt16();
@@ -373,7 +387,6 @@ namespace S60.Lib.Firmware
 
     public override void Write(BinaryWriter bw)
     {
-      //throw new NotImplementedException();
       bw.Write((byte)flashMemory);
       bw.Write(unkn2);
       bw.Write(contentChecksum16);
@@ -464,13 +477,9 @@ namespace S60.Lib.Firmware
 
     public override void Write(BinaryWriter bw)
     {
-      byte[] buffer;
-      // Folytatni!!!!!
-      //throw new NotImplementedException();
       bw.Write(maybe_hash16_md5, 0, 0x10);
       bw.Write(unkn4, 0, 4);
       bw.Write(description);
-      //bw.Write(buffer);
       bw.Write((byte)flashMemory);
       bw.Write(unkn2);
       bw.Write(contentChecksum16);
@@ -548,20 +557,14 @@ namespace S60.Lib.Firmware
 
     public Valami MegNemTudomMitCsinal()
     {
-      TBlock block;
       List<byte> list;
       int num;
       List<TBlock>.Enumerator enumerator;
-      enumerator = blocks.GetEnumerator();
-      Begin:
-      block = enumerator.Current;
-      if (block.blockType == EBlockType.BlockType28_CORE_Cert)
+      foreach(TBlock block in blocks)
       {
-        return Valami.ertek3;
+        if (block.blockType == EBlockType.BlockType28_CORE_Cert)
+          return Valami.ertek3;
       }
-      if (enumerator.MoveNext())
-        goto Begin;
-      enumerator.Dispose();
       list = new List<byte>();
       num = 0;
       do
@@ -583,17 +586,14 @@ namespace S60.Lib.Firmware
         {
           if (list[num + 3] == 0x53)
           {
-            //return class98.Field_01;
             return Valami.ertek1;
           }
         }
-        if (((list.Count-num) >=500) && ((((list[num+11]==0) && (list[num+12]==2)) && ((list[num+10]<=2) && (list[num+11]==0))) && list[num+12]<=2)))
+        if (((list.Count-num) >=500) && ((((list[num+11]==0) && (list[num+12]==2)) && ((list[num+10]<=2) && (list[num+11]==0))) && list[num+12]<=2))
         {
-          //return class98.Field_00;
           return Valami.ertek0;
         }
       }
-      //return class98.Field_04;
       return Valami.ertek4;
     }
     
@@ -642,9 +642,6 @@ namespace S60.Lib.Firmware
       }
       br.Close();
 
-
-      // Merge the Code Blocks
-      // Dump Data and Code to file...
       EContentType oldType = blocks[0].contentType;
       FileStream fs = null;
       BufferedStream bs = null;

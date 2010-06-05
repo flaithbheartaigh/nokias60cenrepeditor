@@ -43,6 +43,7 @@ namespace S60.Lib.Firmware
       crc1 = ( ushort ) ( crc1 << 8 );
       return (ushort)(crc1|crc2);
     }
+
     public static byte ComputeCRC8( TBase block )
     {
       byte iCRC8 = 0;
