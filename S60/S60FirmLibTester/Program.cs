@@ -26,7 +26,7 @@ namespace S60FirmLibTester
     static void ObeyTest( string[] args )
     {
       ObeyManager.writeObey( "test.oby", "fucking.img","", "0x10000000",  @"D:\FirmWare SDK\NokiaEditor Beta6\rofs2" );
-      UseExternalTools.BuildRofsImage( Directory.GetCurrentDirectory(), "test.oby" );
+      UseExternalTools.BuildRofsImage( Directory.GetCurrentDirectory(), "test.oby","" );
     }
 
     static void Main(string[] args)
