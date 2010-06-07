@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<PHONES>
+  <PHONE type="Nokia">
+    <MODEL name="5800XM">
+      <FIRMWARE>50.0.005</FIRMWARE>
+    </MODEL>
+  </PHONE>
+  <PHONE type="Sony"></PHONE>
+  <PHONE type="LG"></PHONE>
+  <PHONE type="Samsung"></PHONE>
+</PHONES>

@@ -45,8 +45,8 @@ namespace S60.Lib.Firmware
   public class CBytePair
   {
     public const int MAXBLOCKSIZE = 0x1000;
-    public const short POSEND = (short)0xffff;
-    public const short POSHEAD = (short)0xfffe;
+    public const ushort POSEND = 0xffff;
+    public const ushort POSHEAD = 0xfffe;
     public const byte BYTEREMOVED = (byte)'R';
     public const byte BYTEMARKED = (byte)'M';
     public const byte BYTEHEAD = (byte)'H';
