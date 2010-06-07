@@ -23,6 +23,11 @@ namespace S60.Lib.Firmware
       Process p = Process.Start( toolsPath + @"\rofsbuild.exe", "-compress " + Directory.GetCurrentDirectory()+@"\"+obeyfile );
       p.WaitForExit();
     }
+
+    public static void BuildRofsImage(string p, string p_2, string p_3)
+    {
+      throw new NotImplementedException();
+    }
   }
 
   static public class ConstructBlocks
