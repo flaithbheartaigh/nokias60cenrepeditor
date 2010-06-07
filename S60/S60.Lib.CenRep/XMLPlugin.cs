@@ -5,7 +5,7 @@ using System.Text;
 using System.Xml.Linq;
 using System.Collections;
 
-namespace S60.CenRepEditor
+namespace S60.Lib.CenRep
 {
   public sealed class XMLPlugin:IS60XMLParser
   {
