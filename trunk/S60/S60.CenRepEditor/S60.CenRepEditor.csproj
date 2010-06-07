@@ -45,7 +45,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="XMLPlugin.cs" />
     <Compile Include="frmMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -58,7 +57,6 @@
     <Compile Include="frmProperties.Designer.cs">
       <DependentUpon>frmProperties.cs</DependentUpon>
     </Compile>
-    <Compile Include="IS60XMLParser.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frmMain.resx">
