@@ -94,6 +94,12 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\S60.Lib.CenRep\S60.Lib.CenRep.csproj">
+      <Project>{CCA908B2-A34E-4AFF-803C-ACCD00962BC6}</Project>
+      <Name>S60.Lib.CenRep</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

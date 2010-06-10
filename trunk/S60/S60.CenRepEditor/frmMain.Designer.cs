@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+          this.components = new System.ComponentModel.Container();
           this.menuStrip1 = new System.Windows.Forms.MenuStrip();
           this.fájlToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
           this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -39,6 +40,11 @@
           this.allChangesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
           this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
           this.toolsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+          this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+          this.patcherToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+          this.makePatchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+          this.applyPatchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+          this.batchPatchingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
           this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
           this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
           this.helpToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -58,11 +64,19 @@
           this.label1 = new System.Windows.Forms.Label();
           this.cmbName = new System.Windows.Forms.ComboBox();
           this.label2 = new System.Windows.Forms.Label();
-          this.comboBox1 = new System.Windows.Forms.ComboBox();
+          this.cmbModel = new System.Windows.Forms.ComboBox();
           this.label3 = new System.Windows.Forms.Label();
-          this.comboBox2 = new System.Windows.Forms.ComboBox();
+          this.cmbFirm = new System.Windows.Forms.ComboBox();
+          this.mnuRightClick = new System.Windows.Forms.ContextMenuStrip(this.components);
+          this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+          this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+          this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
+          this.toolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
+          this.backupToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+          this.restoreToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
           this.menuStrip1.SuspendLayout();
           this.tableLayoutPanel1.SuspendLayout();
+          this.mnuRightClick.SuspendLayout();
           this.SuspendLayout();
           // 
           // menuStrip1
@@ -92,7 +106,7 @@
           // openToolStripMenuItem
           // 
           this.openToolStripMenuItem.Name = "openToolStripMenuItem";
-          this.openToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+          this.openToolStripMenuItem.Size = new System.Drawing.Size(123, 22);
           this.openToolStripMenuItem.Text = "Open";
           this.openToolStripMenuItem.Click += new System.EventHandler(this.OpenRofsDir);
           // 
@@ -102,7 +116,7 @@
             this.saveFileToolStripMenuItem,
             this.saveAllChangesToolStripMenuItem});
           this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-          this.saveToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+          this.saveToolStripMenuItem.Size = new System.Drawing.Size(123, 22);
           this.saveToolStripMenuItem.Text = "Save ";
           // 
           // saveFileToolStripMenuItem
@@ -123,7 +137,7 @@
             this.oneFileToolStripMenuItem,
             this.allChangesToolStripMenuItem});
           this.restoreToolStripMenuItem.Name = "restoreToolStripMenuItem";
-          this.restoreToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+          this.restoreToolStripMenuItem.Size = new System.Drawing.Size(123, 22);
           this.restoreToolStripMenuItem.Text = "Restore";
           // 
           // oneFileToolStripMenuItem
@@ -141,14 +155,52 @@
           // exitToolStripMenuItem
           // 
           this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-          this.exitToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+          this.exitToolStripMenuItem.Size = new System.Drawing.Size(123, 22);
           this.exitToolStripMenuItem.Text = "Exit";
+          this.exitToolStripMenuItem.Click += new System.EventHandler(this.ExitClick);
           // 
           // toolsToolStripMenuItem
           // 
+          this.toolsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.settingsToolStripMenuItem,
+            this.patcherToolStripMenuItem});
           this.toolsToolStripMenuItem.Name = "toolsToolStripMenuItem";
           this.toolsToolStripMenuItem.Size = new System.Drawing.Size(44, 18);
           this.toolsToolStripMenuItem.Text = "Tools";
+          // 
+          // settingsToolStripMenuItem
+          // 
+          this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
+          this.settingsToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+          this.settingsToolStripMenuItem.Text = "Settings";
+          // 
+          // patcherToolStripMenuItem
+          // 
+          this.patcherToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.makePatchToolStripMenuItem,
+            this.applyPatchToolStripMenuItem,
+            this.batchPatchingToolStripMenuItem});
+          this.patcherToolStripMenuItem.Name = "patcherToolStripMenuItem";
+          this.patcherToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+          this.patcherToolStripMenuItem.Text = "Patcher";
+          // 
+          // makePatchToolStripMenuItem
+          // 
+          this.makePatchToolStripMenuItem.Name = "makePatchToolStripMenuItem";
+          this.makePatchToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
+          this.makePatchToolStripMenuItem.Text = "Make patch";
+          // 
+          // applyPatchToolStripMenuItem
+          // 
+          this.applyPatchToolStripMenuItem.Name = "applyPatchToolStripMenuItem";
+          this.applyPatchToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
+          this.applyPatchToolStripMenuItem.Text = "Apply patch";
+          // 
+          // batchPatchingToolStripMenuItem
+          // 
+          this.batchPatchingToolStripMenuItem.Name = "batchPatchingToolStripMenuItem";
+          this.batchPatchingToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
+          this.batchPatchingToolStripMenuItem.Text = "Batch patching";
           // 
           // helpToolStripMenuItem
           // 
@@ -199,14 +251,15 @@
             this.columnHeader7});
           this.lstCenRep.FullRowSelect = true;
           this.lstCenRep.GridLines = true;
-          this.lstCenRep.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
           this.lstCenRep.Location = new System.Drawing.Point(12, 63);
           this.lstCenRep.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
           this.lstCenRep.Name = "lstCenRep";
           this.lstCenRep.Size = new System.Drawing.Size(920, 366);
+          this.lstCenRep.Sorting = System.Windows.Forms.SortOrder.Ascending;
           this.lstCenRep.TabIndex = 2;
           this.lstCenRep.UseCompatibleStateImageBehavior = false;
           this.lstCenRep.View = System.Windows.Forms.View.Details;
+          this.lstCenRep.ColumnClick += new System.Windows.Forms.ColumnClickEventHandler(this.ChangeOrder);
           // 
           // columnHeader1
           // 
@@ -259,13 +312,13 @@
           this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 61F));
           this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 129F));
           this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 74F));
-          this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 359F));
+          this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 466F));
           this.tableLayoutPanel1.Controls.Add(this.label1, 0, 0);
           this.tableLayoutPanel1.Controls.Add(this.cmbName, 1, 0);
           this.tableLayoutPanel1.Controls.Add(this.label2, 2, 0);
-          this.tableLayoutPanel1.Controls.Add(this.comboBox1, 3, 0);
+          this.tableLayoutPanel1.Controls.Add(this.cmbModel, 3, 0);
           this.tableLayoutPanel1.Controls.Add(this.label3, 4, 0);
-          this.tableLayoutPanel1.Controls.Add(this.comboBox2, 5, 0);
+          this.tableLayoutPanel1.Controls.Add(this.cmbFirm, 5, 0);
           this.tableLayoutPanel1.Location = new System.Drawing.Point(12, 27);
           this.tableLayoutPanel1.Name = "tableLayoutPanel1";
           this.tableLayoutPanel1.RowCount = 1;
@@ -304,13 +357,13 @@
           this.label2.TabIndex = 2;
           this.label2.Text = "Model :";
           // 
-          // comboBox1
+          // cmbModel
           // 
-          this.comboBox1.FormattingEnabled = true;
-          this.comboBox1.Location = new System.Drawing.Point(254, 3);
-          this.comboBox1.Name = "comboBox1";
-          this.comboBox1.Size = new System.Drawing.Size(121, 25);
-          this.comboBox1.TabIndex = 3;
+          this.cmbModel.FormattingEnabled = true;
+          this.cmbModel.Location = new System.Drawing.Point(254, 3);
+          this.cmbModel.Name = "cmbModel";
+          this.cmbModel.Size = new System.Drawing.Size(121, 25);
+          this.cmbModel.TabIndex = 3;
           // 
           // label3
           // 
@@ -321,13 +374,62 @@
           this.label3.TabIndex = 4;
           this.label3.Text = "Firmware :";
           // 
-          // comboBox2
+          // cmbFirm
           // 
-          this.comboBox2.FormattingEnabled = true;
-          this.comboBox2.Location = new System.Drawing.Point(457, 3);
-          this.comboBox2.Name = "comboBox2";
-          this.comboBox2.Size = new System.Drawing.Size(185, 25);
-          this.comboBox2.TabIndex = 5;
+          this.cmbFirm.FormattingEnabled = true;
+          this.cmbFirm.Location = new System.Drawing.Point(457, 3);
+          this.cmbFirm.Name = "cmbFirm";
+          this.cmbFirm.Size = new System.Drawing.Size(185, 25);
+          this.cmbFirm.TabIndex = 5;
+          // 
+          // mnuRightClick
+          // 
+          this.mnuRightClick.Font = new System.Drawing.Font("Segoe Condensed", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+          this.mnuRightClick.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItem1,
+            this.toolStripMenuItem2,
+            this.toolStripMenuItem3,
+            this.toolStripMenuItem4,
+            this.backupToolStripMenuItem,
+            this.restoreToolStripMenuItem1});
+          this.mnuRightClick.Name = "mnuRightClick";
+          this.mnuRightClick.Size = new System.Drawing.Size(164, 136);
+          // 
+          // toolStripMenuItem1
+          // 
+          this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+          this.toolStripMenuItem1.Size = new System.Drawing.Size(163, 22);
+          this.toolStripMenuItem1.Text = "Edit with notepad";
+          // 
+          // toolStripMenuItem2
+          // 
+          this.toolStripMenuItem2.Name = "toolStripMenuItem2";
+          this.toolStripMenuItem2.Size = new System.Drawing.Size(163, 22);
+          this.toolStripMenuItem2.Text = "Edit width builtin";
+          // 
+          // toolStripMenuItem3
+          // 
+          this.toolStripMenuItem3.Name = "toolStripMenuItem3";
+          this.toolStripMenuItem3.Size = new System.Drawing.Size(163, 22);
+          this.toolStripMenuItem3.Text = "Apply patch";
+          // 
+          // toolStripMenuItem4
+          // 
+          this.toolStripMenuItem4.Name = "toolStripMenuItem4";
+          this.toolStripMenuItem4.Size = new System.Drawing.Size(163, 22);
+          this.toolStripMenuItem4.Text = "Create patch";
+          // 
+          // backupToolStripMenuItem
+          // 
+          this.backupToolStripMenuItem.Name = "backupToolStripMenuItem";
+          this.backupToolStripMenuItem.Size = new System.Drawing.Size(163, 22);
+          this.backupToolStripMenuItem.Text = "Backup";
+          // 
+          // restoreToolStripMenuItem1
+          // 
+          this.restoreToolStripMenuItem1.Name = "restoreToolStripMenuItem1";
+          this.restoreToolStripMenuItem1.Size = new System.Drawing.Size(163, 22);
+          this.restoreToolStripMenuItem1.Text = "Restore";
           // 
           // frmMain
           // 
@@ -348,6 +450,7 @@
           this.menuStrip1.PerformLayout();
           this.tableLayoutPanel1.ResumeLayout(false);
           this.tableLayoutPanel1.PerformLayout();
+          this.mnuRightClick.ResumeLayout(false);
           this.ResumeLayout(false);
           this.PerformLayout();
 
@@ -385,9 +488,21 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cmbName;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cmbModel;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox cmbFirm;
+        private System.Windows.Forms.ToolStripMenuItem settingsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem patcherToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem makePatchToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem applyPatchToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem batchPatchingToolStripMenuItem;
+        private System.Windows.Forms.ContextMenuStrip mnuRightClick;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem3;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem4;
+        private System.Windows.Forms.ToolStripMenuItem backupToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem restoreToolStripMenuItem1;
 
     }
 }

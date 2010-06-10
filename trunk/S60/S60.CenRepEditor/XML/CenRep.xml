@@ -11,5 +11,16 @@
       </ITEM>
     </PATCH>
   </FILE>
-  
+  <FILE name="101F87A8" description="Valami">
+    <EDITINFO phone="Nokia" type="5800XM" firmware="50.0.005" >
+
+    </EDITINFO>
+    <PATCH phone="Nokia" type="5800XM" firmware="50.0.005">
+      <ITEM KEY="0x01" description="Csak teszt">
+        <OLD description="Gyári">0</OLD>
+        <NEW description="Gyorsabban forog a biszbasz">50</NEW>
+      </ITEM>
+    </PATCH>
+  </FILE>
+
 </CENREP>

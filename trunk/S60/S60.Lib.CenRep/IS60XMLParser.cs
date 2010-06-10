@@ -8,9 +8,12 @@ using System.Collections;
 
 namespace S60.Lib.CenRep
 {
-  public interface IS60XMLParser:IEnumerable
+  
+  public interface IS60XMLParser:IEnumerable,IEnumerator,IList
   {
     XElement rootDoc { get; }
+    string Filter { get; set; }
+    string ElementChain { get; set; }
     List<XElement> SelectElementByAttribute(string selAttrib);
   }
 }
