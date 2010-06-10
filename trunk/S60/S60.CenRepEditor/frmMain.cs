@@ -28,9 +28,9 @@ namespace S60.CenRepEditor
         plugin.Filter = "";
         phones.Filter = "";
         cmbName.Items.Clear();
-        foreach (XElement xel in phones.rootDoc)
+        for (int i = 0; i < phones.Count; i++)
         {
-
+          cmbName.Items.Add(phones[i].Attribute("type").Value);
         }
       }
     }
@@ -82,6 +82,28 @@ namespace S60.CenRepEditor
     private void ChangeOrder( object sender, ColumnClickEventArgs e )
     {
 
+    }
+
+    private void ChangeModell(object sender, EventArgs e)
+    {
+      cmbModel.Items.Clear();
+      cmbModel.Text = "";
+      cmbFirm.Items.Clear();
+      cmbFirm.Text = "";
+      foreach (XElement xel in phones[cmbName.SelectedIndex].Elements())
+      {
+        cmbModel.Items.Add(xel.Attribute("name").Value);
+      }
+    }
+
+    private void ChangeType(object sender, EventArgs e)
+    {
+      cmbFirm.Items.Clear();
+      cmbFirm.Text = "";
+      foreach (XElement xel in phones[cmbName.SelectedIndex].Element("MODEL").Elements())
+      {
+        cmbFirm.Items.Add(xel.Value);
+      }
     }
   }
 }

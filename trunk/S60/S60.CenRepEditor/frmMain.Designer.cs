@@ -347,6 +347,7 @@
           this.cmbName.Name = "cmbName";
           this.cmbName.Size = new System.Drawing.Size(121, 25);
           this.cmbName.TabIndex = 1;
+          this.cmbName.SelectedValueChanged += new System.EventHandler(this.ChangeModell);
           // 
           // label2
           // 
@@ -364,6 +365,7 @@
           this.cmbModel.Name = "cmbModel";
           this.cmbModel.Size = new System.Drawing.Size(121, 25);
           this.cmbModel.TabIndex = 3;
+          this.cmbModel.SelectedValueChanged += new System.EventHandler(this.ChangeType);
           // 
           // label3
           // 

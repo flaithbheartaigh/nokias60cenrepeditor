@@ -39,12 +39,7 @@ namespace S60.Lib.CenRep
       get { return myDoc; }
     }
 
-    public int Count()
-    {
-      return xmlList.Count;
-    }
-
-    public string Filter
+   public string Filter
     {
       get
       {
@@ -182,17 +177,6 @@ namespace S60.Lib.CenRep
       throw new NotImplementedException();
     }
 
-    public object this[int index]
-    {
-      get
-      {
-        throw new NotImplementedException();
-      }
-      set
-      {
-        throw new NotImplementedException();
-      }
-    }
 
     public XElement this[string index]
     {
@@ -216,6 +200,14 @@ namespace S60.Lib.CenRep
       get
       {
         return xmlList[index];
+      }
+    }
+
+    public int Count
+    {
+      get
+      {
+        return xmlList.Count;
       }
     }
 
@@ -249,11 +241,6 @@ namespace S60.Lib.CenRep
       throw new NotImplementedException();
     }
 
-    public int Count
-    {
-      get { throw new NotImplementedException(); }
-    }
-
     public bool IsSynchronized
     {
       get { throw new NotImplementedException(); }
@@ -266,5 +253,32 @@ namespace S60.Lib.CenRep
 
     #endregion
 
+
+    #region IList Members
+
+
+    object IList.this[int index]
+    {
+      get
+      {
+        throw new NotImplementedException();
+      }
+      set
+      {
+        throw new NotImplementedException();
+      }
+    }
+
+    #endregion
+
+    #region ICollection Members
+
+
+    int ICollection.Count
+    {
+      get { throw new NotImplementedException(); }
+    }
+
+    #endregion
   }
 }
