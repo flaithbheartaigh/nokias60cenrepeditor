@@ -25,11 +25,14 @@ namespace S60.Lib.CenRep
   }
   public sealed class XMLPlugin:IS60XMLParser
   {
+    public Func<string, List<XElement>> listFilter;
     private XElement nullElement = XElement.Parse(@"<root><ERROR></ERROR></root>");
     private XElement myDoc;
     private string strFilter = "";
     private readonly string strRootEntry;
     private List<XElement> xmlList = new List<XElement>();
+    private XElement iCurrent = null;
+    private int iPointer = -1;
 
 
     #region IS60XMLParser Members
@@ -54,7 +57,11 @@ namespace S60.Lib.CenRep
     private void RebuildList()
     {
       if (xmlList.Count > 0)
+      {
         xmlList = new List<XElement>();
+        iCurrent = null;
+        iPointer = -1;
+      }
       if (strFilter == "")
       {
         var x = from elem in myDoc.Elements() select elem;
@@ -67,6 +74,15 @@ namespace S60.Lib.CenRep
         Match maFilter = reFilter.Match(strFilter);
         if (maFilter.Success)
         {
+          var x = from elem in myDoc.Elements() select elem;
+          foreach (XElement xEl in x)
+          {
+            if (xEl.HasAttribute(maFilter.Groups["attr"].Value))
+            {
+              if (xEl.Attribute(maFilter.Groups["attr"].Value).Value == maFilter.Groups["valu"].Value)
+                xmlList.Add(xEl);
+            }
+          }
         }
       }
     }
@@ -111,73 +127,6 @@ namespace S60.Lib.CenRep
 
     #endregion
 
-    #region IEnumerator Members
-
-    public object Current
-    {
-      get { throw new NotImplementedException(); }
-    }
-
-    public bool MoveNext()
-    {
-      throw new NotImplementedException();
-    }
-
-    public void Reset()
-    {
-      throw new NotImplementedException();
-    }
-
-    #endregion
-
-    #region IList Members
-
-    public int Add(object value)
-    {
-      throw new NotImplementedException();
-    }
-
-    public void Clear()
-    {
-      throw new NotImplementedException();
-    }
-
-    public bool Contains(object value)
-    {
-      throw new NotImplementedException();
-    }
-
-    public int IndexOf(object value)
-    {
-      throw new NotImplementedException();
-    }
-
-    public void Insert(int index, object value)
-    {
-      throw new NotImplementedException();
-    }
-
-    public bool IsFixedSize
-    {
-      get { throw new NotImplementedException(); }
-    }
-
-    public bool IsReadOnly
-    {
-      get { throw new NotImplementedException(); }
-    }
-
-    public void Remove(object value)
-    {
-      throw new NotImplementedException();
-    }
-
-    public void RemoveAt(int index)
-    {
-      throw new NotImplementedException();
-    }
-
-
     public XElement this[string index]
     {
       get
@@ -203,14 +152,6 @@ namespace S60.Lib.CenRep
       }
     }
 
-    public int Count
-    {
-      get
-      {
-        return xmlList.Count;
-      }
-    }
-
     public XElement this[string attr, string value]
     {
       get
@@ -232,36 +173,80 @@ namespace S60.Lib.CenRep
       }
     }
 
-    #endregion
+    #region IEnumerable<XElement> Members
 
-    #region ICollection Members
-
-    public void CopyTo(Array array, int index)
+    IEnumerator<XElement> IEnumerable<XElement>.GetEnumerator()
     {
       throw new NotImplementedException();
     }
 
-    public bool IsSynchronized
-    {
-      get { throw new NotImplementedException(); }
-    }
+    #endregion
 
-    public object SyncRoot
+    #region IEnumerator<XElement> Members
+
+    public XElement Current
     {
-      get { throw new NotImplementedException(); }
+      get { return iCurrent; }
     }
 
     #endregion
 
+    #region IDisposable Members
 
-    #region IList Members
+    public void Dispose()
+    {
+      throw new NotImplementedException();
+    }
 
+    #endregion
 
-    object IList.this[int index]
+    #region IEnumerator Members
+
+    object IEnumerator.Current
+    {
+      get { throw new NotImplementedException(); }
+    }
+
+    public bool MoveNext()
+    {
+      if (iPointer < xmlList.Count)
+      {
+        iCurrent = xmlList[++iPointer];
+        return true;
+      }
+      return false;
+    }
+
+    public void Reset()
+    {
+      iPointer = -1;
+      iCurrent = null;
+    }
+
+    #endregion
+
+    #region IList<XElement> Members
+
+    public int IndexOf(XElement item)
+    {
+      throw new NotImplementedException();
+    }
+
+    public void Insert(int index, XElement item)
+    {
+      xmlList.Insert(index, item);
+    }
+
+    public void RemoveAt(int index)
+    {
+      xmlList.RemoveAt(index);
+    }
+
+    public XElement this[int index]
     {
       get
       {
-        throw new NotImplementedException();
+        return xmlList[index];
       }
       set
       {
@@ -271,12 +256,41 @@ namespace S60.Lib.CenRep
 
     #endregion
 
-    #region ICollection Members
+    #region ICollection<XElement> Members
 
+    public void Add(XElement item)
+    {
+      xmlList.Add(item);
+    }
 
-    int ICollection.Count
+    public void Clear()
+    {
+      xmlList.Clear();
+    }
+
+    public bool Contains(XElement item)
+    {
+      throw new NotImplementedException();
+    }
+
+    public void CopyTo(XElement[] array, int arrayIndex)
+    {
+      throw new NotImplementedException();
+    }
+
+    public int Count
+    {
+      get { return xmlList.Count; }
+    }
+
+    public bool IsReadOnly
     {
       get { throw new NotImplementedException(); }
+    }
+
+    public bool Remove(XElement item)
+    {
+      return xmlList.Remove(item);
     }
 
     #endregion
