@@ -18,6 +18,8 @@ namespace S60.CenRepEditor
     string rootProgDir = Application.StartupPath;
     XMLPlugin plugin = null;
     XMLPlugin phones = null;
+    private frmSettings frmMySettings = new frmSettings();
+
     public frmMain()
     {
       InitializeComponent();
@@ -104,6 +106,11 @@ namespace S60.CenRepEditor
       {
         cmbFirm.Items.Add(xel.Value);
       }
+    }
+
+    private void ClickSettings(object sender, EventArgs e)
+    {
+      frmMySettings.Show();
     }
   }
 }

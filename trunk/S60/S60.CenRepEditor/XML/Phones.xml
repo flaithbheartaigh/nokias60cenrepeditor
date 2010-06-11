@@ -3,6 +3,12 @@
   <PHONE type="Nokia">
     <MODEL name="5800XM">
       <FIRMWARE>50.0.005</FIRMWARE>
+      <FIRMWARE>40.0.006</FIRMWARE>
+      <FIRMWARE>40.0.005</FIRMWARE>
+      <FIRMWARE>31.0.011</FIRMWARE>
+    </MODEL>
+    <MODEL name="5530">
+      <FIRMWARE>20.0.021</FIRMWARE>
     </MODEL>
   </PHONE>
   <PHONE type="Sony"></PHONE>
