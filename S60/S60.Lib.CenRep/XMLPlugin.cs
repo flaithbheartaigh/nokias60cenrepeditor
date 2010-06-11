@@ -95,7 +95,13 @@ namespace S60.Lib.CenRep
 
     public List<XElement> SelectElementByAttribute(string selAttrib)
     {
-      throw new NotImplementedException();
+      List<XElement> xList = new List<XElement>();
+      foreach (XElement xml in xmlList)
+      {
+        if (xml.HasAttribute(selAttrib))
+          xList.Add(xml);
+      }
+      return xList;
     }
 
     #endregion
@@ -149,6 +155,10 @@ namespace S60.Lib.CenRep
       get
       {
         return xmlList[index];
+      }
+      set
+      {
+        throw new NotImplementedException();
       }
     }
 
@@ -242,17 +252,6 @@ namespace S60.Lib.CenRep
       xmlList.RemoveAt(index);
     }
 
-    public XElement this[int index]
-    {
-      get
-      {
-        return xmlList[index];
-      }
-      set
-      {
-        throw new NotImplementedException();
-      }
-    }
 
     #endregion
 
