@@ -45,6 +45,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmInternalEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmInternalEditor.Designer.cs">
+      <DependentUpon>frmInternalEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmItemPatches.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmItemPatches.Designer.cs">
+      <DependentUpon>frmItemPatches.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -65,6 +77,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmInternalEditor.resx">
+      <DependentUpon>frmInternalEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmItemPatches.resx">
+      <DependentUpon>frmItemPatches.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>
@@ -99,12 +117,66 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\Wizard1.png" />
+    <None Include="Resources\Binoculars.png" />
+    <None Include="Resources\Book3.png" />
+    <None Include="Resources\Box_Blue.png" />
+    <None Include="Resources\Box_Green.png" />
+    <None Include="Resources\Box_Grey.png" />
+    <None Include="Resources\Box_Orange.png" />
+    <None Include="Resources\Box_Red.png" />
+    <None Include="Resources\Box_Yellow.png" />
+    <None Include="Resources\Cancel__Red.png" />
+    <None Include="Resources\Checked_Shield_Green.png" />
+    <None Include="Resources\Circle_Blue.png" />
+    <None Include="Resources\Circle_Green.png" />
+    <None Include="Resources\Circle_Grey.png" />
+    <None Include="Resources\Circle_Orange.png" />
+    <None Include="Resources\Circle_Red.png" />
+    <None Include="Resources\Circle_Yellow.png" />
+    <None Include="Resources\Clock4.png" />
+    <None Include="Resources\Close_Box_Red.png" />
+    <None Include="Resources\DeleteRed.png" />
+    <None Include="Resources\DrawingPin1_Blue.png" />
+    <None Include="Resources\DrawingPin2_Blue.png" />
+    <None Include="Resources\Flag1_Green.png" />
+    <None Include="Resources\Flag2_Green.png" />
+    <None Include="Resources\FolderOpened_Yellow.png" />
+    <None Include="Resources\Globe1.png" />
+    <None Include="Resources\Help_Circle_Blue.png" />
+    <None Include="Resources\Home.png" />
+    <None Include="Resources\Hourglass.png" />
+    <None Include="Resources\Info_Box_Blue.png" />
+    <None Include="Resources\Magnifier2.png" />
+    <None Include="Resources\Minimize_Box_Blue.png" />
+    <None Include="Resources\Minus_Circle_Green.png" />
+    <None Include="Resources\PaperClip1_Black.png" />
+    <None Include="Resources\PaperClip2_Black.png" />
+    <None Include="Resources\PaperClip3_Black.png" />
+    <None Include="Resources\PaperClip4_Black.png" />
+    <None Include="Resources\Pencil3.png" />
+    <None Include="Resources\Plus__Orange.png" />
+    <None Include="Resources\Power__Yellow.png" />
+    <None Include="Resources\Ruler1.png" />
+    <None Include="Resources\Scissors.png" />
+    <None Include="Resources\Shield_Blue.png" />
+    <None Include="Resources\Shield_Green.png" />
+    <None Include="Resources\Shield_Grey.png" />
+    <None Include="Resources\Shield_Red.png" />
+    <None Include="Resources\Shield_Yellow.png" />
+    <None Include="Resources\Shutdown_Box_Red.png" />
+    <None Include="Resources\User1.png" />
+    <None Include="Resources\Warning.png" />
+    <None Include="Resources\Warning_Shield_Grey.png" />
+    <Content Include="XML\101F874D.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="XML\CenRep.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <SubType>Designer</SubType>
     </Content>
     <Content Include="XML\Phones.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
   <ItemGroup>

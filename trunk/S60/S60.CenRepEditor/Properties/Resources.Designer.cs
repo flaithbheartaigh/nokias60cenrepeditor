@@ -59,5 +59,416 @@ namespace S60.CenRepEditor.Properties {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Apply checked.
+        /// </summary>
+        internal static string Apply_checked {
+            get {
+                return ResourceManager.GetString("Apply_checked", resourceCulture);
+            }
+        }
+        
+        internal static System.Drawing.Bitmap Binoculars {
+            get {
+                object obj = ResourceManager.GetObject("Binoculars", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap Book3 {
+            get {
+                object obj = ResourceManager.GetObject("Book3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap Box_Blue {
+            get {
+                object obj = ResourceManager.GetObject("Box_Blue", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap Box_Green {
+            get {
+                object obj = ResourceManager.GetObject("Box_Green", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap Box_Grey {
+            get {
+                object obj = ResourceManager.GetObject("Box_Grey", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap Box_Orange {
+            get {
+                object obj = ResourceManager.GetObject("Box_Orange", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap Box_Red {
+            get {
+                object obj = ResourceManager.GetObject("Box_Red", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap Box_Yellow {
+            get {
+                object obj = ResourceManager.GetObject("Box_Yellow", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap Cancel__Red {
+            get {
+                object obj = ResourceManager.GetObject("Cancel__Red", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap Checked_Shield_Green {
+            get {
+                object obj = ResourceManager.GetObject("Checked_Shield_Green", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap Circle_Blue {
+            get {
+                object obj = ResourceManager.GetObject("Circle_Blue", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap Circle_Green {
+            get {
+                object obj = ResourceManager.GetObject("Circle_Green", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap Circle_Grey {
+            get {
+                object obj = ResourceManager.GetObject("Circle_Grey", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap Circle_Orange {
+            get {
+                object obj = ResourceManager.GetObject("Circle_Orange", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap Circle_Red {
+            get {
+                object obj = ResourceManager.GetObject("Circle_Red", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap Circle_Yellow {
+            get {
+                object obj = ResourceManager.GetObject("Circle_Yellow", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap Clock4 {
+            get {
+                object obj = ResourceManager.GetObject("Clock4", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap Close_Box_Red {
+            get {
+                object obj = ResourceManager.GetObject("Close_Box_Red", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap DeleteRed {
+            get {
+                object obj = ResourceManager.GetObject("DeleteRed", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap DrawingPin1_Blue {
+            get {
+                object obj = ResourceManager.GetObject("DrawingPin1_Blue", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap DrawingPin2_Blue {
+            get {
+                object obj = ResourceManager.GetObject("DrawingPin2_Blue", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The selected path dosn&apos;t contains Central Repository!!!.
+        /// </summary>
+        internal static string ERROR_NO_CENREP {
+            get {
+                return ResourceManager.GetString("ERROR_NO_CENREP", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ERROR.
+        /// </summary>
+        internal static string ERROR_TITLE {
+            get {
+                return ResourceManager.GetString("ERROR_TITLE", resourceCulture);
+            }
+        }
+        
+        internal static System.Drawing.Bitmap Flag1_Green {
+            get {
+                object obj = ResourceManager.GetObject("Flag1_Green", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap Flag2_Green {
+            get {
+                object obj = ResourceManager.GetObject("Flag2_Green", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap FolderOpened_Yellow {
+            get {
+                object obj = ResourceManager.GetObject("FolderOpened_Yellow", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap Globe1 {
+            get {
+                object obj = ResourceManager.GetObject("Globe1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap Help_Circle_Blue {
+            get {
+                object obj = ResourceManager.GetObject("Help_Circle_Blue", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap Home {
+            get {
+                object obj = ResourceManager.GetObject("Home", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap Hourglass {
+            get {
+                object obj = ResourceManager.GetObject("Hourglass", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap Info_Box_Blue {
+            get {
+                object obj = ResourceManager.GetObject("Info_Box_Blue", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap Magnifier2 {
+            get {
+                object obj = ResourceManager.GetObject("Magnifier2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Make patch from.
+        /// </summary>
+        internal static string Make_patch_from {
+            get {
+                return ResourceManager.GetString("Make_patch_from", resourceCulture);
+            }
+        }
+        
+        internal static System.Drawing.Bitmap Minimize_Box_Blue {
+            get {
+                object obj = ResourceManager.GetObject("Minimize_Box_Blue", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap Minus_Circle_Green {
+            get {
+                object obj = ResourceManager.GetObject("Minus_Circle_Green", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap PaperClip1_Black {
+            get {
+                object obj = ResourceManager.GetObject("PaperClip1_Black", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap PaperClip2_Black {
+            get {
+                object obj = ResourceManager.GetObject("PaperClip2_Black", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap PaperClip3_Black {
+            get {
+                object obj = ResourceManager.GetObject("PaperClip3_Black", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap PaperClip4_Black {
+            get {
+                object obj = ResourceManager.GetObject("PaperClip4_Black", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap Pencil3 {
+            get {
+                object obj = ResourceManager.GetObject("Pencil3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap Plus__Orange {
+            get {
+                object obj = ResourceManager.GetObject("Plus__Orange", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap Power__Yellow {
+            get {
+                object obj = ResourceManager.GetObject("Power__Yellow", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Remove selected.
+        /// </summary>
+        internal static string Remove_selected {
+            get {
+                return ResourceManager.GetString("Remove_selected", resourceCulture);
+            }
+        }
+        
+        internal static System.Drawing.Bitmap Ruler1 {
+            get {
+                object obj = ResourceManager.GetObject("Ruler1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Saving file failed..
+        /// </summary>
+        internal static string SAVE_FAILED {
+            get {
+                return ResourceManager.GetString("SAVE_FAILED", resourceCulture);
+            }
+        }
+        
+        internal static System.Drawing.Bitmap Scissors {
+            get {
+                object obj = ResourceManager.GetObject("Scissors", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap Shield_Blue {
+            get {
+                object obj = ResourceManager.GetObject("Shield_Blue", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap Shield_Green {
+            get {
+                object obj = ResourceManager.GetObject("Shield_Green", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap Shield_Grey {
+            get {
+                object obj = ResourceManager.GetObject("Shield_Grey", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap Shield_Red {
+            get {
+                object obj = ResourceManager.GetObject("Shield_Red", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap Shield_Yellow {
+            get {
+                object obj = ResourceManager.GetObject("Shield_Yellow", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap Shutdown_Box_Red {
+            get {
+                object obj = ResourceManager.GetObject("Shutdown_Box_Red", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap User1 {
+            get {
+                object obj = ResourceManager.GetObject("User1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap Warning {
+            get {
+                object obj = ResourceManager.GetObject("Warning", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap Warning_Shield_Grey {
+            get {
+                object obj = ResourceManager.GetObject("Warning_Shield_Grey", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap Wizard1 {
+            get {
+                object obj = ResourceManager.GetObject("Wizard1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

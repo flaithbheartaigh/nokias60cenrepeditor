@@ -1,46 +1,42 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
 using System.Xml.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.IO;
+using S60.CenRepEditor.Properties;
 using S60.Lib.CenRep;
 
 namespace S60.CenRepEditor
 {
   public partial class frmMain : Form
   {
-    string CenRepDir = "";
-    string rootProgDir = Application.StartupPath;
-    XMLPlugin plugin = null;
-    XMLPlugin phones = null;
-    private frmSettings frmMySettings = new frmSettings();
+    string _cenRepDir = "";
+    readonly string _rootProgDir = Application.StartupPath;
+// ReSharper disable InconsistentNaming
+    public XMLPlugin plugin;
+// ReSharper restore InconsistentNaming
+    readonly XMLPlugin _phones;
+// ReSharper disable FieldCanBeMadeReadOnly.Local
+    private frmSettings _frmMySettings = new frmSettings();
+// ReSharper restore FieldCanBeMadeReadOnly.Local
+    private frmInternalEditor _frmMyEditor;
 
     public frmMain()
     {
       InitializeComponent();
-      if (File.Exists(rootProgDir+@"\XML\CenRep.xml"))
+      if (File.Exists(_rootProgDir+@"\XML\CenRep.xml"))
       {
-        plugin = new XMLPlugin(rootProgDir + @"\XML\CenRep.xml", "CENREP");
-        phones = new XMLPlugin(rootProgDir + @"\XML\Phones.xml", "PHONES");
+        plugin = new XMLPlugin(_rootProgDir + @"\XML\CenRep.xml", "CENREP");
+        _phones = new XMLPlugin(_rootProgDir + @"\XML\Phones.xml", "PHONES");
         plugin.Filter = "";
-        phones.Filter = "";
+        _phones.Filter = "";
         cmbName.Items.Clear();
-        for (int i = 0; i < phones.Count; i++)
+        for (int i = 0; i < _phones.Count; i++)
         {
-          cmbName.Items.Add(phones[i].Attribute("type").Value);
+          cmbName.Items.Add(_phones[i].Attribute("type").Value);
         }
       }
-    }
-
-    private void button1_Click(object sender, EventArgs e)
-    {
-      frmProperties prop = new frmProperties();
-      prop.Show();
     }
 
     private void OpenRofsDir(object sender, EventArgs e)
@@ -49,26 +45,26 @@ namespace S60.CenRepEditor
         return;
       if (!Directory.Exists(dlgOpenRofs.SelectedPath+@"\private\10202be9"))
       {
-        MessageBox.Show("The selected path dosn't contains Central Repository!!!","ERROR");
+        MessageBox.Show(Resources.ERROR_NO_CENREP,Resources.ERROR_TITLE);
         return;
       }
-      CenRepDir = dlgOpenRofs.SelectedPath + @"\private\10202be9";
-      DirectoryInfo dirInfo = new DirectoryInfo(CenRepDir);
+      _cenRepDir = dlgOpenRofs.SelectedPath + @"\private\10202be9";
+      DirectoryInfo dirInfo = new DirectoryInfo(_cenRepDir);
       foreach (FileInfo f in dirInfo.GetFiles("*.txt"))
       {
-        ListViewItem tlCenRep = new ListViewItem(new string[] {
+        ListViewItem tlCenRep = new ListViewItem(new[] {
           f.Name,
-          f.Length > 2040 ? (f.Length/2048).ToString()+" Kb" : f.Length.ToString()+" b",
+          f.Length > 2040 ? (f.Length/2048)+" Kb" : f.Length+" b",
           f.CreationTime.ToLongDateString(),
           "No","No","No","Not available"
         });
         if (null != plugin)
         {
-          string strFN = Path.GetFileNameWithoutExtension(f.Name);
-          XElement x = plugin[strFN];
+          string strFn = Path.GetFileNameWithoutExtension(f.Name);
+          XElement x = plugin[strFn];
           if ( x.HasAttribute("description"))
           {
-            tlCenRep.SubItems[6].Text = x.Attribute("description").Value;
+            if (x != null) tlCenRep.SubItems[6].Text = x.Attribute("description").Value;
           }
         }
         lstCenRep.Items.Add(tlCenRep);
@@ -92,7 +88,7 @@ namespace S60.CenRepEditor
       cmbModel.Text = "";
       cmbFirm.Items.Clear();
       cmbFirm.Text = "";
-      foreach (XElement xel in phones[cmbName.SelectedIndex].Elements())
+      foreach (XElement xel in _phones[cmbName.SelectedIndex].Elements().Where(xel => xel != null))
       {
         cmbModel.Items.Add(xel.Attribute("name").Value);
       }
@@ -102,7 +98,7 @@ namespace S60.CenRepEditor
     {
       cmbFirm.Items.Clear();
       cmbFirm.Text = "";
-      foreach (XElement xel in phones[cmbName.SelectedIndex].Element("MODEL").Elements())
+      foreach (XElement xel in _phones[cmbName.SelectedIndex].Element("MODEL").Elements())
       {
         cmbFirm.Items.Add(xel.Value);
       }
@@ -110,7 +106,21 @@ namespace S60.CenRepEditor
 
     private void ClickSettings(object sender, EventArgs e)
     {
-      frmMySettings.Show();
+      _frmMySettings.Show();
+    }
+
+    private void ClickEditWithBuiltIn( object sender, EventArgs e )
+    {
+      string crFileName = string.Format("{0}\\{1}",_cenRepDir, lstCenRep.SelectedItems[0].SubItems[0].Text);
+      StringBuilder sb = new StringBuilder(cmbName.Text==""?"*":cmbName.Text).
+        Append(";").
+        Append(cmbModel.Text==""?"*":cmbModel.Text).
+        Append(";").
+        Append(cmbFirm.Text==""?"*":cmbFirm.Text);
+      _frmMyEditor = new frmInternalEditor(crFileName, sb.ToString(),plugin);
+      _frmMyEditor.Show();
+//      _frmMyEditor.Dispose();
+//      _frmMyEditor = null;
     }
   }
 }
