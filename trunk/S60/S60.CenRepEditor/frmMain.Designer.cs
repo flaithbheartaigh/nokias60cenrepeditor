@@ -106,7 +106,7 @@
           // openToolStripMenuItem
           // 
           this.openToolStripMenuItem.Name = "openToolStripMenuItem";
-          this.openToolStripMenuItem.Size = new System.Drawing.Size( 123, 22 );
+          this.openToolStripMenuItem.Size = new System.Drawing.Size( 152, 22 );
           this.openToolStripMenuItem.Text = "Open";
           this.openToolStripMenuItem.Click += new System.EventHandler( this.OpenRofsDir );
           // 
@@ -116,7 +116,7 @@
             this.saveFileToolStripMenuItem,
             this.saveAllChangesToolStripMenuItem} );
           this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-          this.saveToolStripMenuItem.Size = new System.Drawing.Size( 123, 22 );
+          this.saveToolStripMenuItem.Size = new System.Drawing.Size( 152, 22 );
           this.saveToolStripMenuItem.Text = "Save ";
           // 
           // saveFileToolStripMenuItem
@@ -137,25 +137,25 @@
             this.oneFileToolStripMenuItem,
             this.allChangesToolStripMenuItem} );
           this.restoreToolStripMenuItem.Name = "restoreToolStripMenuItem";
-          this.restoreToolStripMenuItem.Size = new System.Drawing.Size( 123, 22 );
+          this.restoreToolStripMenuItem.Size = new System.Drawing.Size( 152, 22 );
           this.restoreToolStripMenuItem.Text = "Restore";
           // 
           // oneFileToolStripMenuItem
           // 
           this.oneFileToolStripMenuItem.Name = "oneFileToolStripMenuItem";
-          this.oneFileToolStripMenuItem.Size = new System.Drawing.Size( 141, 22 );
+          this.oneFileToolStripMenuItem.Size = new System.Drawing.Size( 152, 22 );
           this.oneFileToolStripMenuItem.Text = "One file";
           // 
           // allChangesToolStripMenuItem
           // 
           this.allChangesToolStripMenuItem.Name = "allChangesToolStripMenuItem";
-          this.allChangesToolStripMenuItem.Size = new System.Drawing.Size( 141, 22 );
+          this.allChangesToolStripMenuItem.Size = new System.Drawing.Size( 152, 22 );
           this.allChangesToolStripMenuItem.Text = "All Changes";
           // 
           // exitToolStripMenuItem
           // 
           this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-          this.exitToolStripMenuItem.Size = new System.Drawing.Size( 123, 22 );
+          this.exitToolStripMenuItem.Size = new System.Drawing.Size( 152, 22 );
           this.exitToolStripMenuItem.Text = "Exit";
           this.exitToolStripMenuItem.Click += new System.EventHandler( this.ExitClick );
           // 
@@ -171,7 +171,7 @@
           // mnuSettings
           // 
           this.mnuSettings.Name = "mnuSettings";
-          this.mnuSettings.Size = new System.Drawing.Size( 124, 22 );
+          this.mnuSettings.Size = new System.Drawing.Size( 152, 22 );
           this.mnuSettings.Text = "Settings";
           this.mnuSettings.Click += new System.EventHandler( this.ClickSettings );
           // 
@@ -182,7 +182,7 @@
             this.applyPatchToolStripMenuItem,
             this.batchPatchingToolStripMenuItem} );
           this.patcherToolStripMenuItem.Name = "patcherToolStripMenuItem";
-          this.patcherToolStripMenuItem.Size = new System.Drawing.Size( 124, 22 );
+          this.patcherToolStripMenuItem.Size = new System.Drawing.Size( 152, 22 );
           this.patcherToolStripMenuItem.Text = "Patcher";
           // 
           // makePatchToolStripMenuItem

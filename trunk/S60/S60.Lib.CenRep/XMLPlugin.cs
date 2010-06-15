@@ -1,10 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Xml.Linq;
 using System.Collections;
-using System.Linq.Expressions;
 using System.Text.RegularExpressions;
 
 namespace S60.Lib.CenRep
@@ -14,7 +12,12 @@ namespace S60.Lib.CenRep
     public static bool HasAttribute(this XElement xel, string attr)
     {
       try {
+// ReSharper disable PossibleNullReferenceException
+#pragma warning disable 168
         string x = xel.Attribute(attr).Value;
+        if (x == null) throw new NotImplementedException();
+#pragma warning restore 168
+// ReSharper restore PossibleNullReferenceException
         return true;
       }
       catch
@@ -25,63 +28,66 @@ namespace S60.Lib.CenRep
   }
   public sealed class XMLPlugin:IS60XMLParser
   {
-    public Func<string, List<XElement>> listFilter;
-    private XElement nullElement = XElement.Parse(@"<root><ERROR></ERROR></root>");
-    private XElement myDoc;
-    private string strFilter = "";
-    private readonly string strRootEntry;
-    private List<XElement> xmlList = new List<XElement>();
-    private XElement iCurrent = null;
-    private int iPointer = -1;
+    public string StrRootEntry
+    {
+      get { return _strRootEntry; }
+    }
+
+    public Func<string, List<XElement>> ListFilter { get; set;}
+    private readonly XElement _nullElement = XElement.Parse(@"<root><ERROR></ERROR></root>");
+    private readonly XElement _myDoc;
+    private string _strFilter = "";
+    private readonly string _strRootEntry;
+    private List<XElement> _xmlList = new List<XElement>();
+    private XElement _iCurrent;
+    private int _iPointer = -1;
+    private readonly string _fileName;
 
 
     #region IS60XMLParser Members
 
     public XElement rootDoc
     {
-      get { return myDoc; }
+      get { return _myDoc; }
     }
 
    public string Filter
     {
       get
       {
-        return strFilter;
+        return _strFilter;
       }
       set
       {
-        strFilter=value;
+        _strFilter=value;
         RebuildList();
       }
     }
     private void RebuildList()
     {
-      if (xmlList.Count > 0)
+      if (_xmlList.Count > 0)
       {
-        xmlList = new List<XElement>();
-        iCurrent = null;
-        iPointer = -1;
+        _xmlList = new List<XElement>();
+        _iCurrent = null;
+        _iPointer = -1;
       }
-      if (strFilter == "")
+      if (_strFilter == "")
       {
-        var x = from elem in myDoc.Elements() select elem;
+        var x = from elem in _myDoc.Elements() select elem;
         foreach(XElement xEl in x)
-          xmlList.Add(xEl);
+          _xmlList.Add(xEl);
       }
       else
       {
         Regex reFilter = new Regex(@"^(?<attr>[^=]+)=(?<valu>.+)$");
-        Match maFilter = reFilter.Match(strFilter);
+        Match maFilter = reFilter.Match(_strFilter);
         if (maFilter.Success)
         {
-          var x = from elem in myDoc.Elements() select elem;
-          foreach (XElement xEl in x)
+          var x = from elem in _myDoc.Elements() select elem;
+          foreach ( XElement xEl in
+            x.Where( xEl => xEl.HasAttribute( maFilter.Groups["attr"].Value ) ).Where( xEl => xEl.Attribute( maFilter.Groups["attr"].Value ).Value == maFilter.Groups["valu"].Value ) )
           {
-            if (xEl.HasAttribute(maFilter.Groups["attr"].Value))
-            {
-              if (xEl.Attribute(maFilter.Groups["attr"].Value).Value == maFilter.Groups["valu"].Value)
-                xmlList.Add(xEl);
-            }
+            _xmlList.Add(xEl);
           }
         }
       }
@@ -89,19 +95,27 @@ namespace S60.Lib.CenRep
 
     public XMLPlugin(string filename,string myRoot)
     {
-      myDoc = XElement.Load(filename);
-      strRootEntry = myRoot;
+      _iCurrent = null;
+      _myDoc = XElement.Load(filename);
+      _fileName = filename;
+      _strRootEntry = myRoot;
+      ListFilter = defaultFilter;
+    }
+
+    public void Save()
+    {
+      _myDoc.RemoveNodes();
+      foreach ( XElement element in _xmlList )
+      {
+        _myDoc.Add( element );
+      }
+      _myDoc.Save( _fileName );
+      RebuildList();
     }
 
     public List<XElement> SelectElementByAttribute(string selAttrib)
     {
-      List<XElement> xList = new List<XElement>();
-      foreach (XElement xml in xmlList)
-      {
-        if (xml.HasAttribute(selAttrib))
-          xList.Add(xml);
-      }
-      return xList;
+      return _xmlList.Where(xml => xml.HasAttribute(selAttrib)).ToList();
     }
 
     #endregion
@@ -110,7 +124,7 @@ namespace S60.Lib.CenRep
 
     public IEnumerator GetEnumerator()
     {
-      throw new NotImplementedException();
+      return _xmlList.GetEnumerator();
     }
 
     #endregion
@@ -137,28 +151,38 @@ namespace S60.Lib.CenRep
     {
       get
       {
-        XElement x = nullElement;
-        foreach (XElement xel in xmlList)
+        XElement x = _nullElement;
+        foreach (XElement xel in _xmlList)
         {
-          if (xel.Attribute("name").Value == index)
-          {
-            x = xel;
-            break;
-          }
+          if (xel != null)
+            if (xel.Attribute("name").Value == index)
+            {
+              x = xel;
+              break;
+            }
         }
         return x;
       }
+    }
+
+// ReSharper disable InconsistentNaming
+    private static List<XElement> defaultFilter(string defFilter)
+// ReSharper restore InconsistentNaming
+    {
+      List<XElement> newList = new List<XElement>();
+
+      return newList;
     }
 
     public XElement this[int index]
     {
       get
       {
-        return xmlList[index];
+        return _xmlList[index];
       }
       set
       {
-        throw new NotImplementedException();
+        _xmlList[index] = value;
       }
     }
 
@@ -166,18 +190,21 @@ namespace S60.Lib.CenRep
     {
       get
       {
-        XElement x = nullElement;
-        foreach (XElement xel in xmlList)
+        XElement x = _nullElement;
+        foreach (XElement xel in _xmlList)
         {
           try
           {
-            if (xel.Attribute(attr).Value == value)
-            {
-              x = xel;
-              break;
-            }
+            if (xel != null)
+              if (xel.Attribute(attr).Value == value)
+              {
+                x = xel;
+                break;
+              }
           }
+// ReSharper disable EmptyGeneralCatchClause
           catch { }
+// ReSharper restore EmptyGeneralCatchClause
         }
         return x;
       }
@@ -187,7 +214,7 @@ namespace S60.Lib.CenRep
 
     IEnumerator<XElement> IEnumerable<XElement>.GetEnumerator()
     {
-      throw new NotImplementedException();
+      return _xmlList.GetEnumerator();
     }
 
     #endregion
@@ -196,7 +223,7 @@ namespace S60.Lib.CenRep
 
     public XElement Current
     {
-      get { return iCurrent; }
+      get { return _iCurrent; }
     }
 
     #endregion
@@ -219,9 +246,9 @@ namespace S60.Lib.CenRep
 
     public bool MoveNext()
     {
-      if (iPointer < xmlList.Count)
+      if (_iPointer < _xmlList.Count)
       {
-        iCurrent = xmlList[++iPointer];
+        _iCurrent = _xmlList[++_iPointer];
         return true;
       }
       return false;
@@ -229,8 +256,8 @@ namespace S60.Lib.CenRep
 
     public void Reset()
     {
-      iPointer = -1;
-      iCurrent = null;
+      _iPointer = -1;
+      _iCurrent = null;
     }
 
     #endregion
@@ -239,17 +266,17 @@ namespace S60.Lib.CenRep
 
     public int IndexOf(XElement item)
     {
-      throw new NotImplementedException();
+      return _xmlList.IndexOf( item );
     }
 
     public void Insert(int index, XElement item)
     {
-      xmlList.Insert(index, item);
+      _xmlList.Insert(index, item);
     }
 
     public void RemoveAt(int index)
     {
-      xmlList.RemoveAt(index);
+      _xmlList.RemoveAt(index);
     }
 
 
@@ -259,37 +286,38 @@ namespace S60.Lib.CenRep
 
     public void Add(XElement item)
     {
-      xmlList.Add(item);
+      if ( !_xmlList.Contains( item ) )
+        _xmlList.Add( item );
     }
 
     public void Clear()
     {
-      xmlList.Clear();
+      _xmlList.Clear();
     }
 
     public bool Contains(XElement item)
     {
-      throw new NotImplementedException();
+      return _xmlList.Contains( item );
     }
 
     public void CopyTo(XElement[] array, int arrayIndex)
     {
-      throw new NotImplementedException();
+      _xmlList.CopyTo( array,arrayIndex );
     }
 
     public int Count
     {
-      get { return xmlList.Count; }
+      get { return _xmlList.Count; }
     }
 
     public bool IsReadOnly
     {
-      get { throw new NotImplementedException(); }
+      get { return false; }
     }
 
     public bool Remove(XElement item)
     {
-      return xmlList.Remove(item);
+      return _xmlList.Remove(item);
     }
 
     #endregion
