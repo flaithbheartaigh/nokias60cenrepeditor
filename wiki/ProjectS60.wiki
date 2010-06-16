@@ -28,7 +28,7 @@ Our biggest plugin currently is the Central Repository Editor (or CenRepEdit for
 || CenRep Library || Unknown || Owner: jandras ||
 
 
-|| CenRep Editor || Unknown || Owner: jandras ||
+|| CenRep Editor || 75% || Owner: jandras ||
 || CenRep Library || Unknown || Owner: jandras ||
 || CenRep Plugin || Unknown || Owner: jandras ||
 || CenRep UI || On hold || Owner: fonix232 & jandras ||
