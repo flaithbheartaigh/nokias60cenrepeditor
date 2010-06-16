@@ -81,13 +81,14 @@ namespace S60.Lib.CenRep
       {
         Regex reFilter = new Regex(@"^(?<attr>[^=]+)=(?<valu>.+)$");
         Match maFilter = reFilter.Match(_strFilter);
-        if (maFilter.Success)
+        if ( maFilter.Success )
         {
           var x = from elem in _myDoc.Elements() select elem;
           foreach ( XElement xEl in
-            x.Where( xEl => xEl.HasAttribute( maFilter.Groups["attr"].Value ) ).Where( xEl => xEl.Attribute( maFilter.Groups["attr"].Value ).Value == maFilter.Groups["valu"].Value ) )
+            x.Where( xEl => xEl.HasAttribute( maFilter.Groups["attr"].Value ) ).Where( xEl => xEl.Attribute( maFilter.Groups["attr"].Value ).Value == maFilter.Groups["valu"].Value )
+            )
           {
-            _xmlList.Add(xEl);
+            _xmlList.Add( xEl );
           }
         }
       }
@@ -152,14 +153,10 @@ namespace S60.Lib.CenRep
       get
       {
         XElement x = _nullElement;
-        foreach (XElement xel in _xmlList)
+        foreach ( XElement xel in _xmlList.Where( xel => xel != null ).Where( xel => xel.Attribute( "name" ).Value == index ) )
         {
-          if (xel != null)
-            if (xel.Attribute("name").Value == index)
-            {
-              x = xel;
-              break;
-            }
+          x = xel;
+          break;
         }
         return x;
       }

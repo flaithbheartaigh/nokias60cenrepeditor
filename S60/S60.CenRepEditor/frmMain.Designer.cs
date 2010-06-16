@@ -66,7 +66,7 @@
           this.backupToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
           this.restoreToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
           this.dlgOpenRofs = new System.Windows.Forms.FolderBrowserDialog();
-          this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+          this.ofdOpenCenrep = new System.Windows.Forms.OpenFileDialog();
           this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
           this.label1 = new System.Windows.Forms.Label();
           this.cmbName = new System.Windows.Forms.ComboBox();
@@ -106,7 +106,7 @@
           // openToolStripMenuItem
           // 
           this.openToolStripMenuItem.Name = "openToolStripMenuItem";
-          this.openToolStripMenuItem.Size = new System.Drawing.Size( 152, 22 );
+          this.openToolStripMenuItem.Size = new System.Drawing.Size( 123, 22 );
           this.openToolStripMenuItem.Text = "Open";
           this.openToolStripMenuItem.Click += new System.EventHandler( this.OpenRofsDir );
           // 
@@ -116,7 +116,7 @@
             this.saveFileToolStripMenuItem,
             this.saveAllChangesToolStripMenuItem} );
           this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-          this.saveToolStripMenuItem.Size = new System.Drawing.Size( 152, 22 );
+          this.saveToolStripMenuItem.Size = new System.Drawing.Size( 123, 22 );
           this.saveToolStripMenuItem.Text = "Save ";
           // 
           // saveFileToolStripMenuItem
@@ -137,25 +137,25 @@
             this.oneFileToolStripMenuItem,
             this.allChangesToolStripMenuItem} );
           this.restoreToolStripMenuItem.Name = "restoreToolStripMenuItem";
-          this.restoreToolStripMenuItem.Size = new System.Drawing.Size( 152, 22 );
+          this.restoreToolStripMenuItem.Size = new System.Drawing.Size( 123, 22 );
           this.restoreToolStripMenuItem.Text = "Restore";
           // 
           // oneFileToolStripMenuItem
           // 
           this.oneFileToolStripMenuItem.Name = "oneFileToolStripMenuItem";
-          this.oneFileToolStripMenuItem.Size = new System.Drawing.Size( 152, 22 );
+          this.oneFileToolStripMenuItem.Size = new System.Drawing.Size( 141, 22 );
           this.oneFileToolStripMenuItem.Text = "One file";
           // 
           // allChangesToolStripMenuItem
           // 
           this.allChangesToolStripMenuItem.Name = "allChangesToolStripMenuItem";
-          this.allChangesToolStripMenuItem.Size = new System.Drawing.Size( 152, 22 );
+          this.allChangesToolStripMenuItem.Size = new System.Drawing.Size( 141, 22 );
           this.allChangesToolStripMenuItem.Text = "All Changes";
           // 
           // exitToolStripMenuItem
           // 
           this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-          this.exitToolStripMenuItem.Size = new System.Drawing.Size( 152, 22 );
+          this.exitToolStripMenuItem.Size = new System.Drawing.Size( 123, 22 );
           this.exitToolStripMenuItem.Text = "Exit";
           this.exitToolStripMenuItem.Click += new System.EventHandler( this.ExitClick );
           // 
@@ -190,6 +190,7 @@
           this.makePatchToolStripMenuItem.Name = "makePatchToolStripMenuItem";
           this.makePatchToolStripMenuItem.Size = new System.Drawing.Size( 156, 22 );
           this.makePatchToolStripMenuItem.Text = "Make patch";
+          this.makePatchToolStripMenuItem.Click += new System.EventHandler( this.OnMakePatch );
           // 
           // applyPatchToolStripMenuItem
           // 
@@ -352,9 +353,9 @@
           this.dlgOpenRofs.RootFolder = System.Environment.SpecialFolder.MyComputer;
           this.dlgOpenRofs.ShowNewFolderButton = false;
           // 
-          // openFileDialog1
+          // ofdOpenCenrep
           // 
-          this.openFileDialog1.FileName = "openFileDialog1";
+          this.ofdOpenCenrep.FileName = "openFileDialog1";
           // 
           // tableLayoutPanel1
           // 
@@ -467,7 +468,7 @@
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ListView lstCenRep;
         private System.Windows.Forms.FolderBrowserDialog dlgOpenRofs;
-        private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.OpenFileDialog ofdOpenCenrep;
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.ColumnHeader columnHeader3;
