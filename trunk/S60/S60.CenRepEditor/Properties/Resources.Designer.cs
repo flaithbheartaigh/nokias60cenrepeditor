@@ -255,6 +255,42 @@ namespace S60.CenRepEditor.Properties {
             }
         }
         
+        /// <summary>
+        ///   Looks up a localized string similar to Description.
+        /// </summary>
+        internal static string frmInternalEditor_InitializeComponent_Description {
+            get {
+                return ResourceManager.GetString("frmInternalEditor_InitializeComponent_Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Details of selected.
+        /// </summary>
+        internal static string frmInternalEditor_InitializeComponent_Details_of_selected {
+            get {
+                return ResourceManager.GetString("frmInternalEditor_InitializeComponent_Details_of_selected", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Restore to default.
+        /// </summary>
+        internal static string frmInternalEditor_InitializeComponent_Restore_to_default {
+            get {
+                return ResourceManager.GetString("frmInternalEditor_InitializeComponent_Restore_to_default", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Version.
+        /// </summary>
+        internal static string frmInternalEditor_InitializeComponent_Version {
+            get {
+                return ResourceManager.GetString("frmInternalEditor_InitializeComponent_Version", resourceCulture);
+            }
+        }
+        
         internal static System.Drawing.Bitmap Globe1 {
             get {
                 object obj = ResourceManager.GetObject("Globe1", resourceCulture);

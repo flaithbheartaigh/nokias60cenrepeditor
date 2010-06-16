@@ -289,4 +289,16 @@
 	<data name="Apply_checked">
 		<value xml:space="preserve">Apply checked</value>
 	</data>
+	<data name="frmInternalEditor_InitializeComponent_Description">
+		<value xml:space="preserve">Description</value>
+	</data>
+	<data name="frmInternalEditor_InitializeComponent_Version">
+		<value xml:space="preserve">Version</value>
+	</data>
+	<data name="frmInternalEditor_InitializeComponent_Details_of_selected">
+		<value xml:space="preserve">Details of selected</value>
+	</data>
+	<data name="frmInternalEditor_InitializeComponent_Restore_to_default">
+		<value xml:space="preserve">Restore to default</value>
+	</data>
 </root>

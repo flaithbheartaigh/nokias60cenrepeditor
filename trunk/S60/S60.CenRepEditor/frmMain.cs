@@ -9,6 +9,8 @@ using S60.Lib.CenRep;
 
 namespace S60.CenRepEditor
 {
+  using System.Collections.Generic;
+
   public partial class frmMain : Form
   {
     string _cenRepDir = "";
@@ -21,22 +23,32 @@ namespace S60.CenRepEditor
     private frmSettings _frmMySettings = new frmSettings();
 // ReSharper restore FieldCanBeMadeReadOnly.Local
     private frmInternalEditor _frmMyEditor;
+    private ImageList _patchIcons;
 
     public frmMain()
     {
       InitializeComponent();
-      if (File.Exists(_rootProgDir+@"\XML\CenRep.xml"))
+      _patchIcons = new ImageList();
+      _patchIcons.Images.Add( Resources.Checked_Shield_Green );
+      _patchIcons.Images.Add( Resources.Shield_Red );
+      if ( !File.Exists( _rootProgDir + @"\XML\CenRep.xml" ) ) return;
+      plugin = new XMLPlugin(_rootProgDir + @"\XML\CenRep.xml", "CENREP");
+      _phones = new XMLPlugin(_rootProgDir + @"\XML\Phones.xml", "PHONES");
+      plugin.Filter = "";
+      _phones.Filter = "";
+      cmbName.Items.Clear();
+      for (int i = 0; i < _phones.Count; i++)
       {
-        plugin = new XMLPlugin(_rootProgDir + @"\XML\CenRep.xml", "CENREP");
-        _phones = new XMLPlugin(_rootProgDir + @"\XML\Phones.xml", "PHONES");
-        plugin.Filter = "";
-        _phones.Filter = "";
-        cmbName.Items.Clear();
-        for (int i = 0; i < _phones.Count; i++)
-        {
-          cmbName.Items.Add(_phones[i].Attribute("type").Value);
-        }
+        cmbName.Items.Add(_phones[i].Attribute("type").Value);
       }
+      lstCenRep.LargeImageList = _patchIcons;
+      lstCenRep.SmallImageList = _patchIcons;
+    }
+
+    private void BatchPatch()
+    {
+      List<string > requirePatch = ( from ListViewItem lvItem in lstCenRep.Items where lvItem.SubItems[4].Text == "YES" select lvItem.SubItems[0].Text ).ToList();
+
     }
 
     private void OpenRofsDir(object sender, EventArgs e)
@@ -57,7 +69,7 @@ namespace S60.CenRepEditor
           f.Length > 2040 ? (f.Length/2048)+" Kb" : f.Length+" b",
           f.CreationTime.ToLongDateString(),
           "No","No","No","Not available"
-        });
+        },1);
         if (null != plugin)
         {
           string strFn = Path.GetFileNameWithoutExtension(f.Name);
@@ -65,6 +77,12 @@ namespace S60.CenRepEditor
           if ( x.HasAttribute("description"))
           {
             if (x != null) tlCenRep.SubItems[6].Text = x.Attribute("description").Value;
+            if ( x != null )
+              if (x.Elements( "PATCH" ).Count()>0 )
+              {
+                tlCenRep.SubItems[4].Text = "YES";
+                tlCenRep.ImageIndex = 0;
+              }
           }
         }
         lstCenRep.Items.Add(tlCenRep);
@@ -121,6 +139,19 @@ namespace S60.CenRepEditor
       _frmMyEditor.Show();
 //      _frmMyEditor.Dispose();
 //      _frmMyEditor = null;
+    }
+
+    private void OnMakePatch( object sender, EventArgs e )
+    {
+      string fn = _cenRepDir+@"\" +lstCenRep.SelectedItems[0].SubItems[0].Text+".txt";
+      TCenRepParser cenRep = new TCenRepParser( fn );
+      ofdOpenCenrep.DefaultExt = "txt";
+      ofdOpenCenrep.FileName = lstCenRep.SelectedItems[0].SubItems[0].Text + ".txt";
+      ofdOpenCenrep.InitialDirectory=@"C:\";
+      if ( ofdOpenCenrep.ShowDialog() != DialogResult.OK ) return;
+      XElement xPatch = cenRep.CreatePatch( ofdOpenCenrep.SafeFileName );
+      plugin.Add( xPatch );
+      plugin.Save();
     }
   }
 }
