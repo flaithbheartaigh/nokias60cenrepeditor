@@ -301,4 +301,7 @@
 	<data name="frmInternalEditor_InitializeComponent_Restore_to_default">
 		<value xml:space="preserve">Restore to default</value>
 	</data>
+	<data name="_YES">
+		<value xml:space="preserve">YES</value>
+	</data>
 </root>

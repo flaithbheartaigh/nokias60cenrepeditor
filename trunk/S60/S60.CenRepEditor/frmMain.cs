@@ -11,7 +11,9 @@ namespace S60.CenRepEditor
 {
   using System.Collections.Generic;
 
+// ReSharper disable InconsistentNaming
   public partial class frmMain : Form
+// ReSharper restore InconsistentNaming
   {
     string _cenRepDir = "";
     readonly string _rootProgDir = Application.StartupPath;
@@ -23,7 +25,7 @@ namespace S60.CenRepEditor
     private frmSettings _frmMySettings = new frmSettings();
 // ReSharper restore FieldCanBeMadeReadOnly.Local
     private frmInternalEditor _frmMyEditor;
-    private ImageList _patchIcons;
+    private readonly ImageList _patchIcons;
 
     public frmMain()
     {
@@ -39,16 +41,28 @@ namespace S60.CenRepEditor
       cmbName.Items.Clear();
       for (int i = 0; i < _phones.Count; i++)
       {
+// ReSharper disable PossibleNullReferenceException
         cmbName.Items.Add(_phones[i].Attribute("type").Value);
+// ReSharper restore PossibleNullReferenceException
       }
       lstCenRep.LargeImageList = _patchIcons;
       lstCenRep.SmallImageList = _patchIcons;
     }
 
+// ReSharper disable UnusedMember.Local
     private void BatchPatch()
+// ReSharper restore UnusedMember.Local
     {
-      List<string > requirePatch = ( from ListViewItem lvItem in lstCenRep.Items where lvItem.SubItems[4].Text == "YES" select lvItem.SubItems[0].Text ).ToList();
-
+      List<string > requirePatch = ( from ListViewItem lvItem in lstCenRep.Items where lvItem.SubItems[4].Text == Resources._YES select lvItem.SubItems[0].Text ).ToList();
+      foreach(string s in requirePatch)
+      {
+        TCenRepParser cParser = new TCenRepParser(_cenRepDir+@"\"+s+@".txt");
+        foreach (XElement xActPatch in plugin[s].Elements("PATCH"))
+        {
+          cParser.ApplyPatch(xActPatch);
+        }
+        cParser.Save();
+      }
     }
 
     private void OpenRofsDir(object sender, EventArgs e)
@@ -76,11 +90,13 @@ namespace S60.CenRepEditor
           XElement x = plugin[strFn];
           if ( x.HasAttribute("description"))
           {
+// ReSharper disable PossibleNullReferenceException
             if (x != null) tlCenRep.SubItems[6].Text = x.Attribute("description").Value;
+// ReSharper restore PossibleNullReferenceException
             if ( x != null )
               if (x.Elements( "PATCH" ).Count()>0 )
               {
-                tlCenRep.SubItems[4].Text = "YES";
+                tlCenRep.SubItems[4].Text = Resources._YES;
                 tlCenRep.ImageIndex = 0;
               }
           }
@@ -106,9 +122,12 @@ namespace S60.CenRepEditor
       cmbModel.Text = "";
       cmbFirm.Items.Clear();
       cmbFirm.Text = "";
-      foreach (XElement xel in _phones[cmbName.SelectedIndex].Elements().Where(xel => xel != null))
+      foreach (XElement xel in
+        _phones[cmbName.SelectedIndex].Elements().Where(xel => xel != null).Where(xel => xel != null))
       {
-        cmbModel.Items.Add(xel.Attribute("name").Value);
+// ReSharper disable PossibleNullReferenceException
+        if (xel != null) cmbModel.Items.Add(xel.Attribute("name").Value);
+// ReSharper restore PossibleNullReferenceException
       }
     }
 
@@ -116,7 +135,9 @@ namespace S60.CenRepEditor
     {
       cmbFirm.Items.Clear();
       cmbFirm.Text = "";
+// ReSharper disable PossibleNullReferenceException
       foreach (XElement xel in _phones[cmbName.SelectedIndex].Element("MODEL").Elements())
+// ReSharper restore PossibleNullReferenceException
       {
         cmbFirm.Items.Add(xel.Value);
       }
@@ -137,8 +158,6 @@ namespace S60.CenRepEditor
         Append(cmbFirm.Text==""?"*":cmbFirm.Text);
       _frmMyEditor = new frmInternalEditor(crFileName, sb.ToString(),plugin);
       _frmMyEditor.Show();
-//      _frmMyEditor.Dispose();
-//      _frmMyEditor = null;
     }
 
     private void OnMakePatch( object sender, EventArgs e )
@@ -152,6 +171,30 @@ namespace S60.CenRepEditor
       XElement xPatch = cenRep.CreatePatch( ofdOpenCenrep.SafeFileName );
       plugin.Add( xPatch );
       plugin.Save();
+    }
+
+    private void OnApplyPatch(object sender, EventArgs e)
+    {
+      if (lstCenRep.SelectedItems.Count>1)
+      {
+        if (MessageBox.Show("Patching all selected items?","Multiple secetion",MessageBoxButtons.YesNo) == System.Windows.Forms.DialogResult.No)
+        {
+          MessageBox.Show("Patching aborted...");
+          return;
+        }
+      }
+      foreach (ListViewItem lvItem in lstCenRep.SelectedItems)
+      {
+        string fn = _cenRepDir + @"\" + lvItem.SubItems[0].Text + ".txt";
+        //File.Copy(fn,); //Backup
+        lvItem.SubItems[3].Text = "YES";
+        TCenRepParser cenrPatcher = new TCenRepParser(fn);
+        if (lvItem.SubItems[4].Text=="YES")
+        {
+          cenrPatcher.ApplyPatch(plugin[lvItem.SubItems[0].Text]);
+
+        }
+      }
     }
   }
 }

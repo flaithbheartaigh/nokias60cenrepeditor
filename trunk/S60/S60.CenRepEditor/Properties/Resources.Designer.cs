@@ -61,6 +61,15 @@ namespace S60.CenRepEditor.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to YES.
+        /// </summary>
+        internal static string _YES {
+            get {
+                return ResourceManager.GetString("_YES", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Apply checked.
         /// </summary>
         internal static string Apply_checked {
