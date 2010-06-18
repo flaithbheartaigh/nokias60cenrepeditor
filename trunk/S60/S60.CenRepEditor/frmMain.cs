@@ -38,6 +38,7 @@ namespace S60.CenRepEditor
 // ReSharper restore FieldCanBeMadeReadOnly.Local
     private frmInternalEditor _frmMyEditor;
     private readonly ImageList _patchIcons;
+    private int _sortCol;
 
     public frmMain()
     {
@@ -125,6 +126,11 @@ namespace S60.CenRepEditor
 
     private void ChangeOrder( object sender, ColumnClickEventArgs e )
     {
+      if (e.Column == _sortCol)
+      {
+        lstCenRep.Sorting = lstCenRep.Sorting == SortOrder.Ascending ? SortOrder.Descending : SortOrder.Ascending;
+      }
+      _sortCol = e.Column;
       lstCenRep.ListViewItemSorter = new ListViewItemComparer( e.Column );
     }
 
@@ -207,6 +213,27 @@ namespace S60.CenRepEditor
           cenrPatcher.ApplyPatch(plugin[lvItem.SubItems[0].Text]);
 
         }
+      }
+    }
+
+    private void OnBtnFilterClick(object sender, EventArgs e)
+    {
+      foreach (ListViewItem lvItem in lstCenRep.Items)
+      {
+        XElement xItem = plugin[Path.GetFileNameWithoutExtension(lvItem.SubItems[0].Text)];
+        lvItem.SubItems[4].Text = Resources._NO;
+#pragma warning disable 168
+        foreach (XElement xPatch in
+#pragma warning restore 168
+          xItem.Elements("PATCH").Where(
+// ReSharper disable PossibleNullReferenceException
+            xPatch => (xPatch.Attribute("phone").Value == cmbName.Text) || (cmbName.Text == @"*")).Where(
+              xPatch => (xPatch.Attribute("type").Value == cmbModel.Text) || (cmbModel.Text == @"*")).Where(
+                xPatch => (xPatch.Attribute("firmware").Value == cmbFirm.Text) || (cmbFirm.Text == @"*")))
+        {
+          lvItem.SubItems[4].Text = Resources._YES;
+        }
+// ReSharper restore PossibleNullReferenceException
       }
     }
   }
