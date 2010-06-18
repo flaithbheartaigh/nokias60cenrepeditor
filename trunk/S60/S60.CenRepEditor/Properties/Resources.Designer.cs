@@ -300,6 +300,33 @@ namespace S60.CenRepEditor.Properties {
             }
         }
         
+        /// <summary>
+        ///   Looks up a localized string similar to Multiple selection.
+        /// </summary>
+        internal static string frmMain_OnApplyPatch_Multiple_secetion {
+            get {
+                return ResourceManager.GetString("frmMain_OnApplyPatch_Multiple_secetion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Patching aborted....
+        /// </summary>
+        internal static string frmMain_OnApplyPatch_Patching_aborted___ {
+            get {
+                return ResourceManager.GetString("frmMain_OnApplyPatch_Patching_aborted___", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Patching all selected items?.
+        /// </summary>
+        internal static string frmMain_OnApplyPatch_Patching_all_selected_items_ {
+            get {
+                return ResourceManager.GetString("frmMain_OnApplyPatch_Patching_all_selected_items_", resourceCulture);
+            }
+        }
+        
         internal static System.Drawing.Bitmap Globe1 {
             get {
                 object obj = ResourceManager.GetObject("Globe1", resourceCulture);

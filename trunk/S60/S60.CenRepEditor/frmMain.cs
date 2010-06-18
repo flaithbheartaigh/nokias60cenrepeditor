@@ -1,4 +1,15 @@
-﻿using System;
+﻿/********************************************************************
+  created:	2010/06/17
+  created:	17:6:2010   22:15
+  filename: 	F:\Projects\S60\S60\S60.CenRepEditor\frmMain.cs
+  file path:	F:\Projects\S60\S60\S60.CenRepEditor
+  file base:	frmMain
+  file ext:	cs
+  author:		Jakab András
+  
+  purpose:	
+*********************************************************************/
+using System;
 using System.Linq;
 using System.Xml.Linq;
 using System.Text;
@@ -9,6 +20,7 @@ using S60.Lib.CenRep;
 
 namespace S60.CenRepEditor
 {
+  using System.Collections;
   using System.Collections.Generic;
 
 // ReSharper disable InconsistentNaming
@@ -113,7 +125,7 @@ namespace S60.CenRepEditor
 
     private void ChangeOrder( object sender, ColumnClickEventArgs e )
     {
-
+      lstCenRep.ListViewItemSorter = new ListViewItemComparer( e.Column );
     }
 
     private void ChangeModell(object sender, EventArgs e)
@@ -162,6 +174,7 @@ namespace S60.CenRepEditor
 
     private void OnMakePatch( object sender, EventArgs e )
     {
+      if ( lstCenRep.SelectedItems.Count < 1 ) return;
       string fn = _cenRepDir+@"\" +lstCenRep.SelectedItems[0].SubItems[0].Text+".txt";
       TCenRepParser cenRep = new TCenRepParser( fn );
       ofdOpenCenrep.DefaultExt = "txt";
@@ -177,9 +190,9 @@ namespace S60.CenRepEditor
     {
       if (lstCenRep.SelectedItems.Count>1)
       {
-        if (MessageBox.Show("Patching all selected items?","Multiple secetion",MessageBoxButtons.YesNo) == System.Windows.Forms.DialogResult.No)
+        if (MessageBox.Show(Resources.frmMain_OnApplyPatch_Patching_all_selected_items_,Resources.frmMain_OnApplyPatch_Multiple_secetion,MessageBoxButtons.YesNo) == DialogResult.No)
         {
-          MessageBox.Show("Patching aborted...");
+          MessageBox.Show(Resources.frmMain_OnApplyPatch_Patching_aborted___);
           return;
         }
       }
@@ -187,14 +200,38 @@ namespace S60.CenRepEditor
       {
         string fn = _cenRepDir + @"\" + lvItem.SubItems[0].Text + ".txt";
         //File.Copy(fn,); //Backup
-        lvItem.SubItems[3].Text = "YES";
+        lvItem.SubItems[3].Text = Resources._YES;
         TCenRepParser cenrPatcher = new TCenRepParser(fn);
-        if (lvItem.SubItems[4].Text=="YES")
+        if (lvItem.SubItems[4].Text==Resources._YES)
         {
           cenrPatcher.ApplyPatch(plugin[lvItem.SubItems[0].Text]);
 
         }
       }
     }
+  }
+
+  public class ListViewItemComparer : IComparer
+  {
+    private readonly int _col;
+
+    public ListViewItemComparer(int column)
+    {
+      _col = column;
+    }
+
+    public ListViewItemComparer()
+    {
+      _col = 0;
+    }
+
+    #region IComparer Members
+
+    public int Compare( object x, object y )
+    {
+      return String.Compare( ( ( ListViewItem ) x ).SubItems[_col].Text, ( ( ListViewItem ) y ).SubItems[_col].Text );
+    }
+
+    #endregion
   }
 }
