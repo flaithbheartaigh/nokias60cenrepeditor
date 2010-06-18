@@ -304,4 +304,13 @@
 	<data name="_YES">
 		<value xml:space="preserve">YES</value>
 	</data>
+	<data name="frmMain_OnApplyPatch_Patching_all_selected_items_">
+		<value xml:space="preserve">Patching all selected items?</value>
+	</data>
+	<data name="frmMain_OnApplyPatch_Multiple_secetion">
+		<value xml:space="preserve">Multiple selection</value>
+	</data>
+	<data name="frmMain_OnApplyPatch_Patching_aborted___">
+		<value xml:space="preserve">Patching aborted...</value>
+	</data>
 </root>
