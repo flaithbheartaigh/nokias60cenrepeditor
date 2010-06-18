@@ -74,6 +74,7 @@
           this.cmbModel = new System.Windows.Forms.ComboBox();
           this.label3 = new System.Windows.Forms.Label();
           this.cmbFirm = new System.Windows.Forms.ComboBox();
+          this.btnFilter = new System.Windows.Forms.Button();
           this.menuStrip1.SuspendLayout();
           this.mnuRightClick.SuspendLayout();
           this.tableLayoutPanel1.SuspendLayout();
@@ -88,7 +89,7 @@
           this.menuStrip1.Location = new System.Drawing.Point(0, 0);
           this.menuStrip1.Name = "menuStrip1";
           this.menuStrip1.Padding = new System.Windows.Forms.Padding(7, 3, 0, 3);
-          this.menuStrip1.Size = new System.Drawing.Size(944, 25);
+          this.menuStrip1.Size = new System.Drawing.Size(944, 24);
           this.menuStrip1.TabIndex = 0;
           this.menuStrip1.Text = "menuStrip1";
           // 
@@ -100,13 +101,13 @@
             this.restoreToolStripMenuItem,
             this.exitToolStripMenuItem});
           this.fájlToolStripMenuItem.Name = "fájlToolStripMenuItem";
-          this.fájlToolStripMenuItem.Size = new System.Drawing.Size(35, 19);
+          this.fájlToolStripMenuItem.Size = new System.Drawing.Size(35, 18);
           this.fájlToolStripMenuItem.Text = "File";
           // 
           // openToolStripMenuItem
           // 
           this.openToolStripMenuItem.Name = "openToolStripMenuItem";
-          this.openToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+          this.openToolStripMenuItem.Size = new System.Drawing.Size(123, 22);
           this.openToolStripMenuItem.Text = "Open";
           this.openToolStripMenuItem.Click += new System.EventHandler(this.OpenRofsDir);
           // 
@@ -116,7 +117,7 @@
             this.saveFileToolStripMenuItem,
             this.saveAllChangesToolStripMenuItem});
           this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-          this.saveToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+          this.saveToolStripMenuItem.Size = new System.Drawing.Size(123, 22);
           this.saveToolStripMenuItem.Text = "Save ";
           // 
           // saveFileToolStripMenuItem
@@ -137,25 +138,25 @@
             this.oneFileToolStripMenuItem,
             this.allChangesToolStripMenuItem});
           this.restoreToolStripMenuItem.Name = "restoreToolStripMenuItem";
-          this.restoreToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+          this.restoreToolStripMenuItem.Size = new System.Drawing.Size(123, 22);
           this.restoreToolStripMenuItem.Text = "Restore";
           // 
           // oneFileToolStripMenuItem
           // 
           this.oneFileToolStripMenuItem.Name = "oneFileToolStripMenuItem";
-          this.oneFileToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+          this.oneFileToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
           this.oneFileToolStripMenuItem.Text = "One file";
           // 
           // allChangesToolStripMenuItem
           // 
           this.allChangesToolStripMenuItem.Name = "allChangesToolStripMenuItem";
-          this.allChangesToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+          this.allChangesToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
           this.allChangesToolStripMenuItem.Text = "All Changes";
           // 
           // exitToolStripMenuItem
           // 
           this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-          this.exitToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+          this.exitToolStripMenuItem.Size = new System.Drawing.Size(123, 22);
           this.exitToolStripMenuItem.Text = "Exit";
           this.exitToolStripMenuItem.Click += new System.EventHandler(this.ExitClick);
           // 
@@ -165,13 +166,13 @@
             this.mnuSettings,
             this.patcherToolStripMenuItem});
           this.toolsToolStripMenuItem.Name = "toolsToolStripMenuItem";
-          this.toolsToolStripMenuItem.Size = new System.Drawing.Size(44, 19);
+          this.toolsToolStripMenuItem.Size = new System.Drawing.Size(44, 18);
           this.toolsToolStripMenuItem.Text = "Tools";
           // 
           // mnuSettings
           // 
           this.mnuSettings.Name = "mnuSettings";
-          this.mnuSettings.Size = new System.Drawing.Size(152, 22);
+          this.mnuSettings.Size = new System.Drawing.Size(124, 22);
           this.mnuSettings.Text = "Settings";
           this.mnuSettings.Click += new System.EventHandler(this.ClickSettings);
           // 
@@ -182,7 +183,7 @@
             this.mnuApplyPatch,
             this.mnuBatchPatching});
           this.patcherToolStripMenuItem.Name = "patcherToolStripMenuItem";
-          this.patcherToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+          this.patcherToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
           this.patcherToolStripMenuItem.Text = "Patcher";
           // 
           // mnuMakePatch
@@ -212,7 +213,7 @@
             this.helpToolStripMenuItem1,
             this.donateToolStripMenuItem});
           this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-          this.helpToolStripMenuItem.Size = new System.Drawing.Size(40, 19);
+          this.helpToolStripMenuItem.Size = new System.Drawing.Size(40, 18);
           this.helpToolStripMenuItem.Text = "Help";
           // 
           // aboutToolStripMenuItem
@@ -360,19 +361,21 @@
           // 
           // tableLayoutPanel1
           // 
-          this.tableLayoutPanel1.ColumnCount = 6;
+          this.tableLayoutPanel1.ColumnCount = 7;
           this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 60F));
           this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 130F));
           this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 61F));
           this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 129F));
           this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 74F));
-          this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 466F));
+          this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 196F));
+          this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 290F));
           this.tableLayoutPanel1.Controls.Add(this.label1, 0, 0);
           this.tableLayoutPanel1.Controls.Add(this.cmbName, 1, 0);
           this.tableLayoutPanel1.Controls.Add(this.label2, 2, 0);
           this.tableLayoutPanel1.Controls.Add(this.cmbModel, 3, 0);
           this.tableLayoutPanel1.Controls.Add(this.label3, 4, 0);
           this.tableLayoutPanel1.Controls.Add(this.cmbFirm, 5, 0);
+          this.tableLayoutPanel1.Controls.Add(this.btnFilter, 6, 0);
           this.tableLayoutPanel1.Location = new System.Drawing.Point(12, 27);
           this.tableLayoutPanel1.Name = "tableLayoutPanel1";
           this.tableLayoutPanel1.RowCount = 1;
@@ -437,6 +440,16 @@
           this.cmbFirm.Name = "cmbFirm";
           this.cmbFirm.Size = new System.Drawing.Size(185, 25);
           this.cmbFirm.TabIndex = 5;
+          // 
+          // btnFilter
+          // 
+          this.btnFilter.Location = new System.Drawing.Point(653, 3);
+          this.btnFilter.Name = "btnFilter";
+          this.btnFilter.Size = new System.Drawing.Size(75, 23);
+          this.btnFilter.TabIndex = 6;
+          this.btnFilter.Text = "Filter";
+          this.btnFilter.UseVisualStyleBackColor = true;
+          this.btnFilter.Click += new System.EventHandler(this.OnBtnFilterClick);
           // 
           // frmMain
           // 
@@ -510,6 +523,7 @@
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem4;
         private System.Windows.Forms.ToolStripMenuItem backupToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem restoreToolStripMenuItem1;
+        private System.Windows.Forms.Button btnFilter;
 
     }
 }

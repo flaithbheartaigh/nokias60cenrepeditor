@@ -313,4 +313,7 @@
 	<data name="frmMain_OnApplyPatch_Patching_aborted___">
 		<value xml:space="preserve">Patching aborted...</value>
 	</data>
+	<data name="_NO">
+		<value xml:space="preserve">NO</value>
+	</data>
 </root>
