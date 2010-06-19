@@ -2,20 +2,32 @@
 <SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="S60.CenRepEditor.Properties" GeneratedClassName="Settings">
   <Profiles />
   <Settings>
-    <Setting Name="ModderName" Type="System.String" Scope="Application">
+    <Setting Name="ModderName" Type="System.String" Scope="User">
       <Value Profile="(Default)">JAndras</Value>
     </Setting>
-    <Setting Name="ModderEmail" Type="System.String" Scope="Application">
+    <Setting Name="ModderEmail" Type="System.String" Scope="User">
       <Value Profile="(Default)">jakabandras210@gmail.com</Value>
     </Setting>
-    <Setting Name="ModderHome" Type="System.String" Scope="Application">
+    <Setting Name="ModderHome" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
-    <Setting Name="AutoBackup" Type="System.Boolean" Scope="Application">
+    <Setting Name="AutoBackup" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
     </Setting>
-    <Setting Name="UseGZip" Type="System.Boolean" Scope="Application">
+    <Setting Name="UseGZip" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="BackupPath" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="PatchDirectory" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="AttachDirectory" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="DefRofsDir" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
     </Setting>
   </Settings>
 </SettingsFile>

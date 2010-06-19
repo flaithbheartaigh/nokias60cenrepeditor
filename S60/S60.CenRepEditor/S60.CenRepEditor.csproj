@@ -46,7 +46,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CenRepEditorSettings.cs" />
     <Compile Include="frmInternalEditor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -171,12 +170,16 @@
     <None Include="Resources\User1.png" />
     <None Include="Resources\Warning.png" />
     <None Include="Resources\Warning_Shield_Grey.png" />
+    <None Include="Resources\technical_256.ico" />
     <Content Include="XML\101F874D.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="XML\CenRep.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <SubType>Designer</SubType>
+    </Content>
+    <Content Include="XML\10275102.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="XML\Phones.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

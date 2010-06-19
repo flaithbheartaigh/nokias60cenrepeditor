@@ -117,203 +117,215 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="ERROR_TITLE" xml:space="preserve">
-    <value>ERROR</value>
-  </data>
-  <data name="ERROR_NO_CENREP" xml:space="preserve">
-    <value>The selected path dosn't contains Central Repository!!!</value>
-  </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="Wizard1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Wizard1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Binoculars" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Binoculars.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Book3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Book3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Box_Blue" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Box_Blue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Box_Green" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Box_Green.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Box_Grey" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Box_Grey.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Box_Orange" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Box_Orange.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Box_Red" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Box_Red.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Box_Yellow" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Box_Yellow.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Cancel__Red" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Cancel__Red.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Checked_Shield_Green" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Checked_Shield_Green.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Circle_Blue" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Circle_Blue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Circle_Green" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Circle_Green.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Circle_Grey" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Circle_Grey.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Circle_Orange" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Circle_Orange.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Circle_Red" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Circle_Red.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Circle_Yellow" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Circle_Yellow.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Clock4" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Clock4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Close_Box_Red" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Close_Box_Red.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="DeleteRed" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\DeleteRed.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="DrawingPin1_Blue" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\DrawingPin1_Blue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="DrawingPin2_Blue" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\DrawingPin2_Blue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Flag1_Green" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Flag1_Green.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Flag2_Green" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Flag2_Green.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="FolderOpened_Yellow" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\FolderOpened_Yellow.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Globe1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Globe1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Help_Circle_Blue" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Help_Circle_Blue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Home" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Home.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Hourglass" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Hourglass.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Info_Box_Blue" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Info_Box_Blue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Magnifier2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Magnifier2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Minimize_Box_Blue" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Minimize_Box_Blue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Minus_Circle_Green" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Minus_Circle_Green.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="PaperClip1_Black" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\PaperClip1_Black.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="PaperClip2_Black" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\PaperClip2_Black.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="PaperClip3_Black" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\PaperClip3_Black.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Ruler1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Ruler1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="PaperClip4_Black" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\PaperClip4_Black.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Pencil3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Pencil3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Box_Orange" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Box_Orange.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Plus__Orange" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Plus__Orange.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Power__Yellow" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Power__Yellow.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Ruler1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Ruler1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Scissors" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Scissors.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Shield_Blue" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Shield_Blue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Shield_Green" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Shield_Green.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Globe1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Globe1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Shield_Grey" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Shield_Grey.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Shield_Red" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Shield_Red.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="PaperClip2_Black" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PaperClip2_Black.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Shield_Yellow" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Shield_Yellow.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Book3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Book3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Shutdown_Box_Red" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Shutdown_Box_Red.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="frmInternalEditor_InitializeComponent_Version" xml:space="preserve">
+    <value>Version</value>
   </data>
-  <data name="User1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\User1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Hourglass" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Hourglass.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="frmInternalEditor_InitializeComponent_Description" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="Binoculars" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Binoculars.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ERROR_TITLE" xml:space="preserve">
+    <value>ERROR</value>
+  </data>
+  <data name="Remove_selected" xml:space="preserve">
+    <value>Remove selected</value>
+  </data>
+  <data name="_YES" xml:space="preserve">
+    <value>YES</value>
   </data>
   <data name="Warning" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Warning.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Box_Grey" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Box_Grey.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="frmMain_OnApplyPatch_Multiple_secetion" xml:space="preserve">
+    <value>Multiple selection</value>
+  </data>
+  <data name="ERROR_NO_CENREP" xml:space="preserve">
+    <value>The selected path dosn't contains Central Repository!!!</value>
+  </data>
+  <data name="Box_Red" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Box_Red.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Shutdown_Box_Red" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Shutdown_Box_Red.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Pencil3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Pencil3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Box_Yellow" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Box_Yellow.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Close_Box_Red" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Close_Box_Red.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Flag2_Green" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Flag2_Green.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="frmInternalEditor_frmInternalEditor_This_file_not_discovered_" xml:space="preserve">
+    <value>This file not discovered.</value>
+  </data>
+  <data name="Circle_Red" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Circle_Red.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="frmMain_OnApplyPatch_Patching_aborted___" xml:space="preserve">
+    <value>Patching aborted...</value>
+  </data>
+  <data name="Shield_Red" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Shield_Red.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Home" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Home.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Warning_Shield_Grey" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Warning_Shield_Grey.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-	<data name="SAVE_FAILED">
-		<value xml:space="preserve">Saving file failed.</value>
-	</data>
-	<data name="Make_patch_from">
-		<value xml:space="preserve">Make patch from</value>
-	</data>
-	<data name="Remove_selected">
-		<value xml:space="preserve">Remove selected</value>
-	</data>
-	<data name="Apply_checked">
-		<value xml:space="preserve">Apply checked</value>
-	</data>
-	<data name="frmInternalEditor_InitializeComponent_Description">
-		<value xml:space="preserve">Description</value>
-	</data>
-	<data name="frmInternalEditor_InitializeComponent_Version">
-		<value xml:space="preserve">Version</value>
-	</data>
-	<data name="frmInternalEditor_InitializeComponent_Details_of_selected">
-		<value xml:space="preserve">Details of selected</value>
-	</data>
-	<data name="frmInternalEditor_InitializeComponent_Restore_to_default">
-		<value xml:space="preserve">Restore to default</value>
-	</data>
-	<data name="_YES">
-		<value xml:space="preserve">YES</value>
-	</data>
-	<data name="frmMain_OnApplyPatch_Patching_all_selected_items_">
-		<value xml:space="preserve">Patching all selected items?</value>
-	</data>
-	<data name="frmMain_OnApplyPatch_Multiple_secetion">
-		<value xml:space="preserve">Multiple selection</value>
-	</data>
-	<data name="frmMain_OnApplyPatch_Patching_aborted___">
-		<value xml:space="preserve">Patching aborted...</value>
-	</data>
-	<data name="_NO">
-		<value xml:space="preserve">NO</value>
-	</data>
+  <data name="Circle_Green" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Circle_Green.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Minus_Circle_Green" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Minus_Circle_Green.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="FolderOpened_Yellow" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\FolderOpened_Yellow.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Cancel__Red" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Cancel__Red.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="frmInternalEditor_frmInternalEditor_Not_discovered" xml:space="preserve">
+    <value>Not discovered</value>
+  </data>
+  <data name="Help_Circle_Blue" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Help_Circle_Blue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Power__Yellow" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Power__Yellow.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="frmMain_OnApplyPatch_Patching_all_selected_items_" xml:space="preserve">
+    <value>Patching all selected items?</value>
+  </data>
+  <data name="Shield_Green" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Shield_Green.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DeleteRed" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DeleteRed.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Box_Green" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Box_Green.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="User1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\User1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Clock4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Clock4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Shield_Blue" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Shield_Blue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Circle_Orange" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Circle_Orange.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Box_Blue" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Box_Blue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="frmInternalEditor_frmInternalEditor_WARNING" xml:space="preserve">
+    <value>WARNING</value>
+  </data>
+  <data name="DrawingPin2_Blue" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DrawingPin2_Blue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_NO" xml:space="preserve">
+    <value>NO</value>
+  </data>
+  <data name="Circle_Grey" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Circle_Grey.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Magnifier2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Magnifier2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Circle_Blue" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Circle_Blue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PaperClip3_Black" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PaperClip3_Black.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="frmInternalEditor_InitializeComponent_Details_of_selected" xml:space="preserve">
+    <value>Details of selected</value>
+  </data>
+  <data name="Make_patch_from" xml:space="preserve">
+    <value>Make patch from</value>
+  </data>
+  <data name="Circle_Yellow" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Circle_Yellow.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Minimize_Box_Blue" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Minimize_Box_Blue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Wizard1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Wizard1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Scissors" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Scissors.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Checked_Shield_Green" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Checked_Shield_Green.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DrawingPin1_Blue" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DrawingPin1_Blue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Shield_Yellow" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Shield_Yellow.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SAVE_FAILED" xml:space="preserve">
+    <value>Saving file failed.</value>
+  </data>
+  <data name="Flag1_Green" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Flag1_Green.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Apply_checked" xml:space="preserve">
+    <value>Apply checked</value>
+  </data>
+  <data name="frmInternalEditor_InitializeComponent_Restore_to_default" xml:space="preserve">
+    <value>Restore to default</value>
+  </data>
+  <data name="Plus__Orange" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Plus__Orange.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PaperClip1_Black" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PaperClip1_Black.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Info_Box_Blue" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Info_Box_Blue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="technical_256" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\technical_256.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>
