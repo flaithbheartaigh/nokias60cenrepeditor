@@ -41,16 +41,16 @@
       this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
       this.groupBox1 = new System.Windows.Forms.GroupBox();
       this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
+      this.checkBox4 = new System.Windows.Forms.CheckBox();
       this.groupBox2 = new System.Windows.Forms.GroupBox();
       this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
       this.chkAutoBackup = new System.Windows.Forms.CheckBox();
-      this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
-      this.btnApply = new System.Windows.Forms.Button();
-      this.btnCancel = new System.Windows.Forms.Button();
       this.checkBox2 = new System.Windows.Forms.CheckBox();
       this.checkBox1 = new System.Windows.Forms.CheckBox();
       this.checkBox3 = new System.Windows.Forms.CheckBox();
-      this.checkBox4 = new System.Windows.Forms.CheckBox();
+      this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+      this.btnApply = new System.Windows.Forms.Button();
+      this.btnCancel = new System.Windows.Forms.Button();
       this.tabControl1.SuspendLayout();
       this.tpModder.SuspendLayout();
       this.tableLayoutPanel1.SuspendLayout();
@@ -175,7 +175,7 @@
       this.tableLayoutPanel2.Name = "tableLayoutPanel2";
       this.tableLayoutPanel2.RowCount = 1;
       this.tableLayoutPanel2.RowStyles.Add( new System.Windows.Forms.RowStyle( System.Windows.Forms.SizeType.Percent, 100F ) );
-      this.tableLayoutPanel2.RowStyles.Add( new System.Windows.Forms.RowStyle( System.Windows.Forms.SizeType.Absolute, 20F ) );
+      this.tableLayoutPanel2.RowStyles.Add( new System.Windows.Forms.RowStyle( System.Windows.Forms.SizeType.Absolute, 180F ) );
       this.tableLayoutPanel2.Size = new System.Drawing.Size( 377, 180 );
       this.tableLayoutPanel2.TabIndex = 0;
       // 
@@ -207,6 +207,16 @@
       this.tableLayoutPanel4.RowStyles.Add( new System.Windows.Forms.RowStyle( System.Windows.Forms.SizeType.Absolute, 20F ) );
       this.tableLayoutPanel4.Size = new System.Drawing.Size( 170, 144 );
       this.tableLayoutPanel4.TabIndex = 0;
+      // 
+      // checkBox4
+      // 
+      this.checkBox4.AutoSize = true;
+      this.checkBox4.Location = new System.Drawing.Point( 4, 4 );
+      this.checkBox4.Name = "checkBox4";
+      this.checkBox4.Size = new System.Drawing.Size( 162, 17 );
+      this.checkBox4.TabIndex = 0;
+      this.checkBox4.Text = "Auto apply modder settings";
+      this.checkBox4.UseVisualStyleBackColor = true;
       // 
       // groupBox2
       // 
@@ -252,41 +262,6 @@
       this.chkAutoBackup.Text = "Auto backup";
       this.chkAutoBackup.UseVisualStyleBackColor = true;
       // 
-      // tableLayoutPanel3
-      // 
-      this.tableLayoutPanel3.ColumnCount = 2;
-      this.tableLayoutPanel3.ColumnStyles.Add( new System.Windows.Forms.ColumnStyle( System.Windows.Forms.SizeType.Percent, 50F ) );
-      this.tableLayoutPanel3.ColumnStyles.Add( new System.Windows.Forms.ColumnStyle( System.Windows.Forms.SizeType.Percent, 50F ) );
-      this.tableLayoutPanel3.Controls.Add( this.btnApply, 0, 0 );
-      this.tableLayoutPanel3.Controls.Add( this.btnCancel, 1, 0 );
-      this.tableLayoutPanel3.Location = new System.Drawing.Point( 4, 227 );
-      this.tableLayoutPanel3.Name = "tableLayoutPanel3";
-      this.tableLayoutPanel3.RowCount = 1;
-      this.tableLayoutPanel3.RowStyles.Add( new System.Windows.Forms.RowStyle( System.Windows.Forms.SizeType.Percent, 100F ) );
-      this.tableLayoutPanel3.RowStyles.Add( new System.Windows.Forms.RowStyle( System.Windows.Forms.SizeType.Absolute, 20F ) );
-      this.tableLayoutPanel3.Size = new System.Drawing.Size( 374, 37 );
-      this.tableLayoutPanel3.TabIndex = 1;
-      // 
-      // btnApply
-      // 
-      this.btnApply.Location = new System.Drawing.Point( 3, 3 );
-      this.btnApply.Name = "btnApply";
-      this.btnApply.Size = new System.Drawing.Size( 181, 31 );
-      this.btnApply.TabIndex = 0;
-      this.btnApply.Text = "&Apply && Save";
-      this.btnApply.UseVisualStyleBackColor = true;
-      this.btnApply.Click += new System.EventHandler( this.SaveSettings );
-      // 
-      // btnCancel
-      // 
-      this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-      this.btnCancel.Location = new System.Drawing.Point( 190, 3 );
-      this.btnCancel.Name = "btnCancel";
-      this.btnCancel.Size = new System.Drawing.Size( 181, 31 );
-      this.btnCancel.TabIndex = 0;
-      this.btnCancel.Text = "Cancel";
-      this.btnCancel.UseVisualStyleBackColor = true;
-      // 
       // checkBox2
       // 
       this.checkBox2.AutoSize = true;
@@ -317,15 +292,40 @@
       this.checkBox3.Text = "checkBox3";
       this.checkBox3.UseVisualStyleBackColor = true;
       // 
-      // checkBox4
+      // tableLayoutPanel3
       // 
-      this.checkBox4.AutoSize = true;
-      this.checkBox4.Location = new System.Drawing.Point( 4, 4 );
-      this.checkBox4.Name = "checkBox4";
-      this.checkBox4.Size = new System.Drawing.Size( 162, 17 );
-      this.checkBox4.TabIndex = 0;
-      this.checkBox4.Text = "Auto apply modder settings";
-      this.checkBox4.UseVisualStyleBackColor = true;
+      this.tableLayoutPanel3.ColumnCount = 2;
+      this.tableLayoutPanel3.ColumnStyles.Add( new System.Windows.Forms.ColumnStyle( System.Windows.Forms.SizeType.Percent, 50F ) );
+      this.tableLayoutPanel3.ColumnStyles.Add( new System.Windows.Forms.ColumnStyle( System.Windows.Forms.SizeType.Percent, 50F ) );
+      this.tableLayoutPanel3.Controls.Add( this.btnApply, 0, 0 );
+      this.tableLayoutPanel3.Controls.Add( this.btnCancel, 1, 0 );
+      this.tableLayoutPanel3.Location = new System.Drawing.Point( 4, 227 );
+      this.tableLayoutPanel3.Name = "tableLayoutPanel3";
+      this.tableLayoutPanel3.RowCount = 1;
+      this.tableLayoutPanel3.RowStyles.Add( new System.Windows.Forms.RowStyle( System.Windows.Forms.SizeType.Percent, 100F ) );
+      this.tableLayoutPanel3.RowStyles.Add( new System.Windows.Forms.RowStyle( System.Windows.Forms.SizeType.Absolute, 37F ) );
+      this.tableLayoutPanel3.Size = new System.Drawing.Size( 374, 37 );
+      this.tableLayoutPanel3.TabIndex = 1;
+      // 
+      // btnApply
+      // 
+      this.btnApply.Location = new System.Drawing.Point( 3, 3 );
+      this.btnApply.Name = "btnApply";
+      this.btnApply.Size = new System.Drawing.Size( 181, 31 );
+      this.btnApply.TabIndex = 0;
+      this.btnApply.Text = "&Apply && Save";
+      this.btnApply.UseVisualStyleBackColor = true;
+      this.btnApply.Click += new System.EventHandler( this.SaveSettings );
+      // 
+      // btnCancel
+      // 
+      this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+      this.btnCancel.Location = new System.Drawing.Point( 190, 3 );
+      this.btnCancel.Name = "btnCancel";
+      this.btnCancel.Size = new System.Drawing.Size( 181, 31 );
+      this.btnCancel.TabIndex = 0;
+      this.btnCancel.Text = "Cancel";
+      this.btnCancel.UseVisualStyleBackColor = true;
       // 
       // frmSettings
       // 

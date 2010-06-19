@@ -34,15 +34,19 @@ namespace S60.CenRepEditor
 // ReSharper restore InconsistentNaming
     readonly XMLPlugin _phones;
 // ReSharper disable FieldCanBeMadeReadOnly.Local
-    private frmSettings _frmMySettings = new frmSettings();
+    private frmSettings _frmMySettings;
 // ReSharper restore FieldCanBeMadeReadOnly.Local
     private frmInternalEditor _frmMyEditor;
     private readonly ImageList _patchIcons;
     private int _sortCol;
+// ReSharper disable FieldCanBeMadeReadOnly.Local
+    private Settings _mySettings = new Settings();
+// ReSharper restore FieldCanBeMadeReadOnly.Local
 
     public frmMain()
     {
       InitializeComponent();
+      _frmMySettings = new frmSettings( _mySettings );
       _patchIcons = new ImageList();
       _patchIcons.Images.Add( Resources.Checked_Shield_Green );
       _patchIcons.Images.Add( Resources.Shield_Red );
@@ -52,6 +56,7 @@ namespace S60.CenRepEditor
       plugin.Filter = "";
       _phones.Filter = "";
       cmbName.Items.Clear();
+      
       for (int i = 0; i < _phones.Count; i++)
       {
 // ReSharper disable PossibleNullReferenceException
@@ -126,12 +131,13 @@ namespace S60.CenRepEditor
 
     private void ChangeOrder( object sender, ColumnClickEventArgs e )
     {
-      if (e.Column == _sortCol)
+      if ( e.Column == _sortCol )
       {
+        
         lstCenRep.Sorting = lstCenRep.Sorting == SortOrder.Ascending ? SortOrder.Descending : SortOrder.Ascending;
       }
       _sortCol = e.Column;
-      lstCenRep.ListViewItemSorter = new ListViewItemComparer( e.Column );
+      lstCenRep.ListViewItemSorter = new ListViewItemComparer( e.Column,lstCenRep.Sorting==SortOrder.Ascending );
     }
 
     private void ChangeModell(object sender, EventArgs e)
@@ -140,12 +146,9 @@ namespace S60.CenRepEditor
       cmbModel.Text = "";
       cmbFirm.Items.Clear();
       cmbFirm.Text = "";
-      foreach (XElement xel in
-        _phones[cmbName.SelectedIndex].Elements().Where(xel => xel != null).Where(xel => xel != null))
+      foreach ( XElement xel in _phones[cmbName.SelectedIndex].Elements().Where( xel => xel != null ).Where( xel => xel != null ).Where( xel => xel != null ) )
       {
-// ReSharper disable PossibleNullReferenceException
-        if (xel != null) cmbModel.Items.Add(xel.Attribute("name").Value);
-// ReSharper restore PossibleNullReferenceException
+        cmbModel.Items.Add(xel.Attribute("name").Value);
       }
     }
 
@@ -241,22 +244,27 @@ namespace S60.CenRepEditor
   public class ListViewItemComparer : IComparer
   {
     private readonly int _col;
+    private readonly bool _order;
 
-    public ListViewItemComparer(int column)
+    public ListViewItemComparer(int column,bool sortorder)
     {
       _col = column;
+      _order = sortorder;
     }
 
     public ListViewItemComparer()
     {
       _col = 0;
+      _order = true;
     }
 
     #region IComparer Members
 
     public int Compare( object x, object y )
     {
-      return String.Compare( ( ( ListViewItem ) x ).SubItems[_col].Text, ( ( ListViewItem ) y ).SubItems[_col].Text );
+      if ( _order )
+        return String.Compare( ( (ListViewItem) x ).SubItems[_col].Text, ( (ListViewItem) y ).SubItems[_col].Text );
+      return 1 - String.Compare( ( ( ListViewItem ) x ).SubItems[_col].Text, ( ( ListViewItem ) y ).SubItems[_col].Text );
     }
 
     #endregion
