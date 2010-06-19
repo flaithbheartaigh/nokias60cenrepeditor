@@ -274,6 +274,33 @@ namespace S60.CenRepEditor.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Not discovered.
+        /// </summary>
+        internal static string frmInternalEditor_frmInternalEditor_Not_discovered {
+            get {
+                return ResourceManager.GetString("frmInternalEditor_frmInternalEditor_Not_discovered", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to This file not discovered..
+        /// </summary>
+        internal static string frmInternalEditor_frmInternalEditor_This_file_not_discovered_ {
+            get {
+                return ResourceManager.GetString("frmInternalEditor_frmInternalEditor_This_file_not_discovered_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to WARNING.
+        /// </summary>
+        internal static string frmInternalEditor_frmInternalEditor_WARNING {
+            get {
+                return ResourceManager.GetString("frmInternalEditor_frmInternalEditor_WARNING", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Description.
         /// </summary>
         internal static string frmInternalEditor_InitializeComponent_Description {
@@ -520,6 +547,13 @@ namespace S60.CenRepEditor.Properties {
         internal static System.Drawing.Bitmap Shutdown_Box_Red {
             get {
                 object obj = ResourceManager.GetObject("Shutdown_Box_Red", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap technical_256 {
+            get {
+                object obj = ResourceManager.GetObject("technical_256", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

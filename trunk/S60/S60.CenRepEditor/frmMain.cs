@@ -34,7 +34,7 @@ namespace S60.CenRepEditor
 // ReSharper restore InconsistentNaming
     readonly XMLPlugin _phones;
 // ReSharper disable FieldCanBeMadeReadOnly.Local
-    private frmSettings _frmMySettings;
+    private FrmSettings _frmMySettings;
 // ReSharper restore FieldCanBeMadeReadOnly.Local
     private frmInternalEditor _frmMyEditor;
     private readonly ImageList _patchIcons;
@@ -46,7 +46,7 @@ namespace S60.CenRepEditor
     public frmMain()
     {
       InitializeComponent();
-      _frmMySettings = new frmSettings( _mySettings );
+      _frmMySettings = new FrmSettings( _mySettings );
       _patchIcons = new ImageList();
       _patchIcons.Images.Add( Resources.Checked_Shield_Green );
       _patchIcons.Images.Add( Resources.Shield_Red );
@@ -166,7 +166,12 @@ namespace S60.CenRepEditor
 
     private void ClickSettings(object sender, EventArgs e)
     {
-      _frmMySettings.Show();
+      if (null != _frmMySettings)
+        _frmMySettings.Show();
+      else
+      {
+        _frmMySettings = new FrmSettings(_mySettings);
+      }
     }
 
     private void ClickEditWithBuiltIn( object sender, EventArgs e )
