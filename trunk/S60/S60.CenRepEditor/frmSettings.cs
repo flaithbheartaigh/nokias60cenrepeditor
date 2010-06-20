@@ -67,7 +67,7 @@ namespace S60.CenRepEditor
           stPath = Application.StartupPath;
           break;
         case "btnFindAttach":
-          myTb = txtRofsDir;
+          myTb = txtAttachDir;
           stPath = Application.StartupPath;
           break;
         case "btnFindRofs":

@@ -252,6 +252,15 @@ namespace S60.CenRepEditor.Properties {
             }
         }
         
+        /// <summary>
+        ///   Looks up a localized string similar to Already saved factory default..
+        /// </summary>
+        internal static string FactoryBackuped {
+            get {
+                return ResourceManager.GetString("FactoryBackuped", resourceCulture);
+            }
+        }
+        
         internal static System.Drawing.Bitmap Flag1_Green {
             get {
                 object obj = ResourceManager.GetObject("Flag1_Green", resourceCulture);
@@ -333,6 +342,26 @@ namespace S60.CenRepEditor.Properties {
         internal static string frmInternalEditor_InitializeComponent_Version {
             get {
                 return ResourceManager.GetString("frmInternalEditor_InitializeComponent_Version", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Attachment directory doesn&apos;t exist and can&apos;t create it.
+        ///Property set to empty..
+        /// </summary>
+        internal static string frmMain_AttachDoesnotExists {
+            get {
+                return ResourceManager.GetString("frmMain_AttachDoesnotExists", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Backup directory is doesn&apos;t exists and can&apos;t create it.
+        ///Property set to empty and disabling auto-backup..
+        /// </summary>
+        internal static string frmMain_Backupdoeasnotexists {
+            get {
+                return ResourceManager.GetString("frmMain_Backupdoeasnotexists", resourceCulture);
             }
         }
         
@@ -428,6 +457,24 @@ namespace S60.CenRepEditor.Properties {
             }
         }
         
+        /// <summary>
+        ///   Looks up a localized string similar to No.
+        /// </summary>
+        internal static string No {
+            get {
+                return ResourceManager.GetString("No", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Not available.
+        /// </summary>
+        internal static string NotAvail {
+            get {
+                return ResourceManager.GetString("NotAvail", resourceCulture);
+            }
+        }
+        
         internal static System.Drawing.Bitmap PaperClip1_Black {
             get {
                 object obj = ResourceManager.GetObject("PaperClip1_Black", resourceCulture);
@@ -506,6 +553,15 @@ namespace S60.CenRepEditor.Properties {
             get {
                 object obj = ResourceManager.GetObject("Scissors", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Saving factory default....
+        /// </summary>
+        internal static string SFD {
+            get {
+                return ResourceManager.GetString("SFD", resourceCulture);
             }
         }
         

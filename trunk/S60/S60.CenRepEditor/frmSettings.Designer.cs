@@ -328,7 +328,7 @@
       this.tableLayoutPanel6.ColumnCount = 3;
       this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 34.77089F));
       this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 65.22911F));
-      this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 34F));
+      this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 35F));
       this.tableLayoutPanel6.Controls.Add(this.label4, 0, 0);
       this.tableLayoutPanel6.Controls.Add(this.txtBackupDir, 1, 0);
       this.tableLayoutPanel6.Controls.Add(this.btnFindBackup, 2, 0);
@@ -364,7 +364,7 @@
       // 
       // txtBackupDir
       // 
-      this.txtBackupDir.Location = new System.Drawing.Point(149, 3);
+      this.txtBackupDir.Location = new System.Drawing.Point(148, 3);
       this.txtBackupDir.Name = "txtBackupDir";
       this.txtBackupDir.Size = new System.Drawing.Size(267, 22);
       this.txtBackupDir.TabIndex = 1;
@@ -372,7 +372,7 @@
       // btnFindBackup
       // 
       this.btnFindBackup.Image = global::S60.CenRepEditor.Properties.Resources.Binoculars;
-      this.btnFindBackup.Location = new System.Drawing.Point(422, 3);
+      this.btnFindBackup.Location = new System.Drawing.Point(421, 3);
       this.btnFindBackup.Name = "btnFindBackup";
       this.btnFindBackup.Size = new System.Drawing.Size(26, 23);
       this.btnFindBackup.TabIndex = 2;
@@ -390,7 +390,7 @@
       // 
       // txtPatchDir
       // 
-      this.txtPatchDir.Location = new System.Drawing.Point(149, 32);
+      this.txtPatchDir.Location = new System.Drawing.Point(148, 32);
       this.txtPatchDir.Name = "txtPatchDir";
       this.txtPatchDir.Size = new System.Drawing.Size(267, 22);
       this.txtPatchDir.TabIndex = 4;
@@ -398,7 +398,7 @@
       // btnFindPatch
       // 
       this.btnFindPatch.Image = global::S60.CenRepEditor.Properties.Resources.Binoculars;
-      this.btnFindPatch.Location = new System.Drawing.Point(422, 32);
+      this.btnFindPatch.Location = new System.Drawing.Point(421, 32);
       this.btnFindPatch.Name = "btnFindPatch";
       this.btnFindPatch.Size = new System.Drawing.Size(26, 23);
       this.btnFindPatch.TabIndex = 5;
@@ -416,7 +416,7 @@
       // 
       // txtAttachDir
       // 
-      this.txtAttachDir.Location = new System.Drawing.Point(149, 61);
+      this.txtAttachDir.Location = new System.Drawing.Point(148, 61);
       this.txtAttachDir.Name = "txtAttachDir";
       this.txtAttachDir.Size = new System.Drawing.Size(267, 22);
       this.txtAttachDir.TabIndex = 7;
@@ -424,7 +424,7 @@
       // btnFindAttach
       // 
       this.btnFindAttach.Image = global::S60.CenRepEditor.Properties.Resources.Binoculars;
-      this.btnFindAttach.Location = new System.Drawing.Point(422, 61);
+      this.btnFindAttach.Location = new System.Drawing.Point(421, 61);
       this.btnFindAttach.Name = "btnFindAttach";
       this.btnFindAttach.Size = new System.Drawing.Size(26, 23);
       this.btnFindAttach.TabIndex = 8;
@@ -442,7 +442,7 @@
       // 
       // txtRofsDir
       // 
-      this.txtRofsDir.Location = new System.Drawing.Point(149, 90);
+      this.txtRofsDir.Location = new System.Drawing.Point(148, 90);
       this.txtRofsDir.Name = "txtRofsDir";
       this.txtRofsDir.Size = new System.Drawing.Size(267, 22);
       this.txtRofsDir.TabIndex = 10;
@@ -450,7 +450,7 @@
       // btnFindRofs
       // 
       this.btnFindRofs.Image = global::S60.CenRepEditor.Properties.Resources.Binoculars;
-      this.btnFindRofs.Location = new System.Drawing.Point(422, 90);
+      this.btnFindRofs.Location = new System.Drawing.Point(421, 90);
       this.btnFindRofs.Name = "btnFindRofs";
       this.btnFindRofs.Size = new System.Drawing.Size(26, 23);
       this.btnFindRofs.TabIndex = 11;
