@@ -328,4 +328,24 @@
   <data name="technical_256" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\technical_256.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+	<data name="frmMain_AttachDoesnotExists">
+		<value><![CDATA[Attachment directory doesn't exist and can't create it.
+Property set to empty.]]></value>
+	</data>
+	<data name="frmMain_Backupdoeasnotexists">
+		<value><![CDATA[Backup directory is doesn't exists and can't create it.
+Property set to empty and disabling auto-backup.]]></value>
+	</data>
+	<data name="NotAvail">
+		<value xml:space="preserve">Not available</value>
+	</data>
+	<data name="No">
+		<value xml:space="preserve">No</value>
+	</data>
+	<data name="FactoryBackuped">
+		<value xml:space="preserve">Already saved factory default.</value>
+	</data>
+	<data name="SFD">
+		<value xml:space="preserve">Saving factory default...</value>
+	</data>
 </root>

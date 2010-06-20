@@ -10,7 +10,9 @@
   purpose:	
 *********************************************************************/
 using System;
+using System.Diagnostics;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Xml.Linq;
 using System.Text;
 using System.Windows.Forms;
@@ -41,6 +43,7 @@ namespace S60.CenRepEditor
     private int _sortCol;
 // ReSharper disable FieldCanBeMadeReadOnly.Local
     private Settings _mySettings = new Settings();
+    private List<ListViewItem> _cloneList = new List<ListViewItem>();
 // ReSharper restore FieldCanBeMadeReadOnly.Local
 
     public frmMain()
@@ -65,6 +68,39 @@ namespace S60.CenRepEditor
       }
       lstCenRep.LargeImageList = _patchIcons;
       lstCenRep.SmallImageList = _patchIcons;
+
+      if (_mySettings.AttachDirectory != "")
+        if (!Directory.Exists(_mySettings.AttachDirectory))
+        {
+          try
+          {
+            Directory.CreateDirectory(_mySettings.AttachDirectory);
+          }
+          catch (Exception)
+          {
+            MessageBox.Show(Resources.frmMain_AttachDoesnotExists, Resources.frmInternalEditor_frmInternalEditor_WARNING);
+            _mySettings.AttachDirectory = "";
+            _mySettings.Save();
+           }
+        }
+      if(_mySettings.BackupPath !="")
+        if (!Directory.Exists(_mySettings.BackupPath))
+        {
+          try
+          {
+            Directory.CreateDirectory(_mySettings.BackupPath);
+          }
+          catch (Exception)
+          {
+            MessageBox.Show(
+              Resources.frmMain_Backupdoeasnotexists,
+              Resources.frmInternalEditor_frmInternalEditor_WARNING);
+            _mySettings.BackupPath = "";
+            _mySettings.AutoBackup = false;
+            _mySettings.Save();
+            throw;
+          }
+        }
     }
 
 // ReSharper disable UnusedMember.Local
@@ -85,6 +121,8 @@ namespace S60.CenRepEditor
 
     private void OpenRofsDir(object sender, EventArgs e)
     {
+      if (_mySettings.DefRofsDir != "")
+        dlgOpenRofs.SelectedPath = _mySettings.DefRofsDir;
       if (dlgOpenRofs.ShowDialog() == DialogResult.Cancel)
         return;
       if (!Directory.Exists(dlgOpenRofs.SelectedPath+@"\private\10202be9"))
@@ -100,7 +138,7 @@ namespace S60.CenRepEditor
           f.Name,
           f.Length > 2040 ? (f.Length/2048)+" Kb" : f.Length+" b",
           f.CreationTime.ToLongDateString(),
-          "No","No","No","Not available"
+          Resources.No,Resources.No,Resources.No,Resources.NotAvail
         },1);
         if (null != plugin)
         {
@@ -120,6 +158,7 @@ namespace S60.CenRepEditor
           }
         }
         lstCenRep.Items.Add(tlCenRep);
+        _cloneList.Add(tlCenRep);
       }
       //lstCenRep.ContextMenu = mnuRightClick.
     }
@@ -243,6 +282,99 @@ namespace S60.CenRepEditor
         }
 // ReSharper restore PossibleNullReferenceException
       }
+    }
+
+    private void OnNameFilter(object sender, EventArgs e)
+    {
+      lstCenRep.BeginUpdate();
+      lstCenRep.Items.Clear();
+      foreach (ListViewItem lvItem in _cloneList)
+      {
+        lstCenRep.Items.Add(lvItem);
+      }
+      Regex reMatcher = new Regex(@"^"+txtNameFilter.Text,RegexOptions.Compiled);
+      foreach (ListViewItem lvItem in
+        lstCenRep.Items.Cast<ListViewItem>().Where(lvItem => !reMatcher.IsMatch(lvItem.SubItems[0].Text)))
+      {
+        lstCenRep.Items.Remove(lvItem);
+
+      }
+      lstCenRep.EndUpdate();
+    }
+
+    private void OnCloseRofs(object sender, EventArgs e)
+    {
+      _cenRepDir = "";
+      lstCenRep.BeginUpdate();
+      lstCenRep.Items.Clear();
+      _cloneList = new List<ListViewItem>();
+      lstCenRep.EndUpdate();
+      lstCenRep.Refresh();
+    }
+
+    private void OnFactoryDefault(object sender, EventArgs e)
+    {
+      string destpath = (_mySettings.BackupPath != "") ? _mySettings.BackupPath : Application.StartupPath + @"\Backup";
+      if (!Directory.Exists(destpath))
+        Directory.CreateDirectory(destpath);
+      StringBuilder sbPath = new StringBuilder(destpath);
+      sbPath.Append(@"\Factory Default");
+      if (!Directory.Exists(sbPath.ToString()))
+        Directory.CreateDirectory(sbPath.ToString());
+      if (cmbName.Text != "")
+        sbPath.Append(@"\").Append(cmbName.Text);
+      else
+        sbPath.Append(@"\unkonwn");
+      if (!Directory.Exists(sbPath.ToString()))
+        Directory.CreateDirectory(sbPath.ToString());
+      if (cmbModel.Text != "")
+        sbPath.Append(@"\").Append(cmbModel.Text);
+      else
+        sbPath.Append(@"\unknown");
+      if (!Directory.Exists(sbPath.ToString()))
+        Directory.CreateDirectory(sbPath.ToString());
+      if (cmbFirm.Text != "")
+        sbPath.Append(@"\").Append(cmbFirm.Text);
+      else
+        sbPath.Append(@"\unknown");
+      if (!Directory.Exists(sbPath.ToString()))
+        Directory.CreateDirectory(sbPath.ToString());
+      DirectoryInfo df = new DirectoryInfo(sbPath.ToString());
+      if (df.GetFiles("*.*").Count()>0)
+      {
+        MessageBox.Show(Resources.FactoryBackuped, Resources.frmInternalEditor_frmInternalEditor_WARNING);
+        return;
+      }
+      destpath = sbPath.Append(@"\").ToString();
+      
+      lblText.Visible = true;
+      lblProcessName.Text = Resources.SFD;
+      lblProcessName.Visible = true;
+      tsProgress.Minimum = 0;
+      tsProgress.Maximum = lstCenRep.Items.Count;
+      tsProgress.Visible = true;
+      foreach(ListViewItem lvItem in lstCenRep.Items)
+      {
+        tsProgress.Increment(1);
+        string source = _cenRepDir + @"\" + lvItem.SubItems[0].Text;
+        File.Copy(source,destpath+lvItem.SubItems[0].Text);
+      }
+      lblText.Visible = false;
+      lblProcessName.Text = "";
+      lblProcessName.Visible = false;
+      tsProgress.Minimum = 0;
+      tsProgress.Maximum = 0;
+      tsProgress.Visible = false;
+    }
+
+    private void OnEditNotepad(object sender, EventArgs e)
+    {
+      if (_mySettings.AutoBackup)
+      {
+        File.Copy(_cenRepDir + @"\" + lstCenRep.SelectedItems[0].SubItems[0].Text, _mySettings.BackupPath + @"\" + lstCenRep.SelectedItems[0].SubItems[0].Text);
+      }
+      Process p = Process.Start("Notepad.exe", _cenRepDir + @"\" + lstCenRep.SelectedItems[0].SubItems[0].Text);
+      p.WaitForExit();
     }
   }
 
