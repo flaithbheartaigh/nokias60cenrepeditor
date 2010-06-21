@@ -394,7 +394,7 @@
             this.backupToolStripMenuItem,
             this.restoreToolStripMenuItem1});
           this.mnuRightClick.Name = "mnuRightClick";
-          this.mnuRightClick.Size = new System.Drawing.Size(164, 158);
+          this.mnuRightClick.Size = new System.Drawing.Size(164, 136);
           // 
           // mnuEditNotepad
           // 

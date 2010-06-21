@@ -235,6 +235,15 @@ namespace S60.CenRepEditor.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Edited Key : .
+        /// </summary>
+        internal static string EditeKey {
+            get {
+                return ResourceManager.GetString("EditeKey", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to The selected path dosn&apos;t contains Central Repository!!!.
         /// </summary>
         internal static string ERROR_NO_CENREP {
