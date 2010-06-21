@@ -371,7 +371,9 @@ namespace S60.CenRepEditor
     {
       if (_mySettings.AutoBackup)
       {
-        File.Copy(_cenRepDir + @"\" + lstCenRep.SelectedItems[0].SubItems[0].Text, _mySettings.BackupPath + @"\" + lstCenRep.SelectedItems[0].SubItems[0].Text);
+        if (!File.Exists(_mySettings.BackupPath + @"\" + lstCenRep.SelectedItems[0].SubItems[0].Text))
+          File.Copy(_cenRepDir + @"\" + lstCenRep.SelectedItems[0].SubItems[0].Text,
+                    _mySettings.BackupPath + @"\" + lstCenRep.SelectedItems[0].SubItems[0].Text);
       }
       Process p = Process.Start("Notepad.exe", _cenRepDir + @"\" + lstCenRep.SelectedItems[0].SubItems[0].Text);
       p.WaitForExit();

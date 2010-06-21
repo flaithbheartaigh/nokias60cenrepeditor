@@ -348,4 +348,7 @@ Property set to empty and disabling auto-backup.]]></value>
 	<data name="SFD">
 		<value xml:space="preserve">Saving factory default...</value>
 	</data>
+	<data name="EditeKey">
+		<value><![CDATA[Edited Key : ]]></value>
+	</data>
 </root>
